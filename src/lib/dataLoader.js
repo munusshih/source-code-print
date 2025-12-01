@@ -14,7 +14,7 @@ export const loadTabData = (tabs) => {
         path.join(__dirname, `../data/${tab.toLowerCase()}.json`),
         path.join(process.cwd(), `src/data/${tab.toLowerCase()}.json`),
       ];
-      
+
       let filename = null;
       for (const p of possiblePaths) {
         if (fs.existsSync(p)) {
@@ -22,7 +22,7 @@ export const loadTabData = (tabs) => {
           break;
         }
       }
-      
+
       if (filename) {
         const content = fs.readFileSync(filename, "utf-8");
         const rows = JSON.parse(content);

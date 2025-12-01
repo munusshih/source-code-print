@@ -126,6 +126,14 @@ async function extractOgImage(url) {
 }
 
 async function takeScreenshot(url, outputPath) {
+  // Skip screenshots in CI/Vercel environments - use committed screenshots as fallback
+  if (process.env.VERCEL || process.env.CI) {
+    console.log(
+      `    ⊘ Skipping screenshot in build environment (using fallback)`
+    );
+    return false;
+  }
+
   let browser;
   try {
     browser = await puppeteer.launch({
@@ -173,7 +181,16 @@ async function main() {
 
   console.log("Fetching OG images for all entries...\n");
 
-  const allImages = {};
+  // Load existing images.json to preserve already captured images
+  let allImages = {};
+  if (fs.existsSync(imagesFile)) {
+    try {
+      allImages = JSON.parse(fs.readFileSync(imagesFile, "utf-8"));
+      console.log("✓ Loaded existing images.json\n");
+    } catch (e) {
+      console.log("⚠ Could not load existing images.json, starting fresh\n");
+    }
+  }
 
   for (const tab of SHEET_TABS) {
     try {
@@ -186,7 +203,11 @@ async function main() {
       }
 
       const rows = JSON.parse(fs.readFileSync(filename, "utf-8"));
-      allImages[tab] = {};
+
+      // Initialize tab if it doesn't exist, but preserve existing entries
+      if (!allImages[tab]) {
+        allImages[tab] = {};
+      }
 
       for (const row of rows) {
         const link = row["Link"] || row["link"];
@@ -194,17 +215,25 @@ async function main() {
 
         if (link && /^https?:\/\//i.test(link)) {
           const url = link.split("\n")[0].trim();
+          const existingImage = allImages[tab][url];
+
           console.log(`  Fetching image for: ${title}`);
 
           // First try to extract OG image or other meta images
           const imageUrl = await extractOgImage(url);
 
           if (imageUrl) {
+            // Update if different from existing
+            if (existingImage && existingImage !== imageUrl) {
+              console.log(`    ↻ Updated: ${imageUrl} (was: ${existingImage})`);
+            } else if (!existingImage) {
+              console.log(`    ✓ Found: ${imageUrl}`);
+            } else {
+              console.log(`    ✓ Confirmed: ${imageUrl}`);
+            }
             allImages[tab][url] = imageUrl;
-            console.log(`    ✓ Found: ${imageUrl}`);
           } else {
-            // Take screenshot if no image found
-            console.log(`    → Taking screenshot...`);
+            // Take screenshot if no image found and no existing screenshot
             const safeFilename = url
               .replace(/https?:\/\//g, "")
               .replace(/[^a-z0-9]/gi, "_")
@@ -213,14 +242,26 @@ async function main() {
               screenshotsDir,
               `${safeFilename}.jpg`
             );
+            const screenshotUrl = `/screenshots/${safeFilename}.jpg`;
 
-            const success = await takeScreenshot(url, screenshotPath);
-            if (success) {
-              const screenshotUrl = `/screenshots/${safeFilename}.jpg`;
-              allImages[tab][url] = screenshotUrl;
-              console.log(`    ✓ Screenshot saved`);
+            // If we already have a screenshot, keep it
+            if (existingImage && existingImage.startsWith("/screenshots/")) {
+              console.log(`    ✓ Using existing screenshot`);
+              allImages[tab][url] = existingImage;
             } else {
-              console.log(`    ✗ Could not capture screenshot`);
+              console.log(`    → Taking screenshot...`);
+              const success = await takeScreenshot(url, screenshotPath);
+              if (success) {
+                allImages[tab][url] = screenshotUrl;
+                console.log(`    ✓ Screenshot saved`);
+              } else if (existingImage) {
+                console.log(
+                  `    ⊘ Screenshot failed, keeping existing: ${existingImage}`
+                );
+                allImages[tab][url] = existingImage;
+              } else {
+                console.log(`    ✗ Could not capture screenshot`);
+              }
             }
           }
 
