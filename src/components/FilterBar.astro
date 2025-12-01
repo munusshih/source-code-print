@@ -1,0 +1,109 @@
+---
+const { tags } = Astro.props;
+---
+
+<div class="filter-bar">
+  <div class="filter-header">
+    <div class="filter-label">Filter by:</div>
+    <div class="result-count"></div>
+  </div>
+  <div class="filter-tags">
+    <button class="filter-tag active" data-filter="all">All</button>
+    {
+      tags.map((tag) => (
+        <button class="filter-tag" data-filter={tag}>
+          {tag}
+        </button>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll(".filter-tag");
+    const allButton = document.querySelector('.filter-tag[data-filter="all"]');
+    const cards = document.querySelectorAll(".card");
+    const resultCount = document.querySelector(".result-count");
+    const activeFilters = new Set();
+
+    function updateResultCount() {
+      const visibleCards = Array.from(cards).filter(
+        (card) => card.style.display !== "none"
+      ).length;
+      if (resultCount) {
+        resultCount.textContent = `${visibleCards} result${visibleCards !== 1 ? "s" : ""}`;
+      }
+    }
+
+    function updateSectionTitles() {
+      const sections = document.querySelectorAll(".tab-section");
+      sections.forEach((section) => {
+        const sectionCards = section.querySelectorAll(".card");
+        const visibleSectionCards = Array.from(sectionCards).filter(
+          (card) => card.style.display !== "none"
+        );
+        const title = section.querySelector(".tab-title");
+        if (title) {
+          title.style.display = visibleSectionCards.length > 0 ? "" : "none";
+        }
+      });
+    }
+
+    function filterCards() {
+      if (activeFilters.size === 0) {
+        // Show all cards
+        cards.forEach((card) => {
+          card.style.display = "";
+        });
+      } else {
+        // Filter cards by active filters
+        cards.forEach((card) => {
+          const tags = Array.from(card.querySelectorAll(".tag")).map((tag) =>
+            tag.textContent?.trim()
+          );
+          const hasAllFilters = Array.from(activeFilters).every((filter) =>
+            tags.includes(filter)
+          );
+          card.style.display = hasAllFilters ? "" : "none";
+        });
+      }
+      updateSectionTitles();
+      updateResultCount();
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.getAttribute("data-filter");
+
+        if (filter === "all") {
+          // Clear all filters
+          activeFilters.clear();
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+        } else {
+          // Toggle filter
+          if (activeFilters.has(filter)) {
+            activeFilters.delete(filter);
+            button.classList.remove("active");
+          } else {
+            activeFilters.add(filter);
+            button.classList.add("active");
+          }
+
+          // Update "All" button state
+          if (activeFilters.size === 0) {
+            allButton?.classList.add("active");
+          } else {
+            allButton?.classList.remove("active");
+          }
+        }
+
+        filterCards();
+      });
+    });
+
+    // Initial count
+    updateResultCount();
+  });
+</script>

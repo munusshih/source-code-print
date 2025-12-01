@@ -1,16 +1,77 @@
 ---
+import { SHEET_TABS } from "../config/sheets";
+import { BOOLEAN_FIELDS } from "../config/constants";
+import { loadTabData } from "../lib/dataLoader";
+import Header from "../components/Header.astro";
+import TabNav from "../components/TabNav.astro";
+import FilterBar from "../components/FilterBar.astro";
+import TabSection from "../components/TabSection.astro";
+import NetworkView from "../components/NetworkView.astro";
+import "../styles/global.css";
 
+const tabData = loadTabData(SHEET_TABS);
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <title>[Source, Code, Print]</title>
+  </head>
+  <body>
+    <div class="container" id="gridView">
+      <button class="view-toggle" id="viewToggle">
+        <span class="toggle-text">Network View</span>
+      </button>
+      <Header />
+      <FilterBar tags={BOOLEAN_FIELDS} />
+      <!-- <TabNav tabs={Object.keys(tabData)} /> -->
+      {
+        Object.entries(tabData).map(([tab, payload]) => (
+          <TabSection
+            tab={tab}
+            payload={payload}
+            booleanFields={BOOLEAN_FIELDS}
+          />
+        ))
+      }
+    </div>
+
+    <NetworkView tabData={tabData} booleanFields={BOOLEAN_FIELDS} />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.getElementById("viewToggle");
+        const gridView = document.getElementById("gridView");
+        const networkView = document.querySelector(".network-view");
+        const toggleText = document.querySelector(".toggle-text");
+        let isNetworkMode = false;
+
+        const handleToggle = () => {
+          isNetworkMode = !isNetworkMode;
+
+          if (isNetworkMode) {
+            gridView!.style.display = "none";
+            networkView!.style.display = "block";
+          } else {
+            gridView!.style.display = "block";
+            networkView!.style.display = "none";
+          }
+        };
+
+        toggleButton?.addEventListener("click", handleToggle);
+        document
+          .getElementById("networkToggle")
+          ?.addEventListener("click", handleToggle);
+      });
+    </script>
+  </body>
 </html>

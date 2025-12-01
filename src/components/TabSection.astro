@@ -1,0 +1,24 @@
+---
+import Card from "./Card.astro";
+
+const { tab, payload, booleanFields } = Astro.props;
+---
+
+<section
+  class="tab-section"
+  id={tab.toLowerCase()}
+  style={tab.toLowerCase() === "databases" ? "display: none;" : ""}
+>
+  {payload.rows && payload.rows.length > 0 && <h2 class="tab-title">{tab}</h2>}
+  {payload.error && <p class="error">{payload.error}</p>}
+  {payload.rows && payload.rows.length === 0 && <p>No entries yet.</p>}
+  {
+    payload.rows && payload.rows.length > 0 && (
+      <div class="cards">
+        {payload.rows.map((row) => (
+          <Card row={row} booleanFields={booleanFields} tab={tab} />
+        ))}
+      </div>
+    )
+  }
+</section>

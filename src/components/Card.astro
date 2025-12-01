@@ -1,0 +1,75 @@
+---
+import { isURL, extractDomain, truncate } from "../lib/utils.js";
+import imagesData from "../data/images.json";
+
+const { row, booleanFields, tab } = Astro.props;
+
+const link = row["Link"] || row["link"];
+const titleLink = link && isURL(link) ? link.split("\n")[0].trim() : null;
+const title = row["Title"] || row["title"];
+const subtitle = row["Subtitle"] || row["subtitle"] || row["Short Description"];
+const author = row["Author/Publisher"] || row["author/publisher"];
+const notes =
+  row["Notes (need to edit in accordance to our point of view)"] ||
+  row["Notes (general) (need to edit in accordance to our point of view)"] ||
+  row["Notes"] ||
+  row["notes"];
+
+const activeTags = booleanFields.filter((field) => {
+  const val = row[field];
+  return val && String(val).trim().toUpperCase() === "TRUE";
+});
+
+// Get image for this entry
+const imageUrl =
+  titleLink && imagesData[tab] ? imagesData[tab][titleLink] : null;
+---
+
+<article class="card">
+  {
+    imageUrl && (
+      <div class="card-image">
+        <img src={imageUrl} alt="" loading="lazy" />
+      </div>
+    )
+  }
+  {
+    activeTags.length > 0 && (
+      <div class="tags">
+        {activeTags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    )
+  }
+  {
+    title && (
+      <div class="card-title">
+        {titleLink ? (
+          <a
+            href={titleLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="title-link"
+          >
+            {title}
+          </a>
+        ) : (
+          title
+        )}
+      </div>
+    )
+  }
+  {subtitle && <div class="card-subtitle">{subtitle}</div>}
+  {author && <div class="card-author">{author}</div>}
+  {
+    notes && (
+      <div class="card-notes">
+        <div class="notes-preview">{truncate(notes)}</div>
+        <div class="notes-full" style="display: none;">
+          {notes}
+        </div>
+      </div>
+    )
+  }
+</article>

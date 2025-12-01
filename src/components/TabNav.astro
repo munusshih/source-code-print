@@ -1,0 +1,13 @@
+---
+const { tabs } = Astro.props;
+---
+
+<nav class="tab-nav">
+  {
+    tabs.map((tab) => (
+      <a href={`#${tab.toLowerCase()}`} class="tab-tag">
+        {tab}
+      </a>
+    ))
+  }
+</nav>

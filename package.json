@@ -6,9 +6,16 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "fetch": "node scripts/fetch-sheets.js",
+    "fetch:images": "node scripts/fetch-images.js"
   },
   "dependencies": {
-    "astro": "^5.15.9"
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.15.9",
+    "d3": "^7.9.0",
+    "js-yaml": "^4.1.1",
+    "puppeteer": "^24.31.0",
+    "tailwindcss": "^4.1.17"
   }
 }
