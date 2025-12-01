@@ -35,9 +35,6 @@ const colorMap = {
       <span class="title-print">Print</span>
     </h2>
   </div>
-  <button class="view-toggle network-toggle" id="networkToggle">
-    <span class="toggle-text">Grid View</span>
-  </button>
   <svg class="network-canvas"></svg>
   <div class="network-container">
     {
@@ -125,8 +122,8 @@ const colorMap = {
           [width, height],
         ])
         .translateExtent([
-          [-width * 3, -height * 3],
-          [width * 4, height * 4],
+          [-width * 1.2, -height * 1.2],
+          [width * 2.2, height * 2.2],
         ])
         .duration(300)
         .on("zoom", (event) => {
