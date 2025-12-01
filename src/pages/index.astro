@@ -7,6 +7,7 @@ import TabNav from "../components/TabNav.astro";
 import FilterBar from "../components/FilterBar.astro";
 import TabSection from "../components/TabSection.astro";
 import NetworkView from "../components/NetworkView.astro";
+import Analytics from "@vercel/analytics/astro";
 import "../styles/global.css";
 
 const tabData = loadTabData(SHEET_TABS);
@@ -73,5 +74,6 @@ const tabData = loadTabData(SHEET_TABS);
           ?.addEventListener("click", handleToggle);
       });
     </script>
+    <Analytics />
   </body>
 </html>

@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/fetch-sheets.js && node scripts/fetch-images.js",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -11,7 +12,9 @@
     "fetch:images": "node scripts/fetch-images.js"
   },
   "dependencies": {
+    "@astrojs/vercel": "^9.0.2",
     "@tailwindcss/vite": "^4.1.17",
+    "@vercel/analytics": "^1.5.0",
     "astro": "^5.15.9",
     "d3": "^7.9.0",
     "js-yaml": "^4.1.1",
