@@ -2,6 +2,7 @@
 import Card from "./Card.astro";
 
 const { tabData, booleanFields } = Astro.props;
+const currentYear = new Date().getFullYear();
 
 // Flatten all entries across tabs, excluding Databases
 const allEntries = Object.entries(tabData)
@@ -68,7 +69,7 @@ const colorMap = {
     }
   </div>
   <div class="network-footer">
-    <p>© 2025 Source, Code, Print. All rights reserved.</p>
+    <p>© {currentYear} Source, Code, Print. All rights reserved.</p>
   </div>
 </div>
 

@@ -1,0 +1,134 @@
+.markdown {
+    @apply w-full;
+}
+
+.markdown h1 {
+    @apply text-4xl font-bold mb-8 mt-0 md:text-3xl sm:text-2xl;
+}
+
+.markdown h2 {
+    @apply text-3xl font-bold mb-4 mt-8 first:mt-0;
+}
+
+.markdown h3 {
+    @apply text-3xl font-semibold mb-3 mt-6;
+}
+
+.markdown p {
+    @apply mb-4 leading-relaxed;
+}
+
+.markdown ul,
+.markdown ol {
+    @apply mb-6 pl-6;
+}
+
+.markdown li {
+    @apply mb-2;
+}
+
+.markdown ul li {
+    @apply list-disc;
+}
+
+.markdown ol li {
+    @apply list-decimal;
+}
+
+.markdown strong {
+    @apply font-semibold;
+}
+
+.markdown em {
+    @apply italic;
+}
+
+.markdown a {
+    @apply text-[var(--color-link)] underline font-medium transition-all duration-200 hover:text-[var(--color-link-hover)];
+}
+
+.markdown blockquote {
+    @apply border-l-4 border-[var(--color-border)] pl-4 my-4 italic text-[var(--color-muted)];
+}
+
+.markdown code {
+    @apply bg-gray-100 px-2 py-1 rounded font-mono text-sm;
+}
+
+.markdown pre {
+    @apply bg-gray-100 p-4 rounded overflow-x-auto mb-4;
+}
+
+.markdown pre code {
+    @apply bg-transparent px-0 py-0;
+}
+
+.markdown hr {
+    @apply my-8 border-t-2 border-[var(--color-border)];
+}
+
+.markdown>*:last-child {
+    @apply mb-0;
+}
+
+.markdown .group-card {
+    @apply w-full grid gap-8 my-8 p-6 bg-white border-2 border-[var(--color-border)] md:gap-4 md:p-4;
+    grid-template-columns: 1fr 1fr;
+}
+
+.markdown .group-card .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.markdown .group-card h3 {
+    @apply m-0 text-4xl font-semibold;
+}
+
+.markdown .group-card .mermaid {
+    @apply mt-4;
+}
+
+.markdown .group-card .content {
+    @apply max-w-prose;
+    grid-column: 2;
+}
+
+@media (max-width: 768px) {
+    .markdown .group-card {
+        grid-template-columns: 1fr;
+    }
+
+    .markdown .group-card .sidebar {
+        flex-direction: column;
+    }
+
+    .markdown .group-card .content {
+        grid-column: 1;
+    }
+}
+
+/* Mermaid diagram styling */
+.markdown .mermaid {
+    display: flex;
+    justify-content: center;
+}
+
+.markdown .mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mermaid color theme */
+.mermaid {
+    --primaryColor: #fff;
+    --primaryBorderColor: #000;
+    --primaryTextColor: #000;
+    --secondaryColor: #ffc0cb;
+    --secondaryBorderColor: #000;
+    --secondaryTextColor: #000;
+    --tertiaryColor: #fff;
+    --tertiaryBorderColor: #000;
+    --tertiaryTextColor: #000;
+}

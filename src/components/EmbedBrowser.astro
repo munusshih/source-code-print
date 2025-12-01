@@ -266,7 +266,7 @@
         // Check if it's an external link (different domain)
         const currentDomain = window.location.origin;
         const linkDomain = new URL(link.href, currentDomain).origin;
-        
+
         if (linkDomain !== currentDomain) {
           // External link - open in embed browser
           e.preventDefault();

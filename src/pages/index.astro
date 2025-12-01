@@ -1,95 +1,75 @@
 ---
-import { SHEET_TABS } from "../config/sheets";
-import { BOOLEAN_FIELDS } from "../config/constants";
-import { loadTabData } from "../lib/dataLoader";
-import Header from "../components/Header.astro";
-import TabNav from "../components/TabNav.astro";
-import FilterBar from "../components/FilterBar.astro";
-import TabSection from "../components/TabSection.astro";
-import NetworkView from "../components/NetworkView.astro";
-import EmbedBrowser from "../components/EmbedBrowser.astro";
-import Menu from "../components/Menu.astro";
-import Analytics from "@vercel/analytics/astro";
-import "../styles/global.css";
+import { SHEET_TABS } from "@/config/sheets";
+import { BOOLEAN_FIELDS } from "@/config/constants";
+import { loadTabData } from "@/lib/dataLoader";
+import FilterBar from "@/components/FilterBar.astro";
+import TabSection from "@/components/TabSection.astro";
+import NetworkView from "@/components/NetworkView.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const tabData = loadTabData(SHEET_TABS);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-      rel="stylesheet"
-    />
-    <title>[Source, Code, Print]</title>
-  </head>
-  <body>
-    <div class="top-controls">
-      <button class="view-toggle" id="viewToggle">
-        <span class="toggle-text">Network View</span>
-      </button>
-      <Menu />
-    </div>
-    <div class="container" id="gridView">
-      <Header />
-      <FilterBar tags={BOOLEAN_FIELDS} />
-      <!-- <TabNav tabs={Object.keys(tabData)} /> -->
-      {
-        Object.entries(tabData).map(([tab, payload]) => (
-          <TabSection
-            tab={tab}
-            payload={payload}
-            booleanFields={BOOLEAN_FIELDS}
-          />
-        ))
-      }
-      <footer class="footer">
-        <p>© 2025 Source, Code, Print. All rights reserved.</p>
-      </footer>
-    </div>
+<BaseLayout
+  title="[Source, Code, Print]"
+  showViewToggle={true}
+  noMarkdown={true}
+>
+  <div id="gridView">
+    <FilterBar tags={BOOLEAN_FIELDS} />
+    {
+      Object.entries(tabData).map(([tab, payload]) => (
+        <TabSection
+          tab={tab}
+          payload={payload}
+          booleanFields={BOOLEAN_FIELDS}
+        />
+      ))
+    }
+  </div>
 
-    <NetworkView tabData={tabData} booleanFields={BOOLEAN_FIELDS} />
+  <NetworkView tabData={tabData} booleanFields={BOOLEAN_FIELDS} />
 
-    <EmbedBrowser />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleButton = document.getElementById("viewToggle");
+      const gridView = document.getElementById("gridView");
+      const networkView = document.querySelector(".network-view");
+      const toggleText = document.querySelector(".toggle-text");
+      let isNetworkMode = false;
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const toggleButton = document.getElementById("viewToggle");
-        const gridView = document.getElementById("gridView");
-        const networkView = document.querySelector(".network-view");
-        const toggleText = document.querySelector(".toggle-text");
-        let isNetworkMode = false;
+      const handleToggle = () => {
+        isNetworkMode = !isNetworkMode;
 
-        const handleToggle = () => {
-          isNetworkMode = !isNetworkMode;
+        if (isNetworkMode) {
+          gridView!.style.display = "none";
+          networkView!.style.display = "block";
+          // Lock scroll in network view
+          document.body.style.overflow = "hidden";
+          toggleText!.textContent = "Grid View";
+          // Hide header and footer in network view
+          const header = document.getElementById("siteHeader");
+          if (header) header.style.display = "none";
+          const footer = document.querySelector(".footer");
+          if (footer) (footer as HTMLElement).style.display = "none";
+        } else {
+          gridView!.style.display = "block";
+          networkView!.style.display = "none";
+          // Restore scroll in grid view
+          document.body.style.overflow = "";
+          toggleText!.textContent = "Network View";
+          // Show header and footer in grid view
+          const header = document.getElementById("siteHeader");
+          if (header) header.style.display = "";
+          const footer = document.querySelector(".footer");
+          if (footer) (footer as HTMLElement).style.display = "";
+        }
+      };
 
-          if (isNetworkMode) {
-            gridView!.style.display = "none";
-            networkView!.style.display = "block";
-            // Lock scroll in network view
-            document.body.style.overflow = "hidden";
-            toggleText!.textContent = "Grid View";
-          } else {
-            gridView!.style.display = "block";
-            networkView!.style.display = "none";
-            // Restore scroll in grid view
-            document.body.style.overflow = "";
-            toggleText!.textContent = "Network View";
-          }
-        };
-
-        toggleButton?.addEventListener("click", handleToggle);
-        document
-          .getElementById("networkToggle")
-          ?.addEventListener("click", handleToggle);
-      });
-    </script>
-    <Analytics />
-  </body>
-</html>
+      toggleButton?.addEventListener("click", handleToggle);
+      document
+        .getElementById("networkToggle")
+        ?.addEventListener("click", handleToggle);
+    });
+  </script>
+</BaseLayout>

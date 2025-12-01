@@ -1,4 +1,26 @@
 @import "tailwindcss";
+@import "./markdown.css";
+
+/* Mermaid diagram styling */
+.mermaid {
+    --primaryColor: #fff;
+    --primaryBorderColor: #000;
+    --primaryTextColor: #000;
+    --secondaryColor: #ffc0cb;
+    --secondaryBorderColor: #000;
+    --secondaryTextColor: #000;
+    --tertiaryColor: #fff;
+    --tertiaryBorderColor: #000;
+    --tertiaryTextColor: #000;
+    --lineColor: #000;
+    --textColor: #000;
+    --background: #fff;
+    --mainBkg: #fff;
+    --secondBkg: #ffc0cb;
+    --tertiaryBkg: #fff;
+    display: flex;
+    justify-content: center;
+}
 
 :root {
     --color-bg: #ffc0cb;
@@ -20,6 +42,22 @@ html {
 body {
     @apply leading-relaxed bg-[var(--color-bg)] text-[var(--color-text)];
     font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.2) 0px,
+            rgba(255, 255, 255, 0.2) 2px,
+            transparent 2px,
+            transparent 40px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.2) 0px,
+            rgba(255, 255, 255, 0.2) 2px,
+            transparent 2px,
+            transparent 40px
+        );
+    background-color: var(--color-bg);
 }
 
 .container {
@@ -27,7 +65,7 @@ body {
 }
 
 .site-header {
-    @apply mb-8 grid grid-cols-2;
+    @apply mb-8 grid grid-cols-1 md:grid-cols-2;
 }
 
 .site-header h1 {
@@ -138,7 +176,7 @@ body {
 }
 
 .external-link {
-    @apply text-[var(--color-link)] no-underline font-medium border-b border-transparent transition-all duration-200 hover:text-[var(--color-link-hover)] hover:border-[var(--color-link-hover)];
+    @apply text-[var(--color-link)] underline font-medium transition-all duration-200 hover:text-[var(--color-link-hover)];
 }
 
 .external-link::after {
@@ -196,6 +234,16 @@ body {
 
 /* Top Controls */
 .top-controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+}
+
+.top-controls-menu-only {
     position: absolute;
     top: 0;
     right: 0;
