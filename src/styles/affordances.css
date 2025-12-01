@@ -1,0 +1,25 @@
+/* Affordance Visualization Styles */
+
+.affordance-node {
+    @apply absolute flex items-center justify-center w-[250px] h-[200px] rounded-full bg-white text-black font-bold text-[28px] text-center cursor-grab border-4 border-black z-10 pointer-events-auto;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+}
+
+.affordance-node:active {
+    @apply cursor-grabbing;
+}
+
+.affordance-node.faded {
+    @apply opacity-[0.05];
+}
+
+.affordance-node.highlighted {
+    @apply bg-black text-white;
+}
+
+.affordance-label {
+    @apply px-2;
+    word-break: break-word;
+}

@@ -1,0 +1,80 @@
+/* Network Visualization Styles */
+
+/* Controls */
+.top-controls {
+    @apply absolute top-0 right-0 z-50 flex gap-2 p-0;
+}
+
+.top-controls-menu-only {
+    @apply absolute top-0 right-0 z-50 flex gap-2 p-0;
+}
+
+/* Header & Footer */
+.network-header {
+    @apply absolute top-6 left-6 z-50 pointer-events-none;
+}
+
+.network-header h2 {
+    @apply text-[2vw] font-bold tracking-tight leading-[80%];
+}
+
+.network-footer {
+    @apply absolute bottom-6 left-6 right-6 z-50 text-left text-sm text-[var(--color-muted)] pointer-events-none;
+}
+
+/* Canvas & Container */
+.network-canvas {
+    @apply absolute inset-0 w-full h-full z-5;
+}
+
+.network-container {
+    @apply absolute inset-0 w-full h-full z-10 pointer-events-none;
+}
+
+/* Network Cards */
+.network-card {
+    @apply absolute w-[280px] cursor-grab pointer-events-auto;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.network-card .card-image img {
+    transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.network-card.faded {
+    @apply opacity-[0.05];
+}
+
+.network-card.faded .card-image img {
+    @apply grayscale;
+}
+
+.network-card:active {
+    @apply cursor-grabbing;
+}
+
+.network-card .card {
+    @apply h-auto;
+}
+
+.network-card .card .card-notes {
+    @apply hidden;
+}
+
+.network-card .card .tags {
+    @apply hidden;
+}
+
+/* Links */
+.network-link {
+    transition: stroke-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), stroke-opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.network-link.highlighted {
+    stroke-width: 4;
+    stroke-opacity: 0.8;
+}
+
+.network-link.faded {
+    stroke-opacity: 0.02;
+}

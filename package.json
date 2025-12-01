@@ -4,12 +4,13 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/fetch-sheets.js && node scripts/fetch-images.js",
+    "prebuild": "node scripts/fetch-sheets.js && node scripts/fetch-images.js && node scripts/fetch-changelog.js",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "fetch": "node scripts/fetch-sheets.js",
-    "fetch:images": "node scripts/fetch-images.js"
+    "fetch:images": "node scripts/fetch-images.js",
+    "fetch:changelog": "node scripts/fetch-changelog.js"
   },
   "dependencies": {
     "@astrojs/vercel": "^9.0.2",

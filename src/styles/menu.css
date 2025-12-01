@@ -1,0 +1,41 @@
+/* Menu Component Styles */
+.menu-container {
+    @apply relative;
+}
+
+.menu-button {
+    @apply px-3 py-4 bg-[var(--color-tag-bg)] text-[var(--color-tag-text)] border-2 border-[var(--color-border)] font-bold text-base cursor-pointer transition-all duration-150 leading-none;
+}
+
+.menu-button:hover {
+    @apply -translate-y-0.5;
+}
+
+.menu-dropdown {
+    @apply absolute top-[calc(100%+0.5rem)] right-0 bg-[var(--color-card-bg)] border-2 border-[var(--color-border)] min-w-[150px] opacity-0 pointer-events-none z-100;
+    transform: translateY(-10px);
+    transition:
+        opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-dropdown.active {
+    @apply opacity-100 pointer-events-auto;
+    transform: translateY(0);
+}
+
+.menu-nav {
+    @apply flex flex-col;
+}
+
+.menu-item {
+    @apply block px-4 py-3 text-[var(--color-text)] no-underline border-b border-[var(--color-border)] transition-colors duration-150 text-base font-semibold;
+}
+
+.menu-item:last-child {
+    @apply border-b-0;
+}
+
+.menu-item:hover {
+    @apply bg-[var(--color-bg)];
+}

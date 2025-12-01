@@ -39,3 +39,59 @@ export const loadTabData = (tabs) => {
 
   return tabData;
 };
+
+// Auto-generate boolean fields from loaded data
+export function extractBooleanFields(tabData) {
+  const booleanFieldCandidates = new Set();
+
+  // Scan all tabs for fields that have true/false values
+  for (const tabName in tabData) {
+    const { rows } = tabData[tabName];
+    if (!Array.isArray(rows)) continue;
+
+    // Look at first few rows to identify boolean fields
+    for (const row of rows.slice(0, 5)) {
+      for (const [key, value] of Object.entries(row)) {
+        if (
+          value === true ||
+          value === false ||
+          value === "TRUE" ||
+          value === "FALSE" ||
+          value === "true" ||
+          value === "false"
+        ) {
+          booleanFieldCandidates.add(key);
+        }
+      }
+    }
+  }
+
+  // Filter to only fields that have values across multiple rows
+  const fieldCounts = {};
+  for (const tabName in tabData) {
+    const { rows } = tabData[tabName];
+    if (!Array.isArray(rows)) continue;
+
+    for (const row of rows) {
+      for (const field of booleanFieldCandidates) {
+        const value = row[field];
+        if (
+          value === true ||
+          value === false ||
+          value === "TRUE" ||
+          value === "FALSE" ||
+          value === "true" ||
+          value === "false"
+        ) {
+          fieldCounts[field] = (fieldCounts[field] || 0) + 1;
+        }
+      }
+    }
+  }
+
+  // Return fields that appear as boolean in at least 2 records
+  return Object.entries(fieldCounts)
+    .filter(([_, count]) => count >= 2)
+    .map(([field, _]) => field)
+    .sort();
+}

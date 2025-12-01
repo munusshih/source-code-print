@@ -1,0 +1,24 @@
+/* Base Layout Styles */
+.top-controls-menu-only {
+    @apply absolute top-0 right-0 z-50 flex gap-2 p-0;
+}
+
+.top-controls {
+    @apply absolute top-0 right-0 z-50 flex gap-2 p-0;
+}
+
+.layout-content {
+    @apply min-h-screen;
+}
+
+.view-toggle {
+    @apply px-3 py-4 bg-[var(--color-tag-bg)] text-[var(--color-tag-text)] border-2 border-[var(--color-border)] font-bold text-base cursor-pointer transition-all duration-150 leading-none;
+}
+
+.view-toggle:hover {
+    @apply -translate-y-0.5;
+}
+
+.toggle-text {
+    @apply inline-block;
+}

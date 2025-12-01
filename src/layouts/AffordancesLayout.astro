@@ -1,0 +1,83 @@
+---
+import { getCollection } from "astro:content";
+import Header from "@/components/Header.astro";
+import Menu from "@/components/Menu.astro";
+import EmbedBrowser from "@/components/EmbedBrowser.astro";
+import Analytics from "@vercel/analytics/astro";
+import "@/styles/global.css";
+
+interface AffordanceItem {
+  slug: string;
+  title: string;
+  description: string;
+}
+
+// Load all affordances from collection
+async function loadAffordances(): Promise<AffordanceItem[]> {
+  const affordances = await getCollection("affordances");
+
+  return affordances
+    .map((entry) => ({
+      slug: entry.slug,
+      title: entry.data.title || entry.slug,
+      description: entry.data.description || "",
+    }))
+    .sort((a, b) => a.title.localeCompare(b.title));
+}
+
+const affordances = await loadAffordances();
+const currentYear = new Date().getFullYear();
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <title>{frontmatter?.title || "Affordances"}</title>
+  </head>
+  <body>
+    <div class="top-controls-menu-only">
+      <Menu />
+    </div>
+
+    <div class="container">
+      <Header />
+      <article class="markdown affordances-article">
+        <div class="affordances-content">
+          <slot />
+
+          <div class="affordances-grid">
+            {
+              affordances.map((affordance) => (
+                <a
+                  href={`/affordance/${affordance.slug}`}
+                  class="affordance-card"
+                >
+                  <div class="affordance-title">{affordance.title}</div>
+                  <div class="affordance-description">
+                    {affordance.description}
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </article>
+      <footer class="footer">
+        <p>© {currentYear} Source, Code, Print. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <EmbedBrowser />
+    <Analytics />
+  </body>
+</html>

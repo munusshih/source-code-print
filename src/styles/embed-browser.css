@@ -1,0 +1,79 @@
+/* Embed Browser Component Styles */
+.embed-backdrop {
+    @apply fixed inset-0 w-screen h-screen bg-black/30 z-[999] opacity-0 pointer-events-none transition-opacity duration-300;
+}
+
+.embed-backdrop.active {
+    @apply opacity-100 pointer-events-auto;
+}
+
+.embed-browser {
+    @apply fixed top-1/2 left-1/2 w-[80vw] h-[80vh] bg-white border-4 border-[var(--color-border)] z-[1000] opacity-0 pointer-events-none flex-col shadow-lg;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition:
+        opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.embed-browser.active {
+    @apply flex opacity-100 pointer-events-auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.embed-browser.fullscreen {
+    @apply w-screen h-screen top-0 left-0;
+    transform: translate(0, 0) scale(1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.embed-taskbar {
+    @apply fixed bottom-6 left-1/2 z-[999] opacity-0 pointer-events-none transition-all duration-300;
+    transform: translateX(-50%) translateY(100px);
+}
+
+.embed-taskbar.active {
+    @apply opacity-100 pointer-events-auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.embed-taskbar-item {
+    @apply py-3 px-6 bg-[var(--color-bg)] border-2 border-[var(--color-border)] font-mono text-[13px] cursor-pointer transition-all duration-150 max-w-[300px] overflow-hidden text-ellipsis whitespace-nowrap;
+}
+
+.embed-taskbar-item:hover {
+    @apply -translate-y-0.5;
+}
+
+.embed-header {
+    @apply flex items-center gap-4 py-3 px-4 bg-[var(--color-bg)] border-b-2 border-[var(--color-border)];
+}
+
+.embed-controls {
+    @apply flex gap-2;
+}
+
+.embed-controls button {
+    @apply w-8 h-8 flex items-center justify-center bg-white border-2 border-[var(--color-border)] font-bold text-base cursor-pointer transition-all duration-150 p-0 leading-none;
+}
+
+.embed-controls button:hover {
+    @apply -translate-y-0.5 bg-[var(--color-bg)];
+}
+
+.embed-close {
+    @apply bg-[var(--color-tag-bg)] text-[var(--color-tag-text)];
+    background: var(--color-tag-bg) !important;
+    color: var(--color-tag-text) !important;
+}
+
+.embed-close:hover {
+    background: var(--color-tag-bg) !important;
+}
+
+.embed-url {
+    @apply flex-1 font-mono text-[13px] overflow-hidden text-ellipsis whitespace-nowrap py-1 px-2 bg-white border-2 border-[var(--color-border)];
+}
+
+.embed-frame {
+    @apply flex-1 w-full border-0 bg-white;
+}

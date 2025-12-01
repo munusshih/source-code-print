@@ -1,0 +1,47 @@
+/* Affordances Layout Styles */
+.affordances-article {
+    @apply bg-white border-2 border-black p-0 m-0 w-full max-w-full flex flex-col;
+}
+
+.affordances-content {
+    @apply p-8;
+}
+
+.affordances-intro {
+    @apply border-2 border-[var(--color-border)] bg-[var(--color-card-bg)] p-8 mb-12;
+}
+
+.affordances-intro p {
+    @apply max-w-[65ch];
+}
+
+.affordances-grid {
+    @apply grid gap-8 mt-12;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+a.affordance-card {
+    @apply flex flex-col border-2 border-[var(--color-border)] p-8 bg-[var(--color-card-bg)] no-underline text-inherit transition-all duration-200 h-full cursor-pointer no-underline;
+}
+
+.affordance-card:hover {
+    @apply -translate-y-0.5 shadow-md;
+}
+
+.affordance-title {
+    @apply text-2xl font-bold mb-4 leading-snug text-inherit no-underline block;
+}
+
+.affordance-description {
+    @apply text-base leading-relaxed text-[var(--color-text)] flex-grow;
+}
+
+@media (max-width: 768px) {
+    .affordances-grid {
+        @apply grid-cols-1 gap-6;
+    }
+
+    .affordances-content {
+        @apply p-4;
+    }
+}

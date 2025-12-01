@@ -1,0 +1,99 @@
+---
+import { execSync } from "child_process";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import * as fs from "fs";
+import * as path from "path";
+
+interface ChangelogEntry {
+  date: string;
+  dateObj: Date;
+  blocks?: Array<{
+    type: "paragraph" | "list";
+    text?: string;
+    items?: string[];
+  }>;
+  type: "manual" | "git";
+  commits?: Array<{ subject: string; body?: string }>;
+}
+
+// Load data from JSON file
+let allEntries: ChangelogEntry[] = [];
+
+try {
+  const dataPath = path.join(process.cwd(), "scripts", "changelog-data.json");
+  if (fs.existsSync(dataPath)) {
+    const data = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
+
+    // Convert manual entries
+    if (data.manual) {
+      allEntries.push(
+        ...data.manual.map((entry: any) => ({
+          date: entry.date,
+          dateObj: new Date(entry.date),
+          blocks: entry.blocks,
+          type: "manual" as const,
+        }))
+      );
+    }
+
+    // Convert git entries
+    if (data.git) {
+      allEntries.push(
+        ...data.git.map((entry: any) => ({
+          date: entry.date,
+          dateObj: new Date(entry.date),
+          type: "git" as const,
+          commits: entry.commits,
+        }))
+      );
+    }
+  }
+} catch (error) {
+  console.error("Error loading changelog data:", error);
+}
+
+// Sort all entries by date (newest first)
+const sortedEntries = allEntries.sort(
+  (a, b) => b.dateObj.getTime() - a.dateObj.getTime()
+);
+---
+
+<BaseLayout title="Changelog" slug="changelog">
+  <h1>Changelog</h1>
+
+  {
+    sortedEntries.map((entry) => (
+      <div class="group-card">
+        <div class="sidebar">
+          <h3>{entry.date}</h3>
+        </div>
+        <div class="content">
+          {entry.type === "git" && entry.commits ? (
+            <ul>
+              {entry.commits.map((commit) => (
+                <li>
+                  <strong>{commit.subject}</strong>
+                  {commit.body && <p>{commit.body}</p>}
+                </li>
+              ))}
+            </ul>
+          ) : entry.blocks ? (
+            <>
+              {entry.blocks.map((block) =>
+                block.type === "paragraph" ? (
+                  <p>{block.text}</p>
+                ) : (
+                  <ul>
+                    {block.items?.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )
+              )}
+            </>
+          ) : null}
+        </div>
+      </div>
+    ))
+  }
+</BaseLayout>

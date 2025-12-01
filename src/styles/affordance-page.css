@@ -1,0 +1,174 @@
+/* Affordance Page Styles ([slug].astro) */
+.affordance-article {
+    @apply bg-white border-2 border-black p-0 m-0 min-h-screen w-full max-w-full flex flex-col;
+}
+
+.affordance-back-link {
+    @apply pt-8 px-8;
+}
+
+.affordance-back-link a {
+    @apply text-black no-underline;
+}
+
+.affordance-back-link a:hover {
+    @apply underline text-black;
+}
+
+.affordance-wrapper {
+    @apply flex flex-col gap-0 w-full px-8 pb-8 mx-auto;
+}
+
+/* Title and description at top level - constrained to center column */
+.affordance-wrapper>h1 {
+    @apply text-[10vw] font-bold my-8 leading-tight mx-auto;
+}
+
+.affordance-wrapper>.affordance-description {
+    @apply mb-8 text-lg max-w-[65ch] mx-auto font-normal leading-relaxed border-2 px-8 py-4 mb-20 bg-[var(--color-bg)];
+    letter-spacing: 0;
+}
+
+.affordance-content {
+    @apply flex flex-col gap-0 leading-[1.8];
+    counter-reset: h2-counter;
+}
+
+/* Per-paragraph three-column layout */
+.paragraph-row {
+    @apply grid gap-8 w-full items-start;
+    grid-template-columns: 1fr 65ch 1fr;
+}
+
+.affordance-content-para {
+    grid-column: 2;
+}
+
+.affordance-side {
+    @apply flex flex-col gap-4;
+}
+
+.affordance-side-left {
+    @apply items-end;
+}
+
+.affordance-side-right {
+    @apply items-start;
+}
+
+.side-annotation {
+    @apply w-full text-sm leading-relaxed border-l-2 pl-4 pr-4;
+    color: var(--color-text-secondary, #666);
+    border-color: var(--color-border);
+}
+
+.affordance-side-left .side-annotation {
+    @apply border-l-0 border-r-2 pl-0 pr-4 max-w-[65ch];
+    border-color: var(--color-border);
+}
+
+.affordance-side-left .side-annotation p {
+    @apply text-right;
+}
+
+.affordance-side-right .side-annotation {
+    @apply max-w-[65ch];
+}
+
+.side-annotation img {
+    @apply max-w-full h-auto mb-2 block;
+}
+
+.side-annotation p {
+    @apply m-0;
+}
+
+/* Anchor links for footnote-style annotations */
+.annotation-anchor {
+    @apply inline underline cursor-pointer;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--color-border);
+}
+
+.annotation-anchor:hover {
+    text-decoration-color: var(--color-text);
+}
+
+/* Content paragraphs and headings */
+.affordance-content h2 {
+    @apply text-[2.5vw] tracking-tighter font-semibold mt-12 block w-auto mx-auto text-center px-4 py-2 my-20 relative;
+    border-color: var(--color-border);
+    letter-spacing: -0.02em;
+    counter-increment: h2-counter;
+}
+
+.affordance-content h2::before {
+    @apply block w-full text-[15vw] font-bold leading-none mb-2;
+    content: counter(h2-counter);
+    color: var(--color-bg);
+    -webkit-text-stroke: 2px var(--color-border);
+}
+
+.affordance-content p {
+    @apply mb-6 leading-[1.8] max-w-full;
+    color: var(--color-text);
+}
+
+.affordance-content a {
+    @apply text-inherit underline transition-all duration-200;
+    text-decoration-color: var(--color-border);
+}
+
+.affordance-content a:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    text-decoration-color: var(--color-text);
+}
+
+.affordance-content strong {
+    @apply font-semibold;
+}
+
+/* Hide annotation markers visually but keep them in DOM */
+.annotation-marker {
+    @apply hidden;
+}
+
+@media (max-width: 1024px) {
+    .paragraph-row {
+        @apply gap-4;
+    }
+
+    .affordance-wrapper {
+        @apply px-4 pb-4;
+    }
+}
+
+@media (max-width: 768px) {
+    .paragraph-row {
+        @apply grid-cols-1 gap-3;
+    }
+
+    .affordance-content-para {
+        grid-column: 1;
+    }
+
+    .affordance-side {
+        @apply hidden;
+    }
+
+    .affordance-wrapper>h1 {
+        @apply text-[10vw];
+    }
+
+    .affordance-content h2 {
+        @apply text-xl;
+    }
+
+    .affordance-back-link {
+        @apply px-4;
+    }
+
+    .affordance-wrapper {
+        @apply px-3 pb-4;
+    }
+}

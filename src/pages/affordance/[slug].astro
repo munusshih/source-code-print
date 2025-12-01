@@ -1,0 +1,217 @@
+---
+import { getCollection } from "astro:content";
+import { marked } from "marked";
+import Header from "@/components/Header.astro";
+import Menu from "@/components/Menu.astro";
+import EmbedBrowser from "@/components/EmbedBrowser.astro";
+import Analytics from "@vercel/analytics/astro";
+import "@/styles/global.css";
+
+interface InlineAnnotation {
+  type: "left" | "right";
+  content: string;
+  marker: string; // unique identifier for this annotation
+}
+
+interface AnnotatedParagraph {
+  html: string;
+  leftAnnotations: InlineAnnotation[];
+  rightAnnotations: InlineAnnotation[];
+}
+
+// Parse inline annotations and extract them from HTML
+// Supports: {left: annotation text} or {left|word: annotation text}
+// The |word syntax makes the annotation anchor to that specific word
+function extractInlineAnnotations(htmlContent: string): {
+  html: string;
+  annotatedParagraphs: AnnotatedParagraph[];
+} {
+  const paragraphRegex = /<p>([\s\S]*?)<\/p>/g;
+  const annotatedParagraphs: AnnotatedParagraph[] = [];
+
+  const newHtml = htmlContent.replace(paragraphRegex, (fullMatch, content) => {
+    const leftAnnotations: InlineAnnotation[] = [];
+    const rightAnnotations: InlineAnnotation[] = [];
+
+    // Find all inline annotations: {left: text} or {left|word: text}
+    const annotationRegex = /\{(left|right)(?:\|([^:]+))?\s*:\s*(.+?)\}/g;
+    let cleanContent = content;
+    const annotationMatches: Array<{
+      type: "left" | "right";
+      targetWord: string | undefined;
+      annotationText: string;
+      marker: string;
+    }> = [];
+
+    // Collect all annotations first
+    let annotationMatch;
+    while ((annotationMatch = annotationRegex.exec(content)) !== null) {
+      const type = annotationMatch[1] as "left" | "right";
+      const targetWord = annotationMatch[2]; // optional word to anchor to
+      const annotationText = annotationMatch[3];
+      const marker = `marker-${Math.random().toString(36).substr(2, 9)}`;
+
+      annotationMatches.push({
+        type,
+        targetWord,
+        annotationText,
+        marker,
+      });
+
+      const annotationObj: InlineAnnotation = {
+        type,
+        content: annotationText,
+        marker,
+      };
+
+      if (type === "left") {
+        leftAnnotations.push(annotationObj);
+      } else {
+        rightAnnotations.push(annotationObj);
+      }
+    }
+
+    // Remove all annotation syntax from content
+    cleanContent = cleanContent.replace(
+      /\{(left|right)(?:\|[^:]+)?\s*:\s*(.+?)\}/g,
+      ""
+    );
+
+    // Now wrap target words with anchors
+    annotationMatches.forEach((ann) => {
+      if (ann.targetWord) {
+        const wordRegex = new RegExp(
+          `\\b${ann.targetWord.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b(?![^<]*>)`,
+          "gi"
+        );
+        cleanContent = cleanContent.replace(wordRegex, (match) => {
+          return `<span class="annotation-anchor" data-marker="${ann.marker}">${match}</span>`;
+        });
+      }
+    });
+
+    const cleanedContent = cleanContent.trim();
+
+    if (leftAnnotations.length > 0 || rightAnnotations.length > 0) {
+      annotatedParagraphs.push({
+        html: `<p>${cleanedContent}</p>`,
+        leftAnnotations,
+        rightAnnotations,
+      });
+
+      // Return three-column layout with annotations
+      const leftSide = leftAnnotations
+        .map(
+          (ann) =>
+            `<div class="side-annotation" data-marker="${ann.marker}">${ann.content}</div>`
+        )
+        .join("");
+      const rightSide = rightAnnotations
+        .map(
+          (ann) =>
+            `<div class="side-annotation" data-marker="${ann.marker}">${ann.content}</div>`
+        )
+        .join("");
+
+      return `<div class="paragraph-row">
+        <div class="affordance-side affordance-side-left">${leftSide}</div>
+        <div class="affordance-content-para"><p>${cleanedContent}</p></div>
+        <div class="affordance-side affordance-side-right">${rightSide}</div>
+      </div>`;
+    } else {
+      // No annotations, still wrap in three-column but empty sides
+      annotatedParagraphs.push({
+        html: `<p>${cleanedContent}</p>`,
+        leftAnnotations: [],
+        rightAnnotations: [],
+      });
+
+      return `<div class="paragraph-row">
+        <div class="affordance-side affordance-side-left"></div>
+        <div class="affordance-content-para"><p>${cleanedContent}</p></div>
+        <div class="affordance-side affordance-side-right"></div>
+      </div>`;
+    }
+  });
+
+  return { html: newHtml, annotatedParagraphs };
+}
+
+export async function getStaticPaths() {
+  const affordances = await getCollection("affordances");
+
+  return affordances.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: any;
+}
+
+const { entry } = Astro.props;
+const { data: metadata, body: rawBody } = entry;
+
+let htmlContent = "";
+let annotatedParagraphs: AnnotatedParagraph[] = [];
+
+// Parse the raw body (if available)
+if (rawBody) {
+  let content = rawBody.replace(/^# .+\n/, "");
+
+  // Convert markdown to HTML
+  const markedHtml = await marked(content);
+
+  // Extract inline annotations and wrap paragraphs
+  const { html: processedHtml, annotatedParagraphs: paragraphs } =
+    extractInlineAnnotations(markedHtml);
+
+  htmlContent = processedHtml;
+  annotatedParagraphs = paragraphs;
+}
+
+const currentYear = new Date().getFullYear();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <title>{metadata.title}</title>
+  </head>
+  <body>
+    <div class="top-controls-menu-only">
+      <Menu />
+    </div>
+
+    <div class="container">
+      <Header />
+      <article class="markdown affordance-article">
+        <div class="affordance-back-link">
+          <a href="/affordances">← Back to Affordances</a>
+        </div>
+
+        <div class="affordance-wrapper">
+          <h1>{metadata.title}</h1>
+          <p class="affordance-description">{metadata.description}</p>
+          <div class="affordance-content" set:html={htmlContent} />
+        </div>
+      </article>
+      <footer class="footer">
+        <p>© {currentYear} Source, Code, Print. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <EmbedBrowser />
+    <Analytics />
+  </body>
+</html>

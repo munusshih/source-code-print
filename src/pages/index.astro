@@ -1,13 +1,13 @@
 ---
-import { SHEET_TABS } from "@/config/sheets";
-import { BOOLEAN_FIELDS } from "@/config/constants";
-import { loadTabData } from "@/lib/dataLoader";
+import { SHEET_TABS } from "@/lib/opensheet";
+import { loadTabData, extractBooleanFields } from "@/lib/dataLoader";
 import FilterBar from "@/components/FilterBar.astro";
 import TabSection from "@/components/TabSection.astro";
 import NetworkView from "@/components/NetworkView.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const tabData = loadTabData(SHEET_TABS);
+const BOOLEAN_FIELDS = extractBooleanFields(tabData);
 ---
 
 <BaseLayout

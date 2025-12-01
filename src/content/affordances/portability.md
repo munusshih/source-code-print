@@ -1,0 +1,24 @@
+---
+title: "(Tele)Portability"
+description: "The ability to navigate within a work by pinpointing areas of interest and jumping directly to them."
+---
+
+Portability addresses how readers move through content. Rather than sequential browsing or linear progression, portability creates direct links between related ideas, compressing distance and enabling non linear exploration. The hyperlink is the quintessential portable gesture: a direct portal from one location to another, bypassing the structural path between them. The counter to portability is sequential linearity, where readers must traverse content in predetermined order to reach any given point.
+
+## The Internet as Index
+
+When Tim Berners Lee created the internet, he also created HTML as part of the protocol to help find different objects saved on servers. His idea was that we could create an index housing all these different objects. This is why he created hyperlinks, and why to this day the first page of any website is called index.html. The internet was meant to be an index, not a container necessarily. This indexing logic fundamentally differs from the sequential structure of books.
+
+A book usually has a table of contents serving as an index, but navigating requires physically paging through to reach the desired section. The hyperlink, by contrast, makes distance irrelevant. Related ideas can be adjacent regardless of their structural position. The portability of the web is striking because it allows for the compression of distance between pages, obfuscating the structural paths taken in the journey from one place to another. Although it is not possible to completely obfuscate this structure in printed books because of the physical presence of pages, perhaps we can integrate portals into the physical form, allowing readers to forgo linear browsing.
+
+How do readers find what they are looking for? Through tables of contents, indexes, search functions, tags, or recommendation systems? What makes connections visible? How are relationships between different sections or ideas indicated? Through explicit links, visual cues, or structural organization? Can the index become the content? What if the project itself is the catalog, and the act of indexing is the primary work rather than a navigation aid? How do we kill sequentiality? What methods allow readers to jump directly to areas of interest without linear progression?
+
+## Precedents and Methods
+
+<u>[Cyberfeminism Index](https://cyberfeminismindex.com)</u> demonstrates portability across both web and print. The web version uses hyperlinks for instant navigation. The print version recreates this through a series of in text annotations and index systems integrated directly into content. Through this integration, the experience creates direct portals between related ideas despite the conventionally sequential arrangement of book pages.
+
+<u>[The Book After the Book](https://static-files.rhizome.org/Q4377/thebook/)</u> explores how hypertext logic can be translated to print, using visual and structural cues to create jump points. QR codes represent a hybrid portability solution: printed markers that portal readers from physical pages to digital content, embedding teleportation directly in the material.
+
+Embedded media like YouTube players inside web pages or iframes showing websites within websites demonstrate how portability can bring external content directly to the reader rather than sending the reader elsewhere. Spreadsheets and databases as publishing methods focus less on creating original projects and more on cataloging and archiving other people's work, making the index itself the primary contribution. <u>[SOOT Spiral](https://spiral.soot.com)</u> visualizes files and content spatially, allowing readers to navigate by visual proximity rather than hierarchical structure.
+
+Projects exploring portability employ tabs and cut outs as physical modifications to book structure that allow readers to jump directly to frequently referenced sections. Overlapping sections use layouts where related content appears simultaneously on facing pages or through transparent overlays. Multi access indexes provide multiple ways to enter and navigate content: by theme, by author, by date, by format, by connection. Fuzzy search uses search algorithms that approximate matches rather than requiring exact terms, making content more discoverable. Visual navigation uses spatial layouts, maps, or diagrams as navigation interfaces rather than linear lists. Cross referencing systems create dense annotation linking related passages, creating webs of connection readers can follow. Modular chunks break content into small, independently accessible pieces that can be recombined in different orders. Living catalogs are indexes that continuously update as new work is added, with portability mechanisms adjusting automatically.

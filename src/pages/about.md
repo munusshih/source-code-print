@@ -73,19 +73,21 @@ We identify and document affordances: the possibilities for action offered by di
 
 The key affordances we explore are:
 
-**Materiality:** The ability to derive meaning from what can be observed or touched. What materials can host this work, and how does each material shape the experience?
+**<u>[Materiality](/materiality)</u>:** The ability to derive meaning from what can be observed or touched. What materials can host this work, and how does each material shape the experience?
 
-**Ownability:** The ability for work to be permanently owned by readers and accessed without interruption, regardless of future changes by publishers or platforms.
+**<u>[Ownability](/ownability)</u>:** The ability for work to be permanently owned by readers and accessed without interruption, regardless of future changes by publishers or platforms.
 
-**Updatability:** The capacity to keep changing and adapting work even after it has been published, moving beyond static, immutable forms.
+**<u>[Updatability](/updatability)</u>:** The capacity to keep changing and adapting work even after it has been published, moving beyond static, immutable forms.
 
-**Reactivity:** The ability for viewers to give feedback and for the medium to adopt that feedback in real time, creating feedback loops between creator and reader.
+**<u>[Reactivity](/reactivity)</u>:** The ability for viewers to give feedback and for the medium to adopt that feedback in real time, creating feedback loops between creator and reader.
 
-**(Tele)Portability:** The ability to navigate within a work by pinpointing areas of interest and jumping directly to them, translating hyperlinks and indexes across media.
+**<u>[(Tele)Portability](/portability)</u>:** The ability to navigate within a work by pinpointing areas of interest and jumping directly to them, translating hyperlinks and indexes across media.
 
-**Traceability:** The ability to record paths, versions, and interactions, documenting how work evolves and how readers engage with it.
+**<u>[Traceability](/traceability)</u>:** The ability to record paths, versions, and interactions, documenting how work evolves and how readers engage with it.
 
 Rather than choosing between print and digital, we explore how these affordances reveal new possibilities when translated across media, enabling hybrid practices that leverage the strengths of each form.
+
+For detailed explorations of each affordance, visit the <u>[Affordances](/affordances)</u> page.
 
 </div>
 

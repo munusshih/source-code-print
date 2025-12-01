@@ -40,8 +40,14 @@ async function downloadImage(imageUrl, outputPath) {
     client
       .get(imageUrl, { timeout: 10000 }, (res) => {
         // Handle redirects
-        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-          downloadImage(res.headers.location, outputPath).then(resolve).catch(reject);
+        if (
+          res.statusCode >= 300 &&
+          res.statusCode < 400 &&
+          res.headers.location
+        ) {
+          downloadImage(res.headers.location, outputPath)
+            .then(resolve)
+            .catch(reject);
           return;
         }
 
@@ -88,15 +94,13 @@ function normalizeImageUrl(imageUrl, baseUrl) {
     }
 
     // Relative paths
-    const basePath = new URL(baseUrl).pathname.split("/").slice(0, -1).join("/");
+    const basePath = new URL(baseUrl).pathname
+      .split("/")
+      .slice(0, -1)
+      .join("/");
     const baseUrlObj = new URL(baseUrl);
     return (
-      baseUrlObj.protocol +
-      "//" +
-      baseUrlObj.host +
-      basePath +
-      "/" +
-      imageUrl
+      baseUrlObj.protocol + "//" + baseUrlObj.host + basePath + "/" + imageUrl
     );
   } catch (e) {
     return null;
@@ -270,6 +274,12 @@ async function main() {
         if (link && /^https?:\/\//i.test(link)) {
           const url = link.split("\n")[0].trim();
           const existingImage = allImages[tab][url];
+
+          // Skip if we already have an image or screenshot for this entry
+          if (existingImage) {
+            console.log(`  ✓ Already have image: ${title}`);
+            continue;
+          }
 
           console.log(`  Fetching image for: ${title}`);
 

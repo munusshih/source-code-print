@@ -1,0 +1,232 @@
+{
+  "manual": [
+    {
+      "date": "October 6, 2025",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "By early October, we began connecting the index concept to existing platforms and tools students already use:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Exploring collective databases and how search features create feedback loops between system and viewer",
+            "Investigating the authorship of the reader and how feedback creates dialogue",
+            "Considering how to source and scavenge from individual databases to build collective ones",
+            "Thinking about sharing mechanisms: collective are.na boards, periodic scraping, feeding into larger systems",
+            "The complicated hierarchy of information organization",
+            "A small world with infinite possibilities expanding beyond borders"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The role of the viewer and reader in creating meaning became increasingly important. We started recognizing that the research could take multiple forms for distribution, and that gathering and organization itself creates space for dialogue."
+        }
+      ]
+    },
+    {
+      "date": "October 13, 2025",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A critical refinement occurred when we recognized that applying formats to vague concepts was ineffective. Instead, we separated formats and qualities into distinct organizational systems:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Using affordances as one categorization system with format as secondary",
+            "Differentiating between process and final form",
+            "Using binary organization (linear/nonlinear) to define opposites",
+            "Treating affordances as ways to move between formats",
+            "Understanding that attributes maintain meaning across different formats",
+            "Recognizing that what we bring to the table is projects that blur these lines"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Our framework shifted from black and white thinking to embracing blurry dichotomies. We stopped thinking of digital and physical as opposites and started thinking of them as interrelated systems. The attributes of a medium should have meaning in different ways across formats."
+        }
+      ]
+    },
+    {
+      "date": "October 20, 2025",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The affordances framework became increasingly sophisticated. We began:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Defining opposite affordances and what it means when an affordance is false",
+            "Clarifying affordances through their negation and counter-examples",
+            "Pulling examples from our database to illustrate each concept",
+            "Building a medium list from collected projects",
+            "Placing affordances in context of standard versus non-standard media use",
+            "Researching the history and parallel evolution of affordances"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Crucial realization: tools are only as interesting as their contents. We started exploring why it matters for content to exist as a book versus a website versus a presentation, emphasizing containers and content relationships. Questions emerged: why does content need to be translated? How is it translated? What gets omitted or created to fit different kinds of containers? Can the research itself be the content?"
+        }
+      ]
+    },
+    {
+      "date": "October 27, 2025",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "This phase deepened our understanding of how historical forces shaped contemporary publishing:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "The concept that the early internet was designed as an index, not a container",
+            "How translations from analogue to digital have evolved throughout internet history",
+            "The distinction between early internet practices and current Web 2 approaches",
+            "Our changing relationship to reading and how it changes our relationship to the web",
+            "The energy and constant maintenance required for websites versus the self-sustaining existence of books",
+            "The energy and flows of life constantly changing web content"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Questions about reading shifted our approach: how our habits change, how relationships to indexing and searching have evolved, how our relationship to impermanence shapes publishing practices."
+        },
+        {
+          "type": "paragraph",
+          "text": "The next step became clear: we needed explicit definitions for the affordances and a working framework that could evolve with our research body."
+        }
+      ]
+    },
+    {
+      "date": "November 3, 2025",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "As the framework solidified, new questions emerged that would shape later development:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "The translation towards material forms",
+            "Whether all affordances must always be true for work to be interesting",
+            "Licensing conversations within ownability section",
+            "The difference between creator intent and user appropriation",
+            "How personal blogs changed our relationship to publishing",
+            "The centralization of the web through platforms post-Web 2",
+            "Distinguishing adaptability from updatability and reactivity",
+            "The role of feedback loops in publishing",
+            "RSS feeds and API structures for publishing"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Key conceptual refinements: changing the framework versus the framework being reactive to users. We began eliminating sequentiality and exploring switching indexing systems between print and digital. The project itself could become the index/catalog. Being able to hide information anywhere and in anything."
+        }
+      ]
+    },
+    {
+      "date": "November 10, 2025",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The pedagogical structure took shape with concrete workshop plans. We moved from theory to practice:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "First semester: students become experts in their own subject",
+            "Second semester: translating work for external audiences",
+            "Workshop series covering print form, publication possibilities, technology, and community engagement",
+            "Exploring how to deliver research through accessible, shareable means",
+            "Developing frameworks for showing students examples and inspiring expanded thinking",
+            "Non-book publications and experimental formats",
+            "Affordances as big chapters with descriptions, writings on histories, related readings, tutorials, precedents, and gesture experiments"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The presentation itself needed to embody hybrid publishing principles. We organized affordances as the organizing structure. Key question emerged: is the workshop more of a show and tell, or a deep dive into the framework itself?"
+        },
+        {
+          "type": "paragraph",
+          "text": "This phase emphasized that workshops should introduce but not fully develop the framework, leaving room for student interpretation and extension."
+        }
+      ]
+    }
+  ],
+  "git": [
+    {
+      "date": "November 17, 2025",
+      "commits": [
+        {
+          "hash": "ca30425",
+          "subject": "Initial commit",
+          "body": ""
+        }
+      ]
+    },
+    {
+      "date": "November 30, 2025",
+      "commits": [
+        {
+          "hash": "dac81e8",
+          "subject": "Initialize Astro project with starter files",
+          "body": "Added initial project structure for an Astro site, including configuration files, VS Code settings, .gitignore, starter README, favicon, and a minimal index page. Dependencies and project metadata are included in package.json and package-lock.json."
+        }
+      ]
+    },
+    {
+      "date": "December 1, 2025",
+      "commits": [
+        {
+          "hash": "91116f0",
+          "subject": "Add Google Sheets integration and UI components",
+          "body": "Introduces Google Sheets data fetching via opensheet.elk.sh, with environment configuration and error handling. Adds multiple Astro components (Card, FilterBar, Header, NetworkView, TabNav, TabSection), scripts for data/image fetching, config files, screenshots, and Tailwind CSS integration. Updates README with setup instructions and modifies Astro/Vite config for Tailwind support."
+        },
+        {
+          "hash": "db8f49c",
+          "subject": "Update favicon and remove [tab] page",
+          "body": "Replaced the favicon.svg with a simplified circular icon and deleted the dynamic [tab].astro page from src/pages. The removal of [tab].astro suggests a change in routing or tab-based sheet display functionality."
+        },
+        {
+          "hash": "2e56212",
+          "subject": "Add Vercel adapter and analytics to Astro config",
+          "body": "Configured Astro to use the Vercel adapter with web analytics enabled and set output to static for deployment. Updated .gitignore to exclude .vercel directory. Added @astrojs/vercel and @vercel/analytics dependencies. No changes to application logic or UI."
+        },
+        {
+          "hash": "1dfe337",
+          "subject": "Improve data file path resolution in dataLoader",
+          "body": "Updated loadTabData to check multiple possible paths for data files, increasing robustness when locating JSON sources. Error messages now list all attempted paths for easier debugging. Also removed unused Icon file and updated several screenshot images."
+        },
+        {
+          "hash": "98ac5c7",
+          "subject": "Improve image fetching and screenshot handling",
+          "body": "Enhances fetch-images.js to skip screenshots in CI/Vercel environments, preserve and update existing images, and provide clearer logging. Also improves robustness by loading existing images.json and handling screenshot failures gracefully. Minor formatting updates in astro.config.mjs and dataLoader.js."
+        },
+        {
+          "hash": "a5ccbe9",
+          "subject": "Add EmbedBrowser component and enhance UI",
+          "body": "Introduces the EmbedBrowser component for in-app link previews with minimize, fullscreen, and taskbar features. Improves NetworkView with header and footer, refines force simulation for smoother layout, and updates global styles for new UI elements. Also adds a footer to the main page and ensures scroll locking in network view."
+        },
+        {
+          "hash": "984df1d",
+          "subject": "Add menu component and improve embed browser UX",
+          "body": "Introduces a new Menu component for navigation and updates the layout to include top controls. Refines the EmbedBrowser overlay and modal transitions, improves external link handling, and adjusts NetworkView zoom extents. Updates global styles for top controls and refactors view toggle logic for better user experience."
+        },
+        {
+          "hash": "1f58685",
+          "subject": "Add mermaid integration and new markdown pages",
+          "body": "Integrated astro-mermaid for diagram support and configured custom theme variables. Added new markdown pages (about, contact), a base layout, and markdown styles. Removed TabNav component and updated several components and global styles to support new features."
+        },
+        {
+          "hash": "22b92a6",
+          "subject": "Add local screenshots and update image references",
+          "body": "Downloaded and added local screenshot files for referenced projects and tools. Updated image URLs in images.json to use local paths. Improved fetch-images.js to download images and handle redirects, and updated UI components and styles for better navigation and changelog support. Added changelog.md page documenting project development."
+        }
+      ]
+    }
+  ]
+}
