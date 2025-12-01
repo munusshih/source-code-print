@@ -225,6 +225,11 @@
           "hash": "22b92a6",
           "subject": "Add local screenshots and update image references",
           "body": "Downloaded and added local screenshot files for referenced projects and tools. Updated image URLs in images.json to use local paths. Improved fetch-images.js to download images and handle redirects, and updated UI components and styles for better navigation and changelog support. Added changelog.md page documenting project development."
+        },
+        {
+          "hash": "3b0c6da",
+          "subject": "Add affordances framework and restructure content",
+          "body": "Introduces six affordance markdown files and supporting layouts, establishing a new content architecture for the publication. Removes legacy config files, adds Astro content collection config, and updates project scripts for changelog generation. Refactors styles and components for modularity, updates README with new structure and setup, and replaces changelog and contact pages with new Astro pages."
         }
       ]
     }

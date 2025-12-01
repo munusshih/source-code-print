@@ -126,14 +126,25 @@ graph LR
 
 <div class="content">
 
-This archive serves as both a tool and a reference:
+This project unfolds across two phases, each exploring how affordances manifest in hybrid publishing practices:
 
-- **An index** documenting hybrid publishing practices, tools, and precedents that explore the intersection of print and digital
-- **A framework** for understanding and identifying affordances across media, providing language to discuss what makes certain publishing practices hybrid
-- **Teaching resources** that present these concepts through workshops, examples, and experiments for students and educators
-- **A research collection** of parallel histories, readings, and interviews supporting designers and creators exploring expanded approaches to publishing
+**Phase 1: Fall 2025**
 
-The project acknowledges that publishing is no longer a question of readership alone, but of resonance. How ideas ripple through different forms and communities.
+- _Materials:_ Workshop-facing comD students, introducing affordances and hybrid practices through direct engagement.
+
+- _Index:_ Build a glossary and website archiving research, establishing the language and framework for discussing hybrid publishing practices.
+
+- _Prototypes:_ Foundation of p5.zine and p5.book frameworks, establishing core interactive and networked document capabilities.
+
+**Phase 2: Spring 2026**
+
+- _Materials:_ Develop comprehensive lecture, writing, and workshop series around each affordance, expanding teaching opportunities across the curriculum.
+
+- _Index:_ Write and research critical histories around each affordance, including diagrams and expanded visual documentation of publishing practices.
+
+- _Prototypes:_ Polish and document existing frameworks; expand design examples and visual communication; create improved assets and animations for publication.
+
+Together, these initiatives create **a framework for understanding and identifying affordances across media**, providing language and tools for designers and creators exploring expanded approaches to publishing. The project acknowledges that publishing is no longer a question of readership alone, but of **resonance**: how ideas ripple through different forms and communities.
 
 </div>
 
