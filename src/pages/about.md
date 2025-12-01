@@ -14,7 +14,7 @@ layout: ../layouts/BaseLayout.astro
 
 ```mermaid
 graph LR
-  A["Digital<br/><br/>"] -->|translate| B["Hybrid<br/>Publishing<br/>"]
+  A["Digital<br/><br/>"] -->|translate| B["Remix<br/>Publishing<br/>"]
   C["Print<br/><br/>"] -->|translate| B
   B -->|resonance| D["Knowledge<br/>Circulation<br/>"]
 ```

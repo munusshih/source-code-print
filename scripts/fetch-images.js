@@ -34,19 +34,73 @@ function fetchUrl(url) {
   });
 }
 
+async function downloadImage(imageUrl, outputPath) {
+  return new Promise((resolve, reject) => {
+    const client = imageUrl.startsWith("https") ? https : http;
+    client
+      .get(imageUrl, { timeout: 10000 }, (res) => {
+        // Handle redirects
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          downloadImage(res.headers.location, outputPath).then(resolve).catch(reject);
+          return;
+        }
+
+        if (res.statusCode !== 200) {
+          reject(new Error(`Failed with status ${res.statusCode}`));
+          return;
+        }
+
+        const file = fs.createWriteStream(outputPath);
+        res.pipe(file);
+        file.on("finish", () => {
+          file.close();
+          resolve(true);
+        });
+        file.on("error", reject);
+      })
+      .on("error", reject)
+      .on("timeout", () => reject(new Error("Request timeout")));
+  });
+}
+
+function getImageExtension(imageUrl) {
+  const pathname = new URL(imageUrl).pathname;
+  const match = pathname.match(/\.([a-z]+)(?:\?|$)/i);
+  return match ? match[1] : "jpg";
+}
+
 function normalizeImageUrl(imageUrl, baseUrl) {
-  if (imageUrl.startsWith("//")) {
-    return `https:${imageUrl}`;
+  try {
+    // If it's already a full URL, return it
+    if (imageUrl.startsWith("http://") || imageUrl.startsWith("https://")) {
+      return imageUrl;
+    }
+
+    // If it's a protocol-relative URL, convert to https
+    if (imageUrl.startsWith("//")) {
+      return "https:" + imageUrl;
+    }
+
+    // If it's a relative URL, resolve against base URL
+    if (imageUrl.startsWith("/")) {
+      const baseUrlObj = new URL(baseUrl);
+      return baseUrlObj.protocol + "//" + baseUrlObj.host + imageUrl;
+    }
+
+    // Relative paths
+    const basePath = new URL(baseUrl).pathname.split("/").slice(0, -1).join("/");
+    const baseUrlObj = new URL(baseUrl);
+    return (
+      baseUrlObj.protocol +
+      "//" +
+      baseUrlObj.host +
+      basePath +
+      "/" +
+      imageUrl
+    );
+  } catch (e) {
+    return null;
   }
-  if (imageUrl.startsWith("/")) {
-    const urlObj = new URL(baseUrl);
-    return `${urlObj.protocol}//${urlObj.host}${imageUrl}`;
-  }
-  if (!imageUrl.startsWith("http")) {
-    const urlObj = new URL(baseUrl);
-    return `${urlObj.protocol}//${urlObj.host}/${imageUrl}`;
-  }
-  return imageUrl;
 }
 
 async function extractOgImage(url) {
@@ -223,15 +277,28 @@ async function main() {
           const imageUrl = await extractOgImage(url);
 
           if (imageUrl) {
-            // Update if different from existing
-            if (existingImage && existingImage !== imageUrl) {
-              console.log(`    ↻ Updated: ${imageUrl} (was: ${existingImage})`);
-            } else if (!existingImage) {
-              console.log(`    ✓ Found: ${imageUrl}`);
-            } else {
-              console.log(`    ✓ Confirmed: ${imageUrl}`);
+            // Download and save the image locally
+            const extension = getImageExtension(imageUrl);
+            const safeFilename = url
+              .replace(/https?:\/\//g, "")
+              .replace(/[^a-z0-9]/gi, "_")
+              .substring(0, 100);
+            const localImagePath = path.join(
+              screenshotsDir,
+              `${safeFilename}.${extension}`
+            );
+            const localImageUrl = `/screenshots/${safeFilename}.${extension}`;
+
+            try {
+              await downloadImage(imageUrl, localImagePath);
+              console.log(`    ✓ Downloaded: ${localImageUrl}`);
+              allImages[tab][url] = localImageUrl;
+            } catch (downloadError) {
+              console.error(`    ✗ Download failed: ${downloadError.message}`);
+              // Fall back to original URL if download fails
+              console.log(`    ⊘ Using original URL as fallback`);
+              allImages[tab][url] = imageUrl;
             }
-            allImages[tab][url] = imageUrl;
           } else {
             // Take screenshot if no image found and no existing screenshot
             const safeFilename = url
