@@ -7,6 +7,7 @@ import TabNav from "../components/TabNav.astro";
 import FilterBar from "../components/FilterBar.astro";
 import TabSection from "../components/TabSection.astro";
 import NetworkView from "../components/NetworkView.astro";
+import EmbedBrowser from "../components/EmbedBrowser.astro";
 import Analytics from "@vercel/analytics/astro";
 import "../styles/global.css";
 
@@ -44,9 +45,14 @@ const tabData = loadTabData(SHEET_TABS);
           />
         ))
       }
+      <footer class="footer">
+        <p>© 2025 Source, Code, Print. All rights reserved.</p>
+      </footer>
     </div>
 
     <NetworkView tabData={tabData} booleanFields={BOOLEAN_FIELDS} />
+
+    <EmbedBrowser />
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -62,9 +68,13 @@ const tabData = loadTabData(SHEET_TABS);
           if (isNetworkMode) {
             gridView!.style.display = "none";
             networkView!.style.display = "block";
+            // Lock scroll in network view
+            document.body.style.overflow = "hidden";
           } else {
             gridView!.style.display = "block";
             networkView!.style.display = "none";
+            // Restore scroll in grid view
+            document.body.style.overflow = "";
           }
         };
 

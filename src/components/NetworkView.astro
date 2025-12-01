@@ -28,6 +28,13 @@ const colorMap = {
 ---
 
 <div class="network-view" style="display: none;">
+  <div class="network-header">
+    <h2>
+      <span class="title-source">Source, </span>
+      <span class="title-code">Code, </span>
+      <span class="title-print">Print</span>
+    </h2>
+  </div>
   <button class="view-toggle network-toggle" id="networkToggle">
     <span class="toggle-text">Grid View</span>
   </button>
@@ -62,6 +69,9 @@ const colorMap = {
         </div>
       ))
     }
+  </div>
+  <div class="network-footer">
+    <p>© 2025 Source, Code, Print. All rights reserved.</p>
   </div>
 </div>
 
@@ -126,8 +136,6 @@ const colorMap = {
           // Apply to HTML container (cards and affordances)
           container.style.transform = `translate(${transform.x}px, ${transform.y}px) scale(${transform.k})`;
           container.style.transformOrigin = "0 0";
-          container.style.transition =
-            "transform 0.15s cubic-bezier(0.4, 0, 0.2, 1)";
         });
 
       // Apply zoom only to empty areas, not on nodes
@@ -279,20 +287,22 @@ const colorMap = {
             .forceLink(links)
             .id((d: any) => d.id)
             .distance(600)
-            .strength(0.05)
+            .strength(0.02)
         )
         .force(
           "charge",
           d3
             .forceManyBody()
-            .strength((d: any) => (d.type === "affordance" ? 0 : -1000))
+            .strength((d: any) => (d.type === "affordance" ? 0 : -500))
         )
-        .force("center", d3.forceCenter(width / 2, height / 2))
+        .force("center", d3.forceCenter(width / 2, height / 2).strength(0.05))
         .force(
           "collision",
           d3.forceCollide().radius((d: any) => d.radius * 1.5)
         )
-        .force("radial", radialForce);
+        .force("radial", radialForce)
+        .alphaDecay(0.02)
+        .velocityDecay(0.4);
 
       // Position HTML nodes on tick
       simulation.on("tick", () => {
@@ -373,7 +383,7 @@ const colorMap = {
       const drag = d3
         .drag<any, any>()
         .on("start", (event, d) => {
-          if (!event.active) simulation?.alphaTarget(0.3).restart();
+          if (!event.active) simulation?.alphaTarget(0.1).restart();
           d.fx = d.x;
           d.fy = d.y;
         })
@@ -383,8 +393,9 @@ const colorMap = {
         })
         .on("end", (event, d) => {
           if (!event.active) simulation?.alphaTarget(0);
-          d.fx = null;
-          d.fy = null;
+          // Keep nodes fixed after drag for stability
+          d.fx = d.x;
+          d.fy = d.y;
         });
 
       // Apply drag to all elements (cards and affordances)
@@ -466,6 +477,10 @@ const colorMap = {
             // Highlight this affordance
             node.element.classList.add("highlighted");
 
+            // Hide center lines and center circle
+            centerLines.attr("stroke-opacity", 0);
+            centerCircle.attr("stroke-opacity", 0);
+
             // Fade unrelated cards
             nodes.forEach((n: any) => {
               if (n.type === "entry") {
@@ -494,6 +509,10 @@ const colorMap = {
             nodes.forEach((n: any) => {
               n.element.classList.remove("faded", "highlighted");
             });
+
+            // Show center lines and center circle
+            centerLines.attr("stroke-opacity", 1.0);
+            centerCircle.attr("stroke-opacity", 1.0);
 
             // Reset all links
             linkElements.attr("stroke-width", 5).attr("stroke-opacity", 0.05);

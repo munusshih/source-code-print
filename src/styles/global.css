@@ -199,6 +199,22 @@ body {
     @apply absolute top-0 right-0 z-50 px-4 py-2 bg-[var(--color-tag-bg)] text-[var(--color-tag-text)] border-2 border-[var(--color-border)] font-semibold text-sm cursor-pointer transition-all duration-150 hover:-translate-y-0.5;
 }
 
+/* Network Header */
+.network-header {
+    @apply absolute top-6 left-6 z-50;
+    pointer-events: none;
+}
+
+.network-header h2 {
+    @apply text-[2vw] font-bold tracking-tight leading-[80%];
+}
+
+/* Network Footer */
+.network-footer {
+    @apply absolute bottom-6 left-6 right-6 z-50 text-left text-sm text-[var(--color-muted)];
+    pointer-events: none;
+}
+
 .network-canvas {
     @apply absolute inset-0 w-full h-full;
     z-index: 5;
