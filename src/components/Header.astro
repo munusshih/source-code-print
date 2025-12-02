@@ -1,5 +1,8 @@
 ---
+import { getEntry } from "astro:content";
 
+const headerContent = await getEntry("site", "header");
+const { Content } = (await headerContent?.render()) || {};
 ---
 
 <header class="site-header" id="siteHeader">
@@ -16,38 +19,6 @@
     </p>
   </div>
   <div class="byline max-w-prose flex flex-col gap-8">
-    <p>
-      “Source, Code, Print” is a research and design project that explores the
-      evolving role of publishing in an era where digital and physical media are
-      deeply intertwined. Rather than seeing print and digital as opposing
-      forms, this project examines how they overlap, coexist, and mutually
-      inform each other, shaping how knowledge, culture, and creative work are
-      produced, circulated, and received.
-    </p>
-    <p>
-      This project draws from databases including
-      <a href="https://p-dpa.net" class="external-link">P—DPA</a>,
-      <a
-        href="https://toolkit.wellgedacht.org/doku.php?id=start"
-        class="external-link">PP DP T</a
-      >,
-      <a href="https://prepostprint.org/resources/" class="external-link"
-        >Pre Post Print</a
-      >,
-      <a href="https://www.apod.li" class="external-link">Apod</a>,
-      <a href="https://networkcultures.org" class="external-link"
-        >Institute of Network Cultures</a
-      >,
-      <a href="https://rhizome.org" class="external-link">rhizome</a>,
-      <a href="https://xpub.pzimediadesign.nl/about.html" class="external-link"
-        >PZI Experimental Publishing</a
-      >,
-      <a href="https://www.asciiart.eu/#google_vignette" class="external-link"
-        >ACII art</a
-      >, and <a
-        href="https://libraryoftheprintedweb.tumblr.com"
-        class="external-link">Library of the Printed Web</a
-      >.
-    </p>
+    {headerContent && <Content />}
   </div>
 </header>

@@ -230,6 +230,11 @@
           "hash": "3b0c6da",
           "subject": "Add affordances framework and restructure content",
           "body": "Introduces six affordance markdown files and supporting layouts, establishing a new content architecture for the publication. Removes legacy config files, adds Astro content collection config, and updates project scripts for changelog generation. Refactors styles and components for modularity, updates README with new structure and setup, and replaces changelog and contact pages with new Astro pages."
+        },
+        {
+          "hash": "40495d6",
+          "subject": "Update changelog and revise about page content",
+          "body": "Added a new changelog entry for the affordances framework and content restructuring. Revised the about page to detail the project's two-phase approach, clarifying materials, index, and prototypes for each phase and emphasizing the project's framework for hybrid publishing practices."
         }
       ]
     }

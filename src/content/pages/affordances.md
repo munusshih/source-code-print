@@ -1,6 +1,6 @@
 ---
 title: Affordances
-layout: ../layouts/AffordancesLayout.astro
+layoutType: affordances
 ---
 
 <div class="affordances-intro">

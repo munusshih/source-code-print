@@ -1,7 +1,6 @@
 ---
 title: Tutorials
 slug: tutorials
-layout: ../layouts/BaseLayout.astro
 ---
 
 # Tutorials
