@@ -3,7 +3,7 @@ title: Ownability
 description: "The ability for work to be permanently owned by readers and accessed without interruption, regardless of future changes by publishers or platforms."
 ---
 
-Ownability addresses fundamental questions of access versus ownership in contemporary publishing. When you "own" a digital book, do you actually possess it? Can it be removed from your library? Updated without your consent? Made inaccessible if a platform shuts down? The counter to ownability is subscription models, licensing, and sole proprietary control, where access is temporary and conditional.
+Ownability addresses fundamental questions of access versus ownership in contemporary publishing. When you "own" a digital book, do you actually possess it? Can it be removed from your library? Updated without your consent? Made inaccessible if a platform shuts down? The counter to ownability is subscription models, licensing, and sole proprietary control, where access is temporary and conditional. test test test
 
 ## The Ownership Question
 
