@@ -3,21 +3,61 @@ import path from "path";
 import { fileURLToPath } from "url";
 import https from "https";
 import http from "http";
-import puppeteer from "puppeteer";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const dataFile = path.join(__dirname, "../src/data/data.json");
+const screenshotsDir = path.join(__dirname, "../public/screenshots");
 
-const SHEET_ID =
-  process.env.PUBLIC_SHEET_ID || "1G5B2A6PmhiQAZa3rRKPTor2scTEzSmeiWuYm1JyI8cw";
-const SHEET_TABS = ["Databases", "Precedents", "Tools"];
+function parseArgs(argv) {
+  const options = {
+    refresh: false,
+    limit: Number.POSITIVE_INFINITY,
+  };
 
-async function fetchSheet(sheetId, tab) {
-  const url = `https://opensheet.elk.sh/${sheetId}/${encodeURIComponent(tab)}`;
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`Failed (${res.status}) to fetch tab '${tab}'`);
+  for (let i = 0; i < argv.length; i += 1) {
+    const arg = argv[i];
+
+    if (arg === "--refresh") {
+      options.refresh = true;
+      continue;
+    }
+
+    if (arg === "--limit" && argv[i + 1]) {
+      options.limit = Number(argv[i + 1]) || Number.POSITIVE_INFINITY;
+      i += 1;
+      continue;
+    }
+
+    if (arg.startsWith("--limit=")) {
+      options.limit = Number(arg.slice("--limit=".length)) || Number.POSITIVE_INFINITY;
+    }
   }
-  return await res.json();
+
+  return options;
+}
+
+function loadData() {
+  if (!fs.existsSync(dataFile)) {
+    throw new Error("data.json not found. Run `npm run fetch` first.");
+  }
+
+  const parsed = JSON.parse(fs.readFileSync(dataFile, "utf-8"));
+  const items = Array.isArray(parsed.items) ? parsed.items : [];
+
+  return {
+    ...parsed,
+    items,
+  };
+}
+
+function saveData(payload) {
+  const next = {
+    ...payload,
+    updatedAt: new Date().toISOString(),
+    count: payload.items.length,
+  };
+
+  fs.writeFileSync(dataFile, JSON.stringify(next, null, 2), "utf-8");
 }
 
 function fetchUrl(url) {
@@ -39,7 +79,6 @@ async function downloadImage(imageUrl, outputPath) {
     const client = imageUrl.startsWith("https") ? https : http;
     client
       .get(imageUrl, { timeout: 10000 }, (res) => {
-        // Handle redirects
         if (
           res.statusCode >= 300 &&
           res.statusCode < 400 &&
@@ -70,39 +109,34 @@ async function downloadImage(imageUrl, outputPath) {
 }
 
 function getImageExtension(imageUrl) {
-  const pathname = new URL(imageUrl).pathname;
-  const match = pathname.match(/\.([a-z]+)(?:\?|$)/i);
-  return match ? match[1] : "jpg";
+  try {
+    const pathname = new URL(imageUrl).pathname;
+    const match = pathname.match(/\.([a-z0-9]+)(?:\?|$)/i);
+    return match ? match[1].toLowerCase() : "jpg";
+  } catch {
+    return "jpg";
+  }
 }
 
 function normalizeImageUrl(imageUrl, baseUrl) {
   try {
-    // If it's already a full URL, return it
     if (imageUrl.startsWith("http://") || imageUrl.startsWith("https://")) {
       return imageUrl;
     }
 
-    // If it's a protocol-relative URL, convert to https
     if (imageUrl.startsWith("//")) {
       return "https:" + imageUrl;
     }
 
-    // If it's a relative URL, resolve against base URL
     if (imageUrl.startsWith("/")) {
-      const baseUrlObj = new URL(baseUrl);
-      return baseUrlObj.protocol + "//" + baseUrlObj.host + imageUrl;
+      const base = new URL(baseUrl);
+      return `${base.protocol}//${base.host}${imageUrl}`;
     }
 
-    // Relative paths
-    const basePath = new URL(baseUrl).pathname
-      .split("/")
-      .slice(0, -1)
-      .join("/");
-    const baseUrlObj = new URL(baseUrl);
-    return (
-      baseUrlObj.protocol + "//" + baseUrlObj.host + basePath + "/" + imageUrl
-    );
-  } catch (e) {
+    const base = new URL(baseUrl);
+    const basePath = base.pathname.split("/").slice(0, -1).join("/");
+    return `${base.protocol}//${base.host}${basePath}/${imageUrl}`;
+  } catch {
     return null;
   }
 }
@@ -111,7 +145,6 @@ async function extractOgImage(url) {
   try {
     const { data } = await fetchUrl(url);
 
-    // Look for og:image meta tag
     const ogImageMatch =
       data.match(
         /<meta\s+(?:property|name)=["']og:image["']\s+content=["']([^"']+)["']/i
@@ -124,7 +157,6 @@ async function extractOgImage(url) {
       return normalizeImageUrl(ogImageMatch[1], url);
     }
 
-    // Look for twitter:image as fallback
     const twitterImageMatch =
       data.match(
         /<meta\s+(?:property|name)=["']twitter:image["']\s+content=["']([^"']+)["']/i
@@ -137,18 +169,11 @@ async function extractOgImage(url) {
       return normalizeImageUrl(twitterImageMatch[1], url);
     }
 
-    // Skip apple-touch-icon and favicons - they're too small
-    // We'll take a screenshot instead for better quality
-
-    // Look for first img tag with reasonable size
-    const imgMatches = data.matchAll(
-      /<img\s+[^>]*src=["']([^"']+)["'][^>]*>/gi
-    );
+    const imgMatches = data.matchAll(/<img\s+[^>]*src=["']([^"']+)["'][^>]*>/gi);
     for (const match of imgMatches) {
       const imgTag = match[0];
       const imgSrc = match[1];
 
-      // Skip tiny images, icons, and common ad/tracking pixels
       if (
         imgSrc.includes("icon") ||
         (imgSrc.includes("logo") && imgSrc.includes("small")) ||
@@ -159,203 +184,98 @@ async function extractOgImage(url) {
         continue;
       }
 
-      // Check if image has width/height attributes suggesting it's substantial
       const widthMatch = imgTag.match(/width=["']?(\d+)/i);
       const heightMatch = imgTag.match(/height=["']?(\d+)/i);
 
       if (widthMatch && heightMatch) {
-        const width = parseInt(widthMatch[1]);
-        const height = parseInt(heightMatch[1]);
+        const width = Number(widthMatch[1]);
+        const height = Number(heightMatch[1]);
         if (width >= 200 && height >= 200) {
           return normalizeImageUrl(imgSrc, url);
         }
       } else {
-        // No size info, try it anyway
         return normalizeImageUrl(imgSrc, url);
       }
     }
 
-    // No image found, will take screenshot
     return null;
   } catch (error) {
-    console.error(`  ✗ Failed to fetch ${url}:`, error.message);
+    console.error(`  ✗ Failed to parse page ${url}: ${error.message}`);
     return null;
   }
 }
 
-async function takeScreenshot(url, outputPath) {
-  // Skip screenshots in CI/Vercel environments - use committed screenshots as fallback
-  if (process.env.VERCEL || process.env.CI) {
-    console.log(
-      `    ⊘ Skipping screenshot in build environment (using fallback)`
-    );
-    return false;
-  }
-
-  let browser;
-  try {
-    browser = await puppeteer.launch({
-      headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1200, height: 630 });
-
-    // Set a shorter timeout and handle failures gracefully
-    await page.goto(url, {
-      waitUntil: "networkidle2",
-      timeout: 30000,
-    });
-
-    await page.screenshot({
-      path: outputPath,
-      type: "jpeg",
-      quality: 85,
-    });
-
-    return true;
-  } catch (error) {
-    console.error(`    ✗ Screenshot failed: ${error.message}`);
-    return false;
-  } finally {
-    if (browser) {
-      await browser.close();
-    }
-  }
+function toLocalImagePath(itemId, extension) {
+  const safeId = String(itemId)
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "_")
+    .slice(0, 120);
+  const ext = extension || "jpg";
+  return {
+    filePath: path.join(screenshotsDir, `${safeId}.${ext}`),
+    publicPath: `/screenshots/${safeId}.${ext}`,
+  };
 }
 
 async function main() {
-  const dataDir = path.join(__dirname, "../src/data");
-  const screenshotsDir = path.join(__dirname, "../public/screenshots");
-  const imagesFile = path.join(dataDir, "images.json");
-
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
+  const options = parseArgs(process.argv.slice(2));
 
   if (!fs.existsSync(screenshotsDir)) {
     fs.mkdirSync(screenshotsDir, { recursive: true });
   }
 
-  console.log("Fetching OG images for all entries...\n");
+  const payload = loadData();
+  const items = payload.items;
 
-  // Load existing images.json to preserve already captured images
-  let allImages = {};
-  if (fs.existsSync(imagesFile)) {
-    try {
-      allImages = JSON.parse(fs.readFileSync(imagesFile, "utf-8"));
-      console.log("✓ Loaded existing images.json\n");
-    } catch (e) {
-      console.log("⚠ Could not load existing images.json, starting fresh\n");
+  const candidates = items.filter((item) => {
+    if (!item?.link || !/^https?:\/\//i.test(item.link)) return false;
+    if (options.refresh) return true;
+    return !item.image || String(item.image).trim() === "";
+  });
+
+  const limited = Number.isFinite(options.limit)
+    ? candidates.slice(0, Math.max(0, options.limit))
+    : candidates;
+
+  console.log("Fetching images for data.json entries...");
+  console.log(`- refresh: ${options.refresh ? "yes" : "no"}`);
+  console.log(`- total candidates: ${candidates.length}`);
+  console.log(`- processing now: ${limited.length}`);
+
+  let updatedCount = 0;
+
+  for (const item of limited) {
+    console.log(`\n[${item.type}] ${item.title}`);
+    const imageUrl = await extractOgImage(item.link);
+
+    if (!imageUrl) {
+      console.log("  ⊘ No downloadable image found");
+      continue;
     }
-  }
 
-  for (const tab of SHEET_TABS) {
+    const extension = getImageExtension(imageUrl);
+    const { filePath, publicPath } = toLocalImagePath(item.id, extension);
+
     try {
-      console.log(`Processing ${tab}...`);
-      const filename = path.join(dataDir, `${tab.toLowerCase()}.json`);
-
-      if (!fs.existsSync(filename)) {
-        console.log(`  ✗ Data file not found, skipping`);
-        continue;
-      }
-
-      const rows = JSON.parse(fs.readFileSync(filename, "utf-8"));
-
-      // Initialize tab if it doesn't exist, but preserve existing entries
-      if (!allImages[tab]) {
-        allImages[tab] = {};
-      }
-
-      for (const row of rows) {
-        const link = row["Link"] || row["link"];
-        const title = row["Title"] || row["title"] || "Unknown";
-
-        if (link && /^https?:\/\//i.test(link)) {
-          const url = link.split("\n")[0].trim();
-          const existingImage = allImages[tab][url];
-
-          // Skip if we already have an image or screenshot for this entry
-          if (existingImage) {
-            console.log(`  ✓ Already have image: ${title}`);
-            continue;
-          }
-
-          console.log(`  Fetching image for: ${title}`);
-
-          // First try to extract OG image or other meta images
-          const imageUrl = await extractOgImage(url);
-
-          if (imageUrl) {
-            // Download and save the image locally
-            const extension = getImageExtension(imageUrl);
-            const safeFilename = url
-              .replace(/https?:\/\//g, "")
-              .replace(/[^a-z0-9]/gi, "_")
-              .substring(0, 100);
-            const localImagePath = path.join(
-              screenshotsDir,
-              `${safeFilename}.${extension}`
-            );
-            const localImageUrl = `/screenshots/${safeFilename}.${extension}`;
-
-            try {
-              await downloadImage(imageUrl, localImagePath);
-              console.log(`    ✓ Downloaded: ${localImageUrl}`);
-              allImages[tab][url] = localImageUrl;
-            } catch (downloadError) {
-              console.error(`    ✗ Download failed: ${downloadError.message}`);
-              // Fall back to original URL if download fails
-              console.log(`    ⊘ Using original URL as fallback`);
-              allImages[tab][url] = imageUrl;
-            }
-          } else {
-            // Take screenshot if no image found and no existing screenshot
-            const safeFilename = url
-              .replace(/https?:\/\//g, "")
-              .replace(/[^a-z0-9]/gi, "_")
-              .substring(0, 100);
-            const screenshotPath = path.join(
-              screenshotsDir,
-              `${safeFilename}.jpg`
-            );
-            const screenshotUrl = `/screenshots/${safeFilename}.jpg`;
-
-            // If we already have a screenshot, keep it
-            if (existingImage && existingImage.startsWith("/screenshots/")) {
-              console.log(`    ✓ Using existing screenshot`);
-              allImages[tab][url] = existingImage;
-            } else {
-              console.log(`    → Taking screenshot...`);
-              const success = await takeScreenshot(url, screenshotPath);
-              if (success) {
-                allImages[tab][url] = screenshotUrl;
-                console.log(`    ✓ Screenshot saved`);
-              } else if (existingImage) {
-                console.log(
-                  `    ⊘ Screenshot failed, keeping existing: ${existingImage}`
-                );
-                allImages[tab][url] = existingImage;
-              } else {
-                console.log(`    ✗ Could not capture screenshot`);
-              }
-            }
-          }
-
-          // Small delay to be respectful
-          await new Promise((resolve) => setTimeout(resolve, 1000));
-        }
-      }
-
-      console.log(`✓ Processed ${tab}\n`);
+      await downloadImage(imageUrl, filePath);
+      item.image = publicPath;
+      updatedCount += 1;
+      console.log(`  ✓ Saved ${publicPath}`);
     } catch (error) {
-      console.error(`✗ Failed to process ${tab}:`, error.message);
+      console.log(`  ✗ Download failed (${error.message}); using source URL`);
+      item.image = imageUrl;
+      updatedCount += 1;
     }
+
+    await new Promise((resolve) => setTimeout(resolve, 800));
   }
 
-  fs.writeFileSync(imagesFile, JSON.stringify(allImages, null, 2), "utf-8");
-  console.log(`\n✓ Saved image data to ${imagesFile}`);
-  console.log("Done!");
+  if (updatedCount > 0) {
+    saveData(payload);
+    console.log(`\n✓ Updated ${updatedCount} item(s) in data.json`);
+  } else {
+    console.log("\nNo image updates applied.");
+  }
 }
 
 main();

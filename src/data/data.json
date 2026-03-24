@@ -1,0 +1,1065 @@
+{
+  "sheetId": "1G5B2A6PmhiQAZa3rRKPTor2scTEzSmeiWuYm1JyI8cw",
+  "tabs": [
+    "Databases",
+    "Precedents",
+    "Tools"
+  ],
+  "updatedAt": "2026-03-24T20:30:13.128Z",
+  "count": 53,
+  "items": [
+    {
+      "id": "databases-p-dpa-net",
+      "type": "Databases",
+      "title": "P—DPA",
+      "link": "https://p-dpa.net",
+      "image": "/screenshots/p_dpa_net.jpeg",
+      "fields": {
+        "Subtitle": "Post-Digital Publishing Archive",
+        "Author/Publisher": "Publishing Lab",
+        "Notes (need to edit in accordance to our point of view)": "The aim of P—DPA is to systematically collect, organize and keep trace of experiences in the fields of art and design that explore the relationships between publishing and digital technology. The archive acts as a space in which the collected projects are confronted and juxtaposed in order to highlight relevant paths, mutual themes, common perspectives, interrelations, but also oppositions and idiosyncrasies. P—DPA is maintained (kinda) by Silvio Lorusso."
+      }
+    },
+    {
+      "id": "databases-toolkit-wellgedacht-org-doku-php-id-start",
+      "type": "Databases",
+      "title": "PP DP T",
+      "link": "https://toolkit.wellgedacht.org/doku.php?id=start",
+      "image": "/screenshots/toolkit_wellgedacht_org_doku_php_id_start.php",
+      "fields": {
+        "Subtitle": "Post-Platform Digital Publishing Toolkit",
+        "Author/Publisher": "İpek Burçak and Eren İleri",
+        "Notes (need to edit in accordance to our point of view)": "Post-Platform Digital Publishing Toolkit is a project exploring how to overcome the limitations of digital publishing today, on social media or elsewhere online, and advocates self-hosted infrastructures and practices for artists and artists' book publishers.\n\nPPDPT is funded by the Berlin Senate Department of Culture's Fund for Digital Development of the Cultural Sector."
+      }
+    },
+    {
+      "id": "databases-prepostprint-org-resources",
+      "type": "Databases",
+      "title": "Pre Post Print",
+      "link": "https://prepostprint.org/resources/",
+      "image": "https://prepostprint.org/site/templates/img/icon.png",
+      "fields": {
+        "Subtitle": "Experiemental publishing archive",
+        "Notes (need to edit in accordance to our point of view)": "PrePostPrint wants to gather those working with experimental publishing techniques and to help to make their projects and tools more accessible. PrePostPrint is a label and a website aiming to promote graphic objects and resources in line with the following characteristics: EXPERIMENTAL The graphic object is crafted within an experimental or unusual approach with alternative, hacked or DIY tools, made in a certain context constrained by its economy, its emergency or its collaborative nature. FREE SOFTWARE The tools used to make the object and if it is possible, the content of the object itself, are published under a free (software) license. DOCUMENTED The object is documented according to the PrePostPrint criteria, then published on the website prepostprint.org."
+      }
+    },
+    {
+      "id": "databases-www-apod-li",
+      "type": "Databases",
+      "title": "Apod",
+      "link": "https://www.apod.li",
+      "image": "/screenshots/www_apod_li.png",
+      "fields": {
+        "Subtitle": "Library of Artistic Print on Demand",
+        "Author/Publisher": "Andreas Bülhoff (hi@abue.io) and Annette Gilbert (annette.gilbert@fau.de).",
+        "Notes (need to edit in accordance to our point of view)": "Print-on-demand has revolutionized the world of books. As analogue-digital hybrids, PoD books epitomize the post-digital age. Digital printing and low-threshold online platforms like Blurb, Lulu, and Kindle Direct Publishing in principle allow anyone to publish work immediately across the globe without the need for any financial investment or risk. This opens up space beyond the classical book market and helps democratize production. At the same time, the new scope this offers is contingent at a fundamental level on the specifications and interests of the platforms. This dynamic has given rise to an entire subculture that is once again probing the medium of the book in search of possible content, aesthetics, materiality, economies, and publics, while at the same time critically reflecting on and negotiating our digital present. With 244 items, the Library of Artistic Print-on-Demand maps this experimental field for the first time, exploring its global spread, historical depth, and political relevance. All publications are documented extensively in a web archive, accessible via www.apod.li. They are also preserved in physical form by the Bavarian State Library. A detailed catalog including essays by key practitioners and thinkers of the field will be published by Spector Books in 2024. The official handover of the collection to the Bavarian State Library took place in November 2023. This will also mark the end of the research project, which was carried out between 2019 and 2022 at Friedrich Alexander University Erlangen-Nuremberg and was funded by the German Research Foundation. The Library of Artistic Print-on-Demand was led by Andreas Bülhoff (hi@abue.io) and Annette Gilbert (annette.gilbert@fau.de)."
+      }
+    },
+    {
+      "id": "databases-networkcultures-org",
+      "type": "Databases",
+      "title": "Institute of Network Cultures",
+      "link": "https://networkcultures.org",
+      "image": "/screenshots/networkcultures_org.jpg",
+      "fields": {
+        "Subtitle": "Digital publishing toolkit",
+        "Author/Publisher": "Amsterdam University of Applied Sciences",
+        "Notes (need to edit in accordance to our point of view)": "This RAAK-MKB project provides the research and realization of a platform that focuses on reseraching digital publications – e-books, newspaper apps and digital magazines – and the knowledge, resources and capacities required to publish them."
+      }
+    },
+    {
+      "id": "databases-rhizome-org",
+      "type": "Databases",
+      "title": "rhizome",
+      "link": "https://rhizome.org",
+      "image": "/screenshots/rhizome_org.jpg",
+      "fields": {
+        "Subtitle": "international hub for new media art",
+        "Author/Publisher": "Mark Tribe",
+        "Notes (need to edit in accordance to our point of view)": "Rhizome champions born-digital art and culture through commissions, exhibitions, scholarship, and digital preservation. Founded by artist Mark Tribe as an email discussion list including some of the first artists to work online, Rhizome has played an integral role in the history of contemporary art engaged with digital technologies and the internet.\n\nSince 2003, Rhizome has been an affiliate in residence at the New Museum of Contemporary Art in New York City. Founded in 1977, the New Museum is a leading destination for new art and new ideas. Together, New Museum, Rhizome, and NEW INC, the first museum-led incubator founded by New Museum in 2014, explore the future of contemporary art and technology.\n\nRhizome is a 501(c)3 organization that relies on grants, partnerships, and contributions from individuals like you. Become a supporter today!"
+      }
+    },
+    {
+      "id": "databases-xpub-pzimediadesign-nl-about-html",
+      "type": "Databases",
+      "title": "PZI Experimental Publishing",
+      "link": "https://xpub.pzimediadesign.nl/about.html",
+      "image": "/screenshots/xpub_pzimediadesign_nl_about_html.jpg",
+      "fields": {
+        "Subtitle": "Curriculum around experiemntal publishing",
+        "Author/Publisher": "Aymeric Mansoux",
+        "Notes (need to edit in accordance to our point of view)": "The new study path experimental publishing is the merging of two stories:\n\na singular one\na slightly more general one.\nThe singular story is the one of the Media Design and Communication Master, which for a decade has established a critical approach to the ambiguous notion of media. In the past years we have welcomed a wide range of practitioners from the culture field, visual and digital artists, graphic designers, musicians, performances artists, architects, fine press book makers, and computer programmers, to help them develop a practice that explore the social, technical, cultural and political dimensions of their work, and ultimately as we took the habit to say, to encourage them to design their own media.\n\nFor this journey, we seek students motivated to challenge the protocols of publishing (in all its (im)possible forms) using play, fiction, and ambiguity as methods and strategies of production and presentation, in order to experiment on the threshold of what is possible, desirable, allowed, or disruptive, in this ever expanding field."
+      }
+    },
+    {
+      "id": "databases-www-asciiart-eu-google-vignette",
+      "type": "Databases",
+      "title": "ACII art",
+      "link": "https://www.asciiart.eu/#google_vignette",
+      "image": "/screenshots/www_asciiart_eu__google_vignette.gif",
+      "fields": {
+        "Subtitle": "ASCII art tool library",
+        "Notes (need to edit in accordance to our point of view)": "ASCII Art Archive is one of the most comprehensive online resources for ASCII art. It celebrates the creativity of text-based design, combining a rich collection of artworks with opportunities to create, play, and learn. Here you can browse pieces from the early days of computing, experiment with modern tools, enjoy ASCII-themed games, and explore the cultural history behind the art form. With features like a dedicated ASCII animation section, the archive continues to grow and inspire both newcomers and long-time fans."
+      }
+    },
+    {
+      "id": "databases-libraryoftheprintedweb-tumblr-com",
+      "type": "Databases",
+      "title": "Library of the Printed Web",
+      "link": "https://libraryoftheprintedweb.tumblr.com",
+      "image": "/screenshots/libraryoftheprintedweb_tumblr_com.jpg",
+      "fields": {
+        "Author/Publisher": "Paul Soulellis",
+        "Notes (need to edit in accordance to our point of view)": "Library of the Printed Web, an archive of web-to-print artists’ publications founded by Paul Soulellis in 2013, has been acquired by The Museum of Modern Art Library \n\nThe mission of Library of the Printed Web is to provide an in-depth view of network culture, artistic practice, and the printed page. The collection is an important resource for the study of print-based experimental publishing in the early 21st century."
+      }
+    },
+    {
+      "id": "precedents-e-book-intellectual-property",
+      "type": "Precedents",
+      "title": "[e-Book] Intellectual Property",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://p-dpa.net/work/e-book-intellectual-property/",
+        "Link (original source)": "https://www.chierico.net/e-book-intellectual-property-a-reference-handbook/",
+        "Subtitle": "A Reference Handbook",
+        "Author/Publisher": "Alessio Chierico",
+        "Year": "2011",
+        "Notes (general - lifted from database and/or designer's website)": "“[e-Book] Intellectual Property – A Reference Handbook” is a print of a pirate copy of the book of the same name, which is (as evident from the title) related to intellectual property. The text that constitutes this book isn’t the text written by the author, but it is the coding of the book itself, in hexadecimal code, used by computers. Does the author of this book’s work still exist in the code lines? Digital properties impose an ontological problem, that brings into question the legitimacy of intellectual property.",
+        "Notes (general - rewritten)": "[e-Book] Intellectual Property is a a pirated version of a book by the same name. This print version pirates not the original contents of the book but the lines of code that make up the e-book of the original. Through the printing of the coding of the book, this pirated book brings to question the equivalency of digital and physical forms of publishing. Does the original work live in the coding of the pirate? Does the information remain there even if it is illegible? Can one truly own digital objects?",
+        "Carolina": "When it comes to digital work, the boundaries of ownability are much less rigid than their print counter parts. Perhaps the ease of the actions taken to ‘steal’ digitally compared to what it takes to ‘steal’ a physical work give the act of pirating less weight, copying and pasting does seem much less involved than re-printing an entire book.",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "Book, e-book",
+        "Source/Database": "P-DPA",
+        "EXTRA IMAGES": "https://drive.google.com/drive/folders/1ihbBNAdCPnrJbsWnnvbtB-sWD7Riowb_?usp=share_link"
+      }
+    },
+    {
+      "id": "precedents-occupy-books",
+      "type": "Precedents",
+      "title": "#Occupy Books",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://p-dpa.net/work/occupy-books/",
+        "Subtitle": "A Twitter Log",
+        "Author/Publisher": "Andrew LeClair for Ether Press",
+        "Year": "2012",
+        "Notes (general - lifted from database and/or designer's website)": "#Occupy Books include 3000 selected tweets from the last 24 hours posted under the #OWS (Occupy Wall Street) hashtag, available for order as print-on-demand volumes. The books are a means to support and preserve this important moment in history. Half of all proceeds goes to support Occupy Wall Street.",
+        "Notes (general - rewritten)": "#Occupy Books is a collection of tweets about Occupy Wall Street posted from July 29, 2012 to July 30 2012. This project serves as a means to preserve a moment in history, solidifying an inherently ephemeral form, the social media post. It also serves as a way to support the cause financially, with half of the proceeds from the book being donated in support of occupy Wall Street.",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "TRUE",
+        "Interactivity": "FALSE",
+        "Searchability": "TRUE",
+        "Traceability": "FALSE",
+        "Mediums": "Book",
+        "Source/Database": "P-DPA",
+        "EXTRA IMAGES": "#OccupyBooks"
+      }
+    },
+    {
+      "id": "precedents-11-books-expanding-tan-lin-s-seven-controlled-vocabularies-and-obituary-the-joy-of-cooking-2010",
+      "type": "Precedents",
+      "title": "11 Books Expanding Tan Lin’s Seven Controlled Vocabularies and Obituary: The Joy of Cooking, 2010",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/11-books-expanding-tan-lin-s-7CV",
+        "Link (original source)": "https://dss-edit.com/edit-7cv/",
+        "Subtitle": "An Exercise in Editing",
+        "Author/Publisher": "Tan Lin and Danny Snelson",
+        "Year": "2010",
+        "Notes (general - lifted from database and/or designer's website)": "The series was based on the hypothesis that “editing is the new semiotics, partly meaning that editing crosses into numerous disciplines connected to writing, artistic practice, book making, social networks, and distribution, etc., in the way that semiotics did with cultural an- thropology, literary studies etc etc...” (Tan Lin, Danny Snelson, Kristen Gallagher, “Notes on an Edit Event”). In their notes, which opened the wiki for the event, the editors further elaborate that it “involved making [...] certain forms of reading visible. The gesture involved taking a book (7CV) from an author [...] and putting it in the hands of its readers (editors). I didn’t want to make editorial practices merely labor intensive or parasitical, vis-à-vis the standard reworking of a source text. Instead, the event encouraged practices (temporal events very much subject to endurance issues) that would situate the so-called textual object in a literal and technological field that included citing sources (Appendix and Bibliography), rewriting the text (Chinese Edition), listing devices, reading the text alongside other texts (Critical Reader), and evaluating its production (Selected Essays)—all of which were read within a number of on-the-fly editorial frameworks” (Ibid.).\n\nThe publications were deliberately produced under time pressure, resulting in decisions and errors that made “the editorial process more visible and render[ed] the book as an emendation in a larger communicative envelope” (Ibid.). All publications are available as free downloads and can also be purchased through print-on-demand on Lulu, but also through Printed Matter (New York), which serves as a collaborative partner along with the University of Pennsylvania and Kelly Writers House.",
+        "Notes (general - rewritten)": "11 Books Expanding Tan Lin’s Seven Controlled Vocabularies and Obituary: The Joy of Cooking is a series of re-editions of Tan Lin’s original work where 11 editors where asked (under time pressure) to re-edit the same text. This experiment looks to make visible editorial practices an give body to the hypothesis that “editing is the new semiotics, partly meaning that editing crosses into numerous disciplines connected to writing, artistic practice, book making, social networks, and distribution, etc., in the way that semiotics did with cultural anthropology, literary studies etc etc...” (Tan Lin, Danny Snelson, Kristen Gallagher, “Notes on an Edit Event”)",
+        "Materiality": "TRUE",
+        "Ownability": "FALSE",
+        "Updatability": "TRUE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "Book",
+        "Source/Database": "APOD"
+      }
+    },
+    {
+      "id": "precedents-56-broken-kindle-screens",
+      "type": "Precedents",
+      "title": "56 Broken Kindle Screens",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/56-broken-kindle-screens",
+        "Link (original source)": "https://vimeo.com/48643156",
+        "Subtitle": "A Reflection on E-Ink",
+        "Author/Publisher": "Silvio Lorusso and Sebastian Schmieg",
+        "Year": "2012",
+        "Notes (general - lifted from database and/or designer's website)": "“56 Broken Kindle Screens is a print on demand paperback that consists of found photos depicting broken Kindle screens. The Kindle is Amazon’s e-reading device which is by default connected to the company’s book store.\n\nThe book takes as its starting point the peculiar aesthetic of broken E Ink displays and serves as an examination into the reading device’s materiality. As the screens break, they become collages composed of different pages, cover illustrations and interface elements” (blurb on Lulu).\n\nThe white frame of the page margins is a declarative act, restoring functional value to the broken devices through turning them into photographic subjects, as well as giving them the artistic value of “readymades” and transforming them into surprisingly fascinating artifacts. The images have undergone several transformations: displayed with e-ink, digitally photographed, collected online, stored in the cloud, printed on demand—or displayed again in e-ink, as there is also an e-book version that is flipped through on a Kindle Touch in a video, which gives the impression that the glitches emerge and fade into each other directly on the device itself. While these images only ever show the broken screens themselves, the book index contains the original found photos and the URLs where they were found. Most of them come from Flickr, Tumblr, blogs, and eBay, where many broken Kindles are offered.\n\nSilvio Lorusso and Sebastian Schmieg’s print-on-demand book was also available in a special edition of fifty-six numbered and signed copies at an exhibition at Link Art Center in Brescia (Italy, 2013). The book served as inspiration for an assignment as part of Danny Snelson’s 2015 course “Print-on-Demand Poetry: Making Books After the Internet” at Northwestern University.",
+        "Notes (general - rewritten)": "56 Broken Kindle Screens, is a print-on-demand project that compiles found photographs of damaged Kindle displays. Treating the fractured aesthetics of E-Ink as both image and inquiry, the book foregrounds the device’s materiallity and repositions broken screens as inadvertent collages through the layering of pages, covers, and interface fragments. Circulating across platforms before returning to print (and even back onto e-ink in an accompanying video of the e-book edition), the images trace a chain of transformations that highlights the Kindle’s entanglement with digital distribution.",
+        "Materiality": "TRUE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "e-book",
+        "Source/Database": "APOD",
+        "Links": "Link to Broken 56 Broken Kindle Screens"
+      }
+    },
+    {
+      "id": "precedents-broken-56-broken-kindle-screens",
+      "type": "Precedents",
+      "title": "Broken 56 Broken Kindle Screens",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/broken-56-broken-kindle-screens",
+        "Link (original source)": "https://dss-edit.com/nupod/Broken-56-Broken-Kindle-Screens_NUPoD_2015.pdf",
+        "Subtitle": "A Reflection on Ink",
+        "Author/Publisher": "Danny Snelson and NUPoD Collective",
+        "Year": "2015",
+        "Notes (general - lifted from database and/or designer's website)": "Broken 56 Broken Kindle Screens was the “first experiment with critical destruction” in Danny Snelson’s first course devoted entirely to print-on-demand practices, “Print on Demand Poetry: Making Books After the Internet,” at Northwestern University in 2015. It responds to 56 Broken Kindle Screens by Silvio Lorusso and Sebastian Schmieg (2012), a collection of found photographs showing broken displays of Kindle e-readers.\n\nThe students were asked to collectively alter a copy of this book by creasing and damaging it, punching pages, writing on or drawing over them, crossing out pictures, or transforming pictures by crossing out eyes and so on, with the aim of understanding the book “as an object, with a specific set of material properties and resistances to destruction—a kind of ‘hands-on’ learning” (Danny Snelson, Edit Publications website). This demolished copy was then scanned in poor quality by Snelson and turned into a print-on-demand book again. Snelson describes the lesson as follows: “Subject to these manifold damages, in the end, Broken 56 Broken Kindle Screens proves the resilience of the book. Unlike the Kindle, a very difficult thing to break” (Danny Snelson, “Grey Libraries”).",
+        "Notes (general - rewritten)": "Broken 56 Broken Kindle Screens, is a direct response to 56 Broken Kindle Screens where students from Danny Snelson’s course on print-on-demand practices at Northwestern University, were asked to collectively “critically destroy” a print copy of Lorusso and Schmieg’s book of broken kindle screens. Through creasing, tearing, annotating, punching, and defacing its pages, the assignment treated the book as a material system with its own properties and resistances. The damaged volume was then scanned at low resolution and reissued as a print-on-demand edition, enacting a loop of alteration and reproduction. If the original book highlighted the materiality of the e-reader, this version shines the light back on the materiality of paper with the aim of understanding the book. Snelson frames the experiment as a demonstration of the book’s remarkable durability—its capacity to withstand interventions that would easily incapacitate the Kindle.",
+        "Materiality": "TRUE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book",
+        "Source/Database": "APOD",
+        "Links": "Link to 56 Broken Kindle Screens"
+      }
+    },
+    {
+      "id": "precedents-9-11-911-calls-in-911-pt-font",
+      "type": "Precedents",
+      "title": "9/11 911 Calls in 911 pt. Font",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/9-11-911-calls-in-911-pt-font",
+        "Link (original source)": "https://trollthread.tumblr.com/post/21557376993/joey-yearous-algozin-911-911-calls-in-911-pt",
+        "Subtitle": "A Hybrid Publication",
+        "Author/Publisher": "Joey Yearous-Algozin",
+        "Year": "2012",
+        "Notes (general - lifted from database and/or designer's website)": "The two-volume 9/11 911 CALLS IN 911 PT. FONT, printed on large US Letter paper, consists of transcript excerpts from emergency calls to the New York fire department—with its 911 phone number—on September 11, 2001. The text is set in an oversized 911 point, which means that it stretches out over two volumes with a total of nine hundred pages (vol. 1: 464 pages, vol. 2: 460 pages). The individual letters go beyond the edges of the page, rendering the printed book almost unreadable. In the PDF, by contrast, the text maintains its readability because it allows for different viewing modes, and the text can be copied into a word processor.\n\nIt is in the nuanced interaction between both formats that the full aesthetic potential and political expressiveness of this work unfold, and the explosive power of the historical event documented becomes obvious: the printed version, with its letter fragments, directs our attention to details and highlights the injuries of individual persons as well as the inconceivability of what is happening. The digital format lets us recognize coherences and an overall picture of what is happening. Thus, these two publication formats are not designed as the usual either-or, in which readers can select the format they prefer, but as both-as-also: PDF and print-on-demand complement and merge to form a conceptual unit that generates surplus and overcomes the antagonistic juxtaposition of analog and digital. This makes these hybrids an epitome of our post-digital age.",
+        "Notes (general - rewritten)": "9/11 911 Calls in 911 pt. Font is a two-volume, print-on-demand work that enlarges excerpts from New York City emergency call transcripts from September 11, 2001 into an overwhelming 911-point type size. Printed on US Letter paper, the letters spill off the page, producing nearly nine hundred pages of text that become virtually unreadable in print while remaining legible and fully selectable in the accompanying PDF.  The fragmented, oversized print embodies the visceral, shattered texture of individual voices, while the digital version prioritizes continuity and legibility. Rather than operating as interchangeable editions, the print and PDF function as a system, one that exposes the limits and possibilities of each medium.",
+        "Materiality": "TRUE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "TRUE",
+        "Searchability": "TRUE",
+        "Traceability": "FALSE",
+        "Mediums": "book, pdf",
+        "Source/Database": "APOD"
+      }
+    },
+    {
+      "id": "precedents-1-10-100-years-of-form-typography-and-interaction-at-parsons",
+      "type": "Precedents",
+      "title": "1, 10, 100 Years of Form Typography, and Interaction at Parsons",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (original source)": "https://eroonkang.com/feature/parsons-publications#/",
+        "Subtitle": "A Research Initiative",
+        "Author/Publisher": "908A (E Roon Kang and Andrew LeClair)",
+        "Year": "2021",
+        "Notes (general - lifted from database and/or designer's website)": "A book is the product of an intricate patchwork of systems: from a font, with its embedded metrics and variable font axes; to a function, which calculates the arrangement of words in each line of a paragraph; to a template, which defines the repeated placement of text and images. Each of these systems is a product of design. Each was created with specific intentions in a particular historical moment and carries with it inherent cultural associations and biases.\nThis book — 1, 10, 100 Years of Form Typography, and Interaction at Parsons — commemorating the history of design education at Parsons, is built on a carefully selected set of lightweight, interconnected technologies; proposing an alternative to the current market-dominent monolithic software tools for designing books.\nContent is managed through a flat-file CMS, Kirby, where Jarret Fuller wrote and edited the text directly using the human-readable markup language, Markdown. Caspar Lam organized data about the program in tables that are stored in a structured text format, TSV. Andrew and E Roon designed browser-based layouts using HTML and CSS that gave form to the content as it was written. The entire book exists as a constantly updated preview on a website, which can be used to generate a PDF on-demand using a renderer, Prince.\nThe final book is a collection of 239 Markdown files, 10 templates, 1,011 lines of CSS, and was generated from the command line in 123.25 seconds on October 19, 2021 at 10:27am.\nWinner of the AIGA 50 books/50 covers competition.",
+        "Notes (general - rewritten)": "1, 10, 100 Years of Form, Typography, and Interaction at Parsons is a book that frames itself as a composite of interlocking systems. Made as part of the 908A research initiative it materializes an approach to bookmaking grounded in transparency, adaptability, and the intertwined histories of design and computation. Built as an alternative to monolithic design software, the project uses a suite of lightweight, modular tools to surface the infrastructural logic of book production. Text was written and edited in Markdown within Kirby’s flat-file CMS; program data was organized in TSV tables; and browser-based layouts in HTML and CSS shaped the book as it evolved in real time. A continuously updated web preview served as the basis for on-demand PDF generation via Prince.",
+        "Materiality": "FALSE",
+        "Ownability": "FALSE",
+        "Updatability": "TRUE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book"
+      }
+    },
+    {
+      "id": "precedents-a-party-to-print",
+      "type": "Precedents",
+      "title": "A Party To Print",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (original source)": "https://raphaelbastide.com/workshops/a-party-to-print/",
+        "Subtitle": "An Experimental Publishing Party",
+        "Author/Publisher": "Sarah Garcin and Raphaël Bastide (and students: Kevin Beckmann, Rahel Diederich, Hoin Ji, Kimin Han, Maximilian Zschiesche, Melanie, Wisser, Róza Velkei, Lea Moescheid, Moritz Schneider, Francesco, Perale, Anna Katalin Szilagyi)",
+        "Year": "2017",
+        "Notes (general - lifted from database and/or designer's website)": "The current libre and open source toolset allows pushing the boundaries of book making. During the last 10 years, in a wish to go beyond limits imposed by proprietary software, designers, artists and collectives researched new ways of thinking the publishing chain. PrePostPrint, initiated by Sarah Garcin and Raphaël Bastide in 2017 is a network made up of such people, events and tools. The collective shares ways of crafting graphic objects, with alternative, libre or DIY tools or made in a certain context constrained by its economy, its emergency or its collaborative nature. The Seminar A Party To Print was given in this context of experimental publishing, free software, and collaboration.\n\nDuring a party called “Blur Factory” organized by students, data and pictures from the guests were collected live and injected into the book layout in real time.Before that event, during the seminar, we have collectively built 4 devices to capture text and images. Each device was designed by a group of student, matches a part in the book, and was linked to a particular space or time of the party.",
+        "Notes (general - rewritten)": "A Party to Print is a seminar that explored real-time, collectively authored production. Within this environment of collaborative and free-software–driven publishing students organized an event titled Blur Factory, where data and images from guests were captured live and streamed directly into the evolving book layout. Leading up to the party, participants designed four custom devices for gathering text and imagery, each tied to a specific section of the book and to a particular spatial or temporal moment of the event. The project stages publishing as an open, performative system—responsive, improvised, and shaped by the contingencies of its own making.",
+        "Materiality": "FALSE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "TRUE",
+        "Searchability": "FALSE",
+        "Traceability": "TRUE",
+        "Mediums": "event, book",
+        "Source/Database": "Pre Post Print"
+      }
+    },
+    {
+      "id": "precedents-astronomical",
+      "type": "Precedents",
+      "title": "Astronomical",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/astronomical",
+        "Link (original source)": "https://vimeo.com/34894951",
+        "Subtitle": "A Capture of the Universe to Scale",
+        "Author/Publisher": "Mishka Henner",
+        "Year": "2011",
+        "Notes (general - lifted from database and/or designer's website)": "“A scale model of our solar system in twelve 500 page volumes. / The width of each page equals one million kilometres. / On page 1 the Sun. On page 6,000 Pluto” (blurb on artist website). In between the other planets, but above all darkness and blackness. The series transfers the unimaginable distances and dimensions of the universe into book for- mat and makes them comprehensible and “traversable.”\n\nThe work has attracted great media attention and high appreciation from collectors and institutions. Originally planned as an open edition, only 130 sets were produced before production was halted by the printer—apparently because Lulu changed to thinner paper and production was no longer possible, but, in reality, probably for reasons of unprofitability due to high ink consumption caused by the almost entirely black pages (proving that Holly Melgard’s Black Friday and Jean Keller’s The Black Book did indeed hit a sore spot in the platform economy). The 130 produced sets have become a highly sought-after, overpriced collector’s item against the artist’s will.\n\nPreviously, the artist had complained several times to Lulu about insufficient quality: The books were cut incorrectly or bound poorly, their height was not always uniform, making their compilation as a twelve-volume set impossible, and sometimes the books arrived blank or the black was printed spottily. This is also the reason why the set could later only be ordered from the artist himself. In 2022, Henner was able to get Lulu to resume production, so together with the Bavarian State Library we were able to acquire a complete set for our collection. The additional copy in our collection (vol. 9) is one that was discarded by the artist because of poor print quality. In view of this, one cannot always be sure whether the tiny white dots are actually stars in the black vastness of space or printing errors.\n\nThere is also a single-channel video, nearly ten minutes long, named Astronomical (the Movie) in which volume one is flipped through page by page. It features the sun, Mercury, Venus, Earth, Mars, and the Asteroid Belt, and served the artist Hermann Zschiegner as the basis for his bootleg edition of Astronomical.",
+        "Notes (general - rewritten)": "Astronomical is a book that translates the scale of the solar system into twelve volumes of 500 pages each, where every page represents one million kilometers—page 1: the Sun; page 6,000: Pluto. Between these markers stretch the other planets, but mostly an expanse of black, rendering cosmic distance as a slow, page-by-page traversal. The project was produced through Lulu, a print on demand service and most sets are marked by inconsistent cutting, faulty binding, and unpredictable print quality. In many copies, it remains uncertain whether the scattered white points on the near-black spreads register as stars or printing artifacts. A ten-minute single-channel video, Astronomical (the Movie)—a filmed flip-through of volume one—extends the work into moving image.",
+        "Materiality": "TRUE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book, video",
+        "Source/Database": "APOD",
+        "Links": "Link to Astronomical, The Bootleg"
+      }
+    },
+    {
+      "id": "precedents-astronomical-the-bootleg",
+      "type": "Precedents",
+      "title": "Astronomical, The Bootleg",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/astronomical-the-bootleg",
+        "Link (original source)": "https://www.youtube.com/watch?v=jvcx0a0brUY",
+        "Subtitle": "A Capture of a Capture of the Universe to Scale",
+        "Author/Publisher": "Hermann Zschiegner",
+        "Year": "2012",
+        "Notes (general - lifted from database and/or designer's website)": "This book is part of Hermann Zschiegner’s Bootleg Edition, a series of books reproducing famous photobooks that are no longer available (due to being out of stock or too expensive to obtain). Their reproduction is based on flip-through videos: a presentation form for books used on video platforms to show their materiality as well as parts of their content. Flip-throughs are used for advertisement, but also to give a broader audience an impression of rare or materially exceptional books.\n\nZschiegner’s Astronomical. The Bootleg shows screenshots of an illegally downloaded copy of Mishka Henner’s ASTRONOMICAL – The Movie that shows a flip-through of the first volume of Henner’s eponymous twelve-volume book series that contains “a scale model of our solar system […]: On page 1 the Sun, on page 6,000 Pluto. The width of each page equals one million kilometers” (Mishka Henner, blurb). The first volume takes us from the sun to Mercury, Venus, Earth, Mars, and the Asteroid Belt.\n\nFor the bootleg of ASTRONOMICAL, Zschiegner mainly used stills showing fully opened page spreads of the original, but a few stills also capture the turning of pages or hands on the book. The quality loss of his reproduction is a result of the remediation from book to film to book, but also of print-on-demand’s poor printing quality. As with the mostly black pages of Henner’s series, one cannot be sure when looking at Zschiegner’s reproduction whether the tiny white dots are actually stars in the black vastness of space or white pixels caused by remediation and printing errors. Our copy also has glaring defects in the perfect binding, so that even after a short use the pages lose their hold, as the photos show.",
+        "Notes (general - rewritten)": "Astronomical, The Bootleg is derived from screenshots of an illicitly downloaded flip-through of Mishka Henner’s ASTRONOMICAL – The Movie, itself a filmed traversal of the first volume of Henner’s twelve-part project mapping a scale model of the solar system (from the Sun on page 1 to Pluto on page 6,000). Zschiegner’s bootleg relies largely on stills of fully opened spreads, occasionally capturing the hand turning pages, and highlights the series of losses engendered by successive translations—from book to video to print-on-demand. As in Henner’s near-black spreads, the tiny white points in Zschiegner’s version hover ambiguously between stars and printing artifacts, further destabilized by the mechanical imperfections of the POD binding. The project extends into a self-reflexive “BookVideo” promoting the bootleg itself, doubling the chain of translation that defines the series. This book is part of a Hermann Zschiegner’s Bootleg Edition, a series that reproduces out-of-print or prohibitively expensive photobooks by using flip-through videos (the promotional, documentary format through which rare books are often circulated online) as its primary source material.",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book, video",
+        "Source/Database": "APOD",
+        "Links": "Link to Astronomical"
+      }
+    },
+    {
+      "id": "precedents-between",
+      "type": "Precedents",
+      "title": "Between",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://hybrid.publishing.systems/#/projekte/Between",
+        "Subtitle": "An Augemented Reality Installation",
+        "Author/Publisher": "Kanna Suzuki",
+        "Notes (general - lifted from database and/or designer's website)": "The experiment \"Between\" is about reviving classic literature through augmented reality. What forms of expression does the space between digital and analog offer? The augmented reality installation \"Between\" experiments with alternative ways of presenting poetry. It shows what can emerge when older forms of self-expression are combined with new, animatable, interactive, and spatial forms.\nThe installation consists of a book with AR markers and a digital visualization. Using a webcam, the poems are digitally displayed and animated on the screen, depending on the page and interaction.",
+        "Notes (general - rewritten)": "Between is an experiment in reanimating classic literature through augmented reality, exploring the expressive possibilities that emerge in the space between analog print and digital visualization. The installation pairs a book embedded with AR markers and a responsive digital layer: when viewed through a webcam, the poems rise from the page as animated, interactive compositions. By staging poetry as both physical text and spatial, screen-based movement, Between proposes new modes of reading that merge historical forms with contemporary, dynamically generative ones.",
+        "Materiality": "FALSE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "TRUE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Source/Database": "Pre Post Print"
+      }
+    },
+    {
+      "id": "precedents-blind-spot",
+      "type": "Precedents",
+      "title": "Blind Spot",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://rhizome.org/editorial/2018/apr/19/miao-ying-interview/",
+        "Link (original source)": "https://anthology.rhizome.org/blind-spot",
+        "Subtitle": "An Index on Censorship",
+        "Author/Publisher": "Miao Ying",
+        "Year": "2007",
+        "Notes (general - lifted from database and/or designer's website)": "For the Blind Spot, I inputted every word, from A to Z, in the standard Chinese dictionary into google.cn, which is Google China. Over the course of three months, I spent ten hours a day searching a whole vocabulary of about 65,000 words to see which ones would be censored. When I came across a censored word I would erase if from the dictionary, only leaving its definition visible. So when reading the book, you cannot see the actual blacklisted term, but you can infer which one it is from the meaning. In my search, I came across 2,000 censored words.",
+        "Notes (general - rewritten)": "Blind Spot reimagines an 1,869-page Mandarin dictionary as an index of Chinese internet censorship. By manually searching every entry on google.cn and marking those that triggered the notice “According to local laws, some search results are not showing,” Miao erased more than 2,000 terms with white tape. The resulting volume maps both the predictable terrain of politically and religiously sensitive words and the more opaque, transient logic of terms censored for reasons that remain unclear. Framed through this slow, repetitive labor, Blind Spot reflects on the mechanisms and lived conditions of China’s filtered internet, underscoring the human work embedded in systems of state regulation and in the experiences of those navigating them.",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "TRUE",
+        "Traceability": "FALSE",
+        "Mediums": "book",
+        "Source/Database": "Rhizome"
+      }
+    },
+    {
+      "id": "precedents-cyber-feminism-index",
+      "type": "Precedents",
+      "title": "Cyber Feminism Index",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://rhizome.org/editorial/2020/oct/22/first-look-cyberfeminism-index/",
+        "Link (original source)": "https://cyberfeminismindex.com",
+        "Subtitle": "A  Collection of Techno-critical Works",
+        "Author/Publisher": "Mindy Seu",
+        "Year": "2020",
+        "Notes (general - lifted from database and/or designer's website)": "Cyberfeminism Index is INCOMPLETE and ALWAYS IN PROGRESS",
+        "Notes (general - rewritten)": "Cyberfeminism Index is both an evolving online archive and a published book. Bringing together hackers, scholars, artists, and activists across regions, races, and sexual orientations, the project explores how humans might reconstruct themselves through technology. Rejecting the standard histories of the internet centered on engineers and protocols, the Index emphasizes the social and political dimensions of digital life: the internet as an environment shaped by and shaping its inhabitants. Designed for both general readers and educators, the book and website together function as an anti-canon—a participatory, post-custodial resource that foregrounds multiplicity, collaboration, and the radical potential of techno-critical practice.",
+        "Materiality": "FALSE",
+        "Ownability": "FALSE",
+        "Updatability": "TRUE",
+        "Interactivity": "FALSE",
+        "Searchability": "TRUE",
+        "Traceability": "TRUE",
+        "Mediums": "website, book",
+        "Source/Database": "Rhizome"
+      }
+    },
+    {
+      "id": "precedents-dear-lulu",
+      "type": "Precedents",
+      "title": "Dear Lulu",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://p-dpa.net/work/dear-lulu/",
+        "Subtitle": "A Calibration Test for Print on Demand",
+        "Author/Publisher": "James Goggin & students",
+        "Year": "2008",
+        "Notes (general - lifted from database and/or designer's website)": "Dear Lulu is a test book which was researched and produced by graphic design students at Hochschule Darmstadt, Germany, during an intensive two-day workshop with London-based designer James Goggin (Practise). The book's intention is to act as a calibration document for testing colour, pattern, format, texture and typography. Exercises in colour profile, halftoning, point size, line, geometry, skin tone, colour texture, cropping and print finishing provide useful data for other designers and self-publishers to judge the possibilities and quality of online print-on-demand — specifically Lulu.com, with this edition. The project was afterwards extended to other platforms, such as Blurb and MagCloud.",
+        "Notes (general - rewritten)": "Dear Lulu is a test book produced by graphic design students at Hochschule Darmstadt during a two-day workshop with London-based designer James Goggin (Practise). Serving as a calibration tool, the book experiments with colour, pattern, format, texture, and typography, generating data on colour profiles, halftoning, point size, line, geometry, skin tone, cropping, and print finishing. Originally focused on Lulu.com, the project was later extended to other print-on-demand platforms, including Blurb and MagCloud, providing a practical resource for designers and self-publishers to evaluate the material and visual possibilities of online book production.",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book",
+        "Source/Database": "P-DPA"
+      }
+    },
+    {
+      "id": "precedents-e-book-backup",
+      "type": "Precedents",
+      "title": "E-Book Backup",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://p-dpa.net/work/e-book-backup/",
+        "Link (original source)": "http://www.jesseengland.net/project/e-book-backup/",
+        "Subtitle": "A Copy of a Copy of a Copy of 1984 by George Orwell",
+        "Author/Publisher": "Jesse England",
+        "Year": "2012",
+        "Notes (general - lifted from database and/or designer's website)": "E-book backup is a physical, tangible, human readable copy of an electronically stored novel. The purchased contents of an e-book reader were easily photocopied and clip-bound to create a shelf-stable backup for the benefit of me, the book consumer. I can keep it on my bookshelf without worry of remote recall. A second hardcover backup has been made with the help of an online self-publishing house.",
+        "Notes (general - rewritten)": "E-book Backup transforms digitally purchased novels into physical, human-readable artifacts. By photocopying and clip-binding the contents of an e-book, the work creates an ownable backup that exists independently of the original device or platform, protecting against deletion or remote recall. A second hardcover edition, produced through an online self-publishing service, extends this gesture, emphasizing the material persistence of text in the age of digital ephemerality.",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book, e-book",
+        "Source/Database": "P-DPA"
+      }
+    },
+    {
+      "id": "precedents-hate-library",
+      "type": "Precedents",
+      "title": "Hate Library",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/hate-library",
+        "Link (original source)": "https://www.nickthurston.info/work/hate-library/",
+        "Subtitle": "An Installation on Online Hate",
+        "Author/Publisher": "Nick Thurston",
+        "Year": "2017",
+        "Notes (general - lifted from database and/or designer's website)": "The material from the online far-right supporter forums was transferred into twelve volumes arranged by country: Vol. 1: Austria; Vol. 2: Belgium; Vol. 3: Denmark; Vol. 4: England; Vol. 5: France; Vol. 6: Germany; Vol. 7: Greece; Vol. 8: Hungary; Vol. 9: Italy; Vol. 10: Netherlands; Vol. 11: Poland; Vol. 12: Sweden. They were presented as “history books” on blue music stands, arranged in a circle on the yellow stars of the European flag, inviting collective, “choral” reading: “Each of these unedited volumes pauses one far-right national conversation, repeating it offline by using simple data-gathering and print-on-demand processes” (Nick Thurston, “Back to Front Truths,” 202). They are encircled by panels presenting the search results of “truth” in the European sections of the world’s largest white supremacist platform Stormfront. In addition, the walls are plastered with oversized thread titles.\n\nNick Thurston, through the exhibition’s title Hate Library, declares this setting to be a public library that recontextualizes these kinds of “backstage” discussions that, despite their public accessibility, “do not seem to have become public knowledge in any strong sense of that phrase,“ and makes them “accessible to audiences who would never enter those online bubbles” (Nick Thurston, “Back to Front Truths,” 203 and 194). At the same time, Thurston probes an artistic approach through which documents like these “can become matters of public concern through their ‘social life’—through re-publishing, sharing, and discussing them” (Nick Thurston, “Document Practices”).",
+        "Notes (general - rewritten)": "Hate Library transforms material from far-right online forums into twelve print-on-demand volumes, each organized by country—from Austria to Sweden. Displayed on blue music stands arranged in a circle over the stars of the European flag, the books invite collective, “choral” reading, pausing and materializing national online conversations in physical form. Surrounding panels show search results for “truth” on the white supremacist platform Stormfront, while walls are plastered with oversized thread titles, making visible discussions that, despite being publicly accessible online, have largely remained outside public awareness. Framing this installation as a library, Thurston positions these documents as objects whose social and political significance emerges through re-publication, circulation, and public engagement, turning hidden digital discourse into matters of collective concern.",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "TRUE",
+        "Interactivity": "FALSE",
+        "Searchability": "TRUE",
+        "Traceability": "FALSE",
+        "Mediums": "book, installation",
+        "Source/Database": "APOD"
+      }
+    },
+    {
+      "id": "precedents-l-mem-vol-001-058",
+      "type": "Precedents",
+      "title": "L-MEM Vol 001.058",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/l-mem-vol-1",
+        "Link (original source)": "http://www.pierrejasmin.com",
+        "Subtitle": "An Introduction to Making Very Big Books",
+        "Author/Publisher": "Pierre Jasmin",
+        "Year": "2013",
+        "Notes (general - lifted from database and/or designer's website)": "L-MEM is a theoretical, speculative, and practical outline of how Pierre Jasmin sees writing and the medium of the book to be reconceptualized in the digital age and how that reconception will produce a new kind of literature in the not-too-far future. For this, he retraces the history of the book and publishing as well as of writing and information technology. The key concept is a networked, extensive production of knowledge in relation to what one human being can produce or perceive in a lifetime. In his speculative facets, Jasmin mostly follows the ideological traces of Silicon Valley Singularitarianism, yet with a distinct interest in the facilitation of knowledge filtered through a single human being, namely himself and his biography.\n\nThe book itself performs some of the theorems and practices Jasmin envisions, as what might be called a library-sized metabook. This mostly describes the fact that the book has a wiki as its source, which is editable, extendible, and in theory inexhaustible—by him and his readers. Also, the text includes versioned rewritings, extensive citations, appropriations, collective writing, and reproductions of discussions happening in digital comment sections of the project. In order to contribute to the wiki, a password was required, which could only be obtained when purchasing the book: “If you have a printed version of the Book, then the password is in the book in the section about Passwords. This password will allow you to Add Pages to this Wiki” (L-MEM Wiki, “Vol 1 – v053 – Aux Book Features”). A corresponding reference is hidden on page 270.\n\nL-MEM exports a snapshot of this digital text, which Jasmin used to regularly rewrite and extend for several years until volume 001.058, which refers to volume 001 of the project in a 58th edition that was exported as a print-on-demand tome. Jasmin also lends one entire chapter to the production method, and to transferring and archiving large amounts of digital content in general in his chapter “Budgeting Printing the Book and Shipping it to You.”",
+        "Notes (general - rewritten)": "L-MEM Vol 001.058 is a speculative and practical exploration of how writing and the book might be reconceived in the digital age, proposing a model for a new, networked literature that exceeds the limits of individual human perception.  The book enacts its own theory as a “library-sized metabook”: it draws from an editable, extendible wiki, incorporates versioned rewritings, extensive citations, appropriated material, and excerpts from digital discussions, and allows readers to contribute via a password embedded in the printed edition. Over successive iterations, Jasmin exported snapshots of the wiki as print-on-demand volumes, culminating in volume 001.058, while dedicating a chapter to the methods of production, archiving, and the logistics of transferring vast digital content into material form. The project stages the book as both conceptual experiment and functional medium, merging digital expansiveness with printed presence.",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "TRUE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book, website",
+        "Source/Database": "APOD"
+      }
+    },
+    {
+      "id": "precedents-my-hard-drive-died-along-with-my-heart",
+      "type": "Precedents",
+      "title": "My Hard-Drive Died Along With My Heart",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://apod.li/my-hard-drive-died-along-with-my-heart",
+        "Subtitle": "A Collection of Stories about Data-loss and Broken Trust",
+        "Author/Publisher": "Stories about data-loss and broken trust",
+        "Year": "2016",
+        "Notes (general - lifted from database and/or designer's website)": "“My Hard-Drive Died Along With My Heart [...] explores people’s relationship with hard-drives and what emotions people get after the trust is broken. The book contains a collection of online forum and twitter posts [from 1994 to 2016] on the topic. As a society we always seem to be looking for a new technical solution for knowledge and information storage and for this, we hope there is one magic, final solution that will solve every issue. But easy solutions create their own problems. The perceived view of the stable nature of digital information differs from reality” (blurb on Lulu).\n\nThe tweets, mostly quite emotional, are set in white on a black background and are reminiscent of an obituary, while the longer forum posts often include requests for help and technical details. Sources are provided for all quotations. The title of the book also comes from a tweet.\n\nIn addition, the artist has edited a five-minute video of footage of people talking online about the data loss they experience after their devices fail. According to the opening credits, they go through five stages of grief: denial, anger, bargaining, depression, and acceptance.",
+        "Notes (general - rewritten)": "My Hard-Drive Died Along With My Heart collects online forum posts and tweets documenting people’s emotional responses to data loss and the failure of trusted digital storage. Framing the search for a “final” technical solution as both desire and illusion, the book contrasts the perceived stability of digital information with its fragile reality. Short, affective tweets appear in white on black, echoing the tone of obituaries, while longer forum entries detail technical problems and requests for help, all meticulously sourced. The title itself is drawn from a tweet.\nComplementing the printed collection, a five-minute video presents individuals recounting their experiences of data loss online, structured around the five stages of grief—denial, anger, bargaining, depression, and acceptance—extending the work’s meditation on digital fragility into performative, audiovisual form.",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "TRUE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book",
+        "Source/Database": "APOD"
+      }
+    },
+    {
+      "id": "precedents-quick-response",
+      "type": "Precedents",
+      "title": "Quick Response",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/quick-response",
+        "Subtitle": "A Pondering on the QR Code",
+        "Author/Publisher": "Joachim Schmid",
+        "Year": "2010",
+        "Notes (general - lifted from database and/or designer's website)": "In Quick Response, Joachim Schmid devotes himself to the ubiquitous QR code, which was developed as a replacement to the barcode by the Japanese company Denso for the Japanese car industry in 1994 and has since found its way from industrial production into everyday life. It links public space with the internet in a unique way and its austere, constructivist look is not infrequently appreciated in aesthetic terms. It is little wonder, then, that it is also well represented in photographs on Flickr.\n\nIt is precisely these QR code photos that Schmid refers to in Quick Response: a collection of QR codes, each of which is individually set on a page and turns into an abstract image that can only be “read” with technical support. A smartphone can be used to scan the code and fol- low the inscribed link to one of these QR code photos on Flickr. Thus, “[t]he series of photos demonstrates the variety of modern commercial, artistic and subversive QR code applications. In addition, the book demonstrates a new way of appropriating other people’s photographs” (Joachim Schmid, “Quick Response,” website).\n\nDissatisfied with Blurb’s quality, customer service, and lack of responsiveness to artists’ specific needs, Schmid moved to Lulu in 2012, from where our copy in the collection originated. The 2010 paginated Blurb edition in the 12.5 × 20.1 cm format was discontinued and scaled for the unpaginated Lulu format.",
+        "Notes (general - rewritten)": "In Quick Response, Joachim Schmid compiles photographs of QR codes into a print-on-demand collection, presenting each code individually on a page as an abstract visual object legible only with technological mediation. Scanning a code with a smartphone links directly to its source image on Flickr, revealing the breadth of commercial, artistic, and subversive QR code applications while enacting a form of photographic appropriation. Originally published in 2010 via Blurb, Schmid later migrated to Lulu in 2012 due to concerns over quality and artist support, reformatting the original paginated volume for Lulu’s unpaginated layout.",
+        "Materiality": "FALSE",
+        "Ownability": "FALSE",
+        "Updatability": "TRUE",
+        "Interactivity": "TRUE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book, QR code",
+        "Source/Database": "APOD"
+      }
+    },
+    {
+      "id": "precedents-reflow",
+      "type": "Precedents",
+      "title": "ReFlow",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://p-dpa.net/work/reflow/",
+        "Subtitle": "A Responsive Poster Series",
+        "Author/Publisher": "Martin Wecke",
+        "Year": "2013",
+        "Notes (general - lifted from database and/or designer's website)": "Series of 6 Responsive Posters that bring the challenge of designing and coding for a large ecosystem of mobile devices, screen sizes and resolutions to the world of print. All posters contain the same ASCII text – in the exact same font and size. Different paper sizes make the text wrap uniquely on each poster revealing patterns, phrases and glitch.",
+        "Notes (general - rewritten)": "A series of six Responsive Posters translates the challenges of designing for diverse digital screens into the analogue realm of print. Each poster displays identical ASCII text in the same font and size, but variations in paper dimensions cause the text to wrap differently, generating emergent patterns, phrases, and glitches. The project visualizes how context and format shape perception, highlighting the interplay between fixed content and variable structure across media.",
+        "Materiality": "TRUE",
+        "Ownability": "FALSE",
+        "Updatability": "TRUE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "Poster",
+        "Source/Database": "P-DPA"
+      }
+    },
+    {
+      "id": "precedents-special-collection",
+      "type": "Precedents",
+      "title": "Special Collection",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/special-collection",
+        "Link (original source)": "https://benjaminshaykin.com/Special-Collection",
+        "Subtitle": "An Assortment of Un-Digitized Books",
+        "Author/Publisher": "Benjamin Shaykin",
+        "Year": "2013",
+        "Notes (general - lifted from database and/or designer's website)": "This print-on-demand edition goes back to the author’s MFA Thesis at Rhode Island School of Design, for which he made twelve hand-sewn books under the title Special Collection, all of which this volume reproduces together.\n\nThe twelve chapbooks are “partial recreations of books found on Google Books,” among them such apt titles as Dewey’s Decimal Classification, Catalogue of Choice, Useful, and Curious Books, and A Handy-Book About Books. In addition, there is a compilation of loan period slips (Date Due) and a chapbook titled Ex Libris Being a Collection of Artifacts & Digits Digitized by Google. This is complemented by a presentation of the Google Books project by Google itself, which has inscribed itself with watermarks in all the scans made—just as libraries used to mark their possessions with ink, embossed, or punched stamps, in the style of which the title of Shaykin’s volume is designed.\n\n“Each [chapbook] is reproduced at its original size, revealing multiple disruptions and errors, introduced during Google’s own scanning process: the scanner’s hand, holding down and obliterating the page; type and illustrations which have degraded and blurred to the point of illegibility; pages scanned while in the process of being turned; fold-out maps and charts that were scanned while closed. Some of these artifacts are beautiful and evocative. They are the found poetry of this new machine” (artist website).\n\nSome finds are indeed ingenious, such as when a book page titled “PART.IX.-INDEX” is appropriately “illustrated” by the index finger of the person scanning the book. But at the same time, Special Collection is much more than just entertaining found objects or beautiful artifacts: “By reinvesting these digital books with physical form, Special Collection asks us to consider the contradictions and unintended consequences of technological advance. Approaching Google Books through its fissures offers a chance to peek behind the curtain of a mysterious, complicated endeavor, which is little understood and generally taken for granted as progress. By using Google’s scans and resources to create this work, I am both highlighting the potential of this new era of distribution and access, and questioning Google’s claims of ownership of all the world’s information” (artist website).",
+        "Notes (general - rewritten)": "Reproduced at their original sizes, the chapbooks reveal the errors and disruptions of Google’s scanning process: blurred type and illustrations, pages obscured by the scanner’s hand, misaligned fold-outs, and partial turns. These artifacts—sometimes humorous, sometimes poetic—form the “found poetry” of machine-mediated reproduction. The work stages a critique: by materializing Google’s digital books, Special Collection highlights the contradictions and unintended consequences of technological distribution, exposes the fissures of an opaque system, and questions claims of proprietary control over global knowledge.",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book, e-book",
+        "Source/Database": "APOD",
+        "Links": "Link to Binder"
+      }
+    },
+    {
+      "id": "precedents-steve-harvey-and-matt",
+      "type": "Precedents",
+      "title": "Steve, Harvey and Matt",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (original source)": "https://epa.archive.work",
+        "Subtitle": "An index of Rescued Information",
+        "Author/Publisher": "Paul Soulellis",
+        "Year": "2018",
+        "Notes (general - lifted from database and/or designer's website)": "This project — a broadcast, a book, and a download — restores access to 1,964 climate change-related URLs that were removed from EPA.gov on April 28, 2017. The URLs point to web pages, documents, presentations, publications, and other files that were purged by the U.S. Environmental Protection Agency under the direction of EPA Administrator Scott Pruitt and the Trump administration. Some of the assets had been accessible on the web since 1997.",
+        "Notes (general - rewritten)": "Steve, Harvey and Matt restores access to 1,964 climate change-related URLs that were removed from EPA.gov on April 28, 2017. The URLs point to web pages, documents, presentations, publications, and other files that were purged by the U.S. Environmental Protection Agency under the direction of EPA Administrator Scott Pruitt and the Trump administration. Some of the assets had been accessible on the web since 1997. Through re-distributing these lost urls through a variety of mediums, a broadcast, a book, and a download, this project ensures this information can be accessed and owned outside of the reach of entities that might try to delete them.",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book, website, broadcast",
+        "Source/Database": "Pre Post Print"
+      }
+    },
+    {
+      "id": "precedents-the-book-after-the-book",
+      "type": "Precedents",
+      "title": "The book after the book",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://artbase.rhizome.org/wiki/Q4376",
+        "Link (original source)": "https://static-files.rhizome.org/Q4377/thebook/",
+        "Subtitle": "A hypertextual Essay about Cyberliterature",
+        "Author/Publisher": "Giselle Beiguelman",
+        "Year": "2001",
+        "Notes (general - lifted from database and/or designer's website)": "The Book after the Book (1999/2000) is a hypertextual and visual essay about cyberliterature, where criticism and web art melts into the context of the net_reading/writing_condition. Its main focus is non-linear narratives, which reconfigure the literature/book relationship starting from the very notion of volume. Works that provide programming language a textual appraisal, creations that resort to videographic procedures in literary construction and play on the passivity and participation of the reader. Short animations intercept the reading of other artists works playing with the textual condition of the on line image and, at the same time, with the imagetic condition of the screen text. They are all images that perform texts and face the strange passage imposed by the net. Deep down, on the back of the page, at the source, a situation is defined: the Internet is no more than a big text. On the front, at the screen, text reveals itself as image.",
+        "Notes (general - rewritten)": "The Book after the Book is a hypertextual, visual essay on cyberliterature in which criticism and web art merge within the conditions of networked reading and writing. Centered on nonlinear narrative forms, the project reconsiders the literature–book relationship from the ground up, treating “volume” as a mutable structure shaped by code, screen space, and interaction. Short animations interrupt and reroute the reading of other artists’ works, playing simultaneously with the textuality of online images and the imagistic nature of on-screen text—images performing text, text performing image. At its core, the project stages a double condition: beneath the interface, the internet persists as a vast textual substrate; on the surface of the screen, text appears as image, revealing the unstable thresholds between reading, viewing, and navigating in digital space.",
+        "Materiality": "FALSE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "TRUE",
+        "Searchability": "TRUE",
+        "Traceability": "FALSE",
+        "Mediums": "website",
+        "Source/Database": "Rhizome"
+      }
+    },
+    {
+      "id": "precedents-the-iraq-war",
+      "type": "Precedents",
+      "title": "The Iraq War",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/the-iraq-war",
+        "Link (original source)": "https://booktwo.org/notebook/wikipedia-historiography/",
+        "Subtitle": "A Historiography of Wikipedia Changelogs",
+        "Author/Publisher": "James Bridle",
+        "Year": "2010",
+        "Notes (general - lifted from database and/or designer's website)": "James Bridle’s twelve-volume set The Iraq War: A Historiography of Wikipedia Changelogs documents in nearly 7,000 pages all 12,000 changes made to the Wikipedia article on the Iraq War in five years between December 2004 and November 2009.\n\n“It contains arguments over numbers, differences of opinion on relevance and political standpoints, and frequent moments when someone erases the whole thing and just writes ‘Saddam Hussein was a dickhead.’ This is historiography. This is what culture actually looks like: a process of argument, of dissenting and accreting opinion, of gradual and not always correct codification.\n\nAnd for the first time in history, we’re building a system that, perhaps only for a brief time but certainly for the moment, is capable of recording every single one of those infinitely valuable pieces of information. Everything should have a history button. We need to talk about historiography, to surface this process, to challenge absolutist narratives of the past, and thus, those of the present and our future” (James Bridle, “On Wikipedia, Cultural Patrimony, and Historiography”).\n\nBridle explains the necessity of putting this web-based debate into book form by its vividness: on the one hand, its scope is impressive and surprising. At twelve hardcover volumes, it approaches “the size of a single old-style encyclopaedia.” On the other hand, “[p]hysical objects are useful props in debates like this: immediately illustrative, and useful to hang an argument and peoples’ attention on” (Ibid.).\n\nThe work was produced only once and is not publicly available. It was exhibited in galleries in the United States and Europe where, apparently, reading the books was not allowed: “Please do not touch. / excerpts of text can be found in blue binder on vitrine.” This shows that Bridle was less interested here in the distributive potential of print-on-demand than in the easy accessibility of the technology.",
+        "Notes (general - rewritten)": "The Iraq War: A Historiography of Wikipedia Changelogs is a twelve-volume, nearly 7,000-page compilation of every one of the 12,000 edits made to Wikipedia’s Iraq War entry between December 2004 and November 2009. The set captures the full spectrum of collaborative authorship—numerical disputes, political disagreements, shifts in relevance, and occasional acts of vandalism—revealing historiography as an active, contested, and accumulative process rather than a fixed narrative. Bridle argues for translating this web-based debate into book form precisely because of its scale and material presence. Twelve hardcover volumes approach the heft of a traditional encyclopedia, offering a physical anchor for conversations about cultural memory and the politics of documentation.",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "TRUE",
+        "Mediums": "book, website",
+        "Source/Database": "APOD"
+      }
+    },
+    {
+      "id": "precedents-the-uncensored-library",
+      "type": "Precedents",
+      "title": "The Uncensored Library",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (original source)": "https://www.minecraft.net/en-us/article/uncensored-library",
+        "Subtitle": "A Minecraft Library of Censored Texts",
+        "Author/Publisher": "Reporters without Borders & BlockWorks",
+        "Year": "2020",
+        "Notes (general - lifted from database and/or designer's website)": "Freedom of expression is a fundamental human right, and yet, there are countries that seek to censor their citizens or prevent them from accessing certain information. This is why The Uncensored Library exists; a grand digital library meant to combat censorship – and it’s all accessible through Minecraft.",
+        "Notes (general - rewritten)": "The Uncensored Library uses the vast, open world of Minecraft to circumvent state-imposed restrictions on access to information. Framed as a monumental digital library, the project embeds banned journalism and censored texts within a globally accessible game environment, transforming a platform associated with play into a tool for press freedom. By exploiting Minecraft’s ubiquity and its availability even in heavily monitored regions, the work offers an alternative channel for circulating prohibited knowledge and underscores the continuing precarity of freedom of expression worldwide.",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "TRUE",
+        "Searchability": "TRUE",
+        "Traceability": "FALSE",
+        "Mediums": "video game"
+      }
+    },
+    {
+      "id": "precedents-tracking-letters",
+      "type": "Precedents",
+      "title": "Tracking Letters_",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://p-dpa.net/work/tracking-letters_/",
+        "Subtitle": "A Correspondance Journal",
+        "Author/Publisher": "John Caserta",
+        "Year": "2004",
+        "Notes (general - lifted from database and/or designer's website)": "Tracking Letters_ is made with a software application that records the timing of keyboard entry. Its primary use is as an email entry program. Using the software, I tracked a week’s worth of my own emails, collecting them into this 168-page book. The 34 correspondences demonstrate the variances in speed, pauses and errors that occur when writing. The book refers to a journal or a small sketchbook, a form that holds the same level of intimacy as personal correspondences.",
+        "Notes (general - rewritten)": "Tracking Letters_ is produced with a custom software application that captures the temporal trace of typing—recording keystrokes, pauses, hesitations, and errors as they unfold. Originally designed as an email composition tool, the program was used here to document a week of the artist’s own correspondence, ultimately collecting 34 emails into a 168-page volume. The resulting book makes visible the rhythm and labor of writing: its accelerations and stalls, its uncertainties, its embodied tempo. Echoing the scale and feel of a journal or pocket sketchbook, the work adopts a format associated with privacy and reflection, mirroring the intimate nature of the personal messages it transcribes.",
+        "Materiality": "TRUE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "TRUE",
+        "Mediums": "book",
+        "Source/Database": "P-DPA"
+      }
+    },
+    {
+      "id": "precedents-treatise-on-luck",
+      "type": "Precedents",
+      "title": "Treatise on Luck",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/treatise-on-luck",
+        "Link (original source)": "https://dl.gauss-pdf.com/GPDF238-MFJ-TOL.pdf",
+        "Subtitle": "A Destructive Reproduction",
+        "Author/Publisher": "Mark Francis Johnson",
+        "Year": "2017",
+        "Notes (general - lifted from database and/or designer's website)": "The nested design (mise-en-abyme) of Mark Francis Johnson’s poetry book was created by Jonathan Gorman. It reproduces every page of a copy made just for this purpose, with each page torn out, scanned, and set on a page with a broad black margin, including front and back covers. The source book, which no longer exists, was apparently also a print-on-demand book, as suggested by the reproduction of the cover, which has the cheap-looking and reflective foliation typical of print-on-demand books. The reflective approach to the materiality of the book, accessible only through multiple stages of mediation, mirrors the reflections on luck and memory in Johnson’s poems.",
+        "Notes (general - rewritten)": "A Treatise on Luck embraces a process of total reproduction creating a nested, mise-en-abyme structure. Every page of a sacrificial source copy was torn out, scanned, and reinserted into a new layout framed by a wide black margin, covers included. The original book, now destroyed, appears to have been a print-on-demand edition, a fact hinted at by the reproduced cover’s telltale reflective foil and low-cost finish. This recursive treatment of the book’s material form—accessible only through layers of translation and loss—echoes the poems’ own preoccupations with chance, disappearance, and the fragile workings of memory.",
+        "Materiality": "TRUE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Mediums": "book",
+        "Source/Database": "APOD"
+      }
+    },
+    {
+      "id": "precedents-vanishing-rouge",
+      "type": "Precedents",
+      "title": "Vanishing Rouge",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://p-dpa.net/work/vanishing-rouge/",
+        "Subtitle": "A Type Writer Performance",
+        "Author/Publisher": "Lisa Spalt",
+        "Year": "2016",
+        "Notes (general - lifted from database and/or designer's website)": "For the text of „Vanishing Rouge“, the author initially searched the internet for a first sentence on the subject of ”Schreibmaschine / Typewriter“. The sentence was recorded using the typewriter. Then she chose a catchword from this first sentence, which she once again inserted into the search engine, thus finding a next sentence, etc.",
+        "Notes (general - rewritten)": "For Vanishing Rouge the author began by searching the web for an opening sentence on the topic “Schreibmaschine / typewriter.” That line was then transcribed on a typewriter. From it, she selected a single keyword, fed it back into the search engine, retrieved a new sentence, and typed it again—continuing this relay of mechanical inscription and algorithmic retrieval. The procedure exposes a fundamental asymmetry: to write a message, one must draw on some reservoir of knowledge beyond the page. The process mirrors the act of browsing: we animate data momentarily, giving it a pulse only for as long as our attention holds. Afterwards, its value evaporates. Typewriter and Internet alike become figures of vanitas—two technologies that reveal, in different ways, the ephemerality of inscription.",
+        "Materiality": "FALSE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "TRUE",
+        "Traceability": "TRUE",
+        "Mediums": "print, performance",
+        "Source/Database": "P-DPA"
+      }
+    },
+    {
+      "id": "precedents-walker-evans-sherrie-levine",
+      "type": "Precedents",
+      "title": "+walker evans +sherrie levine",
+      "link": "",
+      "image": "",
+      "fields": {
+        "Link (database source)": "https://www.apod.li/walker-evans-sherrie-levine",
+        "Link (original source)": "https://follow-ed.com/levine-walker-installation/",
+        "Subtitle": "A Reproduction of a Reproduction of a Reproduction",
+        "Author/Publisher": "Hermann Zschiegner",
+        "Year": "2008",
+        "Notes (general - lifted from database and/or designer's website)": "In 1981, Sherrie Levine appropriated famous photographs by Walker Evans by photographing them from a catalog, referencing the progressing musealization of documentary photography and questioning the concepts of authorship, creativity, and originality. The photographs Levine took were almost indistinguishable from those Evans had taken fifty years earlier.\n\nWith +walker evans +sherrie levine Hermann Zschiegner takes this reflection on appropriation, remediation, and authorship to the digital age by showing that circulating “poor images” (Hito Steyerl, “In Defense of the Poor Image”) further obfuscate the material and the ontological differences between Evans’ and Levine’s photos, but at the same time metadata such as file names and URLs help identify their origin.\n\nThe title of Zschiegner’s book contains the search parameter of his Google image search conducted on July 24, 2008, which resulted in twenty-six found images of Evans’ most famous photograph, depicting Allie Mae Burroughs. These twenty-six images are sorted in descending order by file size and “positioned to match the original print with any white space around the image representing the cropped area of the reproduced picture. File size, pixel aspect ratio and URL of all images are included as a frame of reference. It is only in reading the file names that we can identify if the reproduced image is a Levine or an Evans” (Hermann Zschiegner, “+walker evans +sherrie levine”).",
+        "Notes (general - rewritten)": "+walker evans +sherrie levine extends Sherrie Levine’s inquiry on Walker Evans’s Depression-era images into the digital sphere, demonstrating how the circulation of “poor images” (Hito Steyerl’s term for low-resolution, endlessly reproduced files) further blurs the material and ontological boundaries between Evans’s and Levine’s works. The book’s title reproduces the exact search terms Zschiegner used in a Google Image query on July 24, 2008, which yielded twenty-six versions of Evans’s iconic portrait of Allie Mae Burroughs. File size, pixel proportions, and source URL are printed alongside each image, forming a metadata frame that substitutes for visual certainty. Ultimately, only by reading these file names can one determine whether a given reproduction traces back to Levine or to Evans—an authorship legible not through the image, but through its digital residue.",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Source/Database": "APOD"
+      }
+    },
+    {
+      "id": "tools-bindery-info",
+      "type": "Tools",
+      "title": "Bindery.js",
+      "link": "https://bindery.info",
+      "image": "/screenshots/bindery_info.jpg",
+      "fields": {
+        "Subtitle": "A tool that converts *html* projects into print ready files",
+        "Author/Publisher": "Evan Brooks",
+        "Notes (need to edit in accordance to our point of view)": "Bindery.js is a JavaScript library designed to facilitate the creation of print-ready books directly within a web browser. It allows web designers and developers to structure and format content for print, including features like page breaks, footnotes, tables of contents, and indexes, using HTML and CSS. examples of work here https://bindery.info/gallery/",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE"
+      }
+    },
+    {
+      "id": "tools-pagedjs-org",
+      "type": "Tools",
+      "title": "Paged Js",
+      "link": "https://pagedjs.org",
+      "image": "/screenshots/pagedjs_org.jpg",
+      "fields": {
+        "Subtitle": "A tool that converts html projects into print ready files",
+        "Notes (need to edit in accordance to our point of view)": "Paged.js is a free and open source JavaScript library that paginates content in the browser to create PDF output from any HTML content. This means you can design works for print (eg. books) using HTML and CSS! Paged.js follows the Paged Media standards published by the W3C (ie the Paged Media Module, and the Generated Content for Paged Media Module). In effect Paged.js acts as a polyfill for the CSS modules to print content using features that are not yet natively supported by browsers. Paged.js is a community driven project, we’ll make sure that anyone feels just like at home, newcomers and old friends alike. We’ll always put the community needs first: we have a Mattermost that we use to discuss everything and the development is hosted on github. All the issues are read and answered as fast as possible.",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE"
+      }
+    },
+    {
+      "id": "tools-weasyprint-org",
+      "type": "Tools",
+      "title": "Weasy print",
+      "link": "https://weasyprint.org",
+      "image": "/screenshots/weasyprint_org.webp",
+      "fields": {
+        "Subtitle": "A tool that converts html projects into statistical reports, tickets or invoices",
+        "Notes (need to edit in accordance to our point of view)": "WeasyPrint is a smart solution helping web developers to create PDF documents. It’s free and open source software that can be easily plugged to your applications and websites and turns simple HTML pages into gorgeous statistical reports, invoices and tickets",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE"
+      }
+    },
+    {
+      "id": "tools-www-artivive-com",
+      "type": "Tools",
+      "title": "Artivive",
+      "link": "https://www.artivive.com",
+      "image": "/screenshots/www_artivive_com.webp",
+      "fields": {
+        "Subtitle": "A tool for AR image overlays",
+        "Author/Publisher": "Sergiu Ardelean and Codin Popescu",
+        "Notes (need to edit in accordance to our point of view)": "Artivive is an AR tool that allows artists to create new dimensions of art by linking classical with digital art. The digital layer opens doors to a whole new world of possibilities. Artists can take visitors on a journey through time, explain what lies underneath, enhance the art with animations, or show how the artworks were made.",
+        "Materiality": "FALSE",
+        "Ownability": "FALSE",
+        "Updatability": "TRUE",
+        "Interactivity": "TRUE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE"
+      }
+    },
+    {
+      "id": "tools-www-lulu-com",
+      "type": "Tools",
+      "title": "Lulu",
+      "link": "https://www.lulu.com",
+      "image": "/screenshots/www_lulu_com.png",
+      "fields": {
+        "Subtitle": "Print on demand platform",
+        "Author/Publisher": "Bob Young",
+        "Notes (need to edit in accordance to our point of view)": "Lulu Press, Inc., doing business under trade name Lulu, is an online print-on-demand, self-publishing, and distribution platform. By 2014, it had issued approximately two million titles.[1]",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE"
+      }
+    },
+    {
+      "id": "tools-editor-p5js-org-munusshih-sketches-t7ykew5",
+      "type": "Tools",
+      "title": "P5.js flip book generator",
+      "link": "https://editor.p5js.org/munusshih/sketches/_-T7yKeW5",
+      "image": "/screenshots/editor_p5js_org_munusshih_sketches___T7yKeW5.jpg",
+      "fields": {
+        "Author/Publisher": "Munus Shih",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE"
+      }
+    },
+    {
+      "id": "tools-editor-p5js-org-munusshih-sketches-wyaamh2gy",
+      "type": "Tools",
+      "title": "P5 zine generator",
+      "link": "https://editor.p5js.org/munusshih/sketches/WyAAMH2gY",
+      "image": "/screenshots/editor_p5js_org_munusshih_sketches_WyAAMH2gY.jpg",
+      "fields": {
+        "Author/Publisher": "Munus Shih",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE"
+      }
+    },
+    {
+      "id": "tools-toolkit-wellgedacht-org-doku-php-id-articles-digital-publishing",
+      "type": "Tools",
+      "title": "Pandoc",
+      "link": "https://toolkit.wellgedacht.org/doku.php?id=articles:digital-publishing",
+      "image": "/screenshots/toolkit_wellgedacht_org_doku_php_id_articles_digital_publishing.php",
+      "fields": {
+        "Subtitle": "File converter",
+        "Notes (need to edit in accordance to our point of view)": "Pandoc is a tool to convert one file format to another, like markdown, html, docx, rtf, txt, epub, LaTeX, PDF and many others.",
+        "Materiality": "FALSE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "TRUE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Source/Database": "PP DP T"
+      }
+    },
+    {
+      "id": "tools-toolkit-wellgedacht-org-doku-php-id-guides-self-hosting-guide",
+      "type": "Tools",
+      "title": "Self hosting guide",
+      "link": "https://toolkit.wellgedacht.org/doku.php?id=guides:self-hosting_guide",
+      "image": "/screenshots/toolkit_wellgedacht_org_doku_php_id_guides_self_hosting_guide.php",
+      "fields": {
+        "Notes (need to edit in accordance to our point of view)": "This guide focuses on the relatively simple method (as opposed to a more comprehensive “homelab” running services like Nextcloud—explained in our separate guide), which uses a Linux computer that could be your old laptop you always keep powered on or an old desktop PC, mini-PC, a single board computer like a Raspberry Pi, or anything that can run Linux and has enough juice to run two Docker containers.",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Source/Database": "PP DP T"
+      }
+    },
+    {
+      "id": "tools-toolkit-wellgedacht-org-doku-php-id-guides-nextcloud",
+      "type": "Tools",
+      "title": "Nextcloud",
+      "link": "https://toolkit.wellgedacht.org/doku.php?id=guides:nextcloud",
+      "image": "/screenshots/toolkit_wellgedacht_org_doku_php_id_guides_nextcloud.php",
+      "fields": {
+        "Subtitle": "Self-hosting file storing platforms",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Source/Database": "PP DP T"
+      }
+    },
+    {
+      "id": "tools-toolkit-wellgedacht-org-doku-php-id-guides-bookstack",
+      "type": "Tools",
+      "title": "Bookstack",
+      "link": "https://toolkit.wellgedacht.org/doku.php?id=guides:bookstack",
+      "image": "/screenshots/toolkit_wellgedacht_org_doku_php_id_guides_bookstack.php",
+      "fields": {
+        "Subtitle": "Self-hosted wiki",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Source/Database": "PP DP T"
+      }
+    },
+    {
+      "id": "tools-print-are-na",
+      "type": "Tools",
+      "title": "Print Are.na",
+      "link": "https://print.are.na",
+      "image": "/screenshots/print_are_na.jpg",
+      "fields": {
+        "Subtitle": "A tool that converts [are.na](https://are.na) boards into print ready files",
+        "Author/Publisher": "Mindy Seu",
+        "Notes (need to edit in accordance to our point of view)": "print.are.na was created by Mindy Seu, Charles Broskoski and Ekene Ijeoma. print.are.na uses bindery.js, an open-source library for creating books using HTML and CSS, created by Evan Brooks. The first version print.are.na was created by Callil Capuozzo for the 2017 Cybernetics Conference.",
+        "Materiality": "TRUE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE"
+      }
+    },
+    {
+      "id": "tools-spectrolite-app",
+      "type": "Tools",
+      "title": "Spectrolite",
+      "link": "https://spectrolite.app",
+      "image": "/screenshots/spectrolite_app.jpg",
+      "fields": {
+        "Subtitle": "Riso printing channel seperator",
+        "Author/Publisher": "Anemone",
+        "Notes (need to edit in accordance to our point of view)": "Spectrolite is a free Mac desktop app by ANEMONE to make colorful 🌈 risograph prints and zines more easily.\nRiso-ify your images! Spectrolite lets you do color separation for risograph, to make the greyscale files that the printer uses to make the stencil(s) for each ink color. Change opacity, or switch styles to halftone or posterize your artwork. Or preview a greyscale file as a single ink color. You can export PSD files to edit further with channels or levels, or place into InDesign.",
+        "Materiality": "TRUE",
+        "Ownability": "FALSE",
+        "Updatability": "FALSE",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Source/Database": "Pre Post Print"
+      }
+    },
+    {
+      "id": "tools-bookolab-coalitioncyborg-org",
+      "type": "Tools",
+      "title": "Bookolab",
+      "link": "https://bookolab.coalitioncyborg.org",
+      "image": "/screenshots/bookolab_coalitioncyborg_org.jpg",
+      "fields": {
+        "Subtitle": "Collaborative web publishing tool",
+        "Author/Publisher": "Lucile Haute",
+        "Materiality": "FALSE",
+        "Ownability": "TRUE",
+        "Updatability": "FALSE",
+        "Interactivity": "TRUE",
+        "Searchability": "FALSE",
+        "Traceability": "FALSE",
+        "Source/Database": "Pre Post Print"
+      }
+    },
+    {
+      "id": "tools-p-dpa-net-work-binder",
+      "type": "Tools",
+      "title": "Binder",
+      "link": "https://p-dpa.net/work/binder/",
+      "image": "/screenshots/p_dpa_net_work_binder_.png",
+      "fields": {
+        "Subtitle": "A tool for web compositing (not sure this is the right word)",
+        "Author/Publisher": "This is our work and Clement Valla",
+        "Notes (need to edit in accordance to our point of view)": "We wanted to design a website that is a simple navigation layer on top of an already-existing web format — and made this idea usable with the full Google suite, and also Tumblr, PDF’s, Wikipedia, YouTube. Binder isn’t a holder of content but a link, or a hub, that binds other sites together.",
+        "Interactivity": "FALSE",
+        "Searchability": "FALSE",
+        "Traceability": "TRUE",
+        "Source/Database": "FALSE",
+        "OVERRIDE IMAGE": "TRUE"
+      }
+    }
+  ]
+}

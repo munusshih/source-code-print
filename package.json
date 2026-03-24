@@ -1,27 +1,20 @@
 {
-  "name": "purple-proxima",
+  "name": "source-code-print",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/fetch-sheets.js && node scripts/fetch-images.js && node scripts/fetch-changelog.js",
+    "prebuild": "npm run sync",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "fetch": "node scripts/fetch-sheets.js",
     "fetch:images": "node scripts/fetch-images.js",
-    "fetch:changelog": "node scripts/fetch-changelog.js"
+    "sync": "node scripts/fetch-sheets.js && node scripts/fetch-images.js",
+    "check:updates": "node scripts/fetch-sheets.js --check-only",
+    "check:updates:strict": "node scripts/fetch-sheets.js --check-only --fail-on-change"
   },
   "dependencies": {
-    "@astrojs/vercel": "^9.0.2",
-    "@tailwindcss/vite": "^4.1.17",
-    "@vercel/analytics": "^1.5.0",
-    "astro": "^5.15.9",
-    "astro-mermaid": "^1.2.0",
-    "d3": "^7.9.0",
-    "js-yaml": "^4.1.1",
-    "mermaid": "^11.12.1",
-    "puppeteer": "^24.31.0",
-    "tailwindcss": "^4.1.17"
+    "astro": "^5.15.9"
   }
 }

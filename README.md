@@ -1,76 +1,62 @@
 # Source Code Print
 
-A publication framework exploring affordances in publishing through interactive web design.
+Minimal Astro setup using:
+- One canonical data file: `src/data/data.json`
+- Astro Content Layer (`file()` loader) for rendering
 
-## Quick Start
+## Setup
 
 ```bash
-# Install dependencies
 npm install
-
-# Set up environment (copy .env.example to .env and update with your Google Sheet ID)
-cp .env.example .env
-
-# Start dev server
-npm run dev
+npm run sync
 ```
 
 ## Commands
 
 ```bash
-npm run dev              # Start local dev server at localhost:4321
-npm run build            # Build for production
-npm run preview          # Preview built site
+npm run check:updates         # Compare Google Sheet vs local data.json, no writes
+npm run check:updates:strict  # Same check, exits non-zero when changes exist
+npm run fetch                 # Pull sheet, compute diff, write data.json if changed
+npm run fetch:images          # Fill missing images in data.json + save local files
+npm run sync                  # fetch + fetch:images
+npm run dev                   # Start Astro dev server
+npm run build                 # Runs sync, then Astro build
+npm run preview               # Preview build
+```
 
-npm run fetch            # Fetch data from Google Sheets
-npm run fetch:images     # Download project images
-npm run fetch:changelog  # Regenerate changelog from git + manual entries
+## Replace Sheet ID Easily
+
+Use either method:
+
+```bash
+# One-off via arg
+npm run check:updates -- --sheet-id=YOUR_SHEET_ID
+npm run fetch -- --sheet-id=YOUR_SHEET_ID
+
+# One-off via env var (works well for sync/build too)
+PUBLIC_SHEET_ID=YOUR_SHEET_ID npm run sync
+```
+
+Optional tab override:
+
+```bash
+npm run fetch -- --tabs=Databases,Precedents,Tools
 ```
 
 ## Project Structure
 
-```
+```text
+scripts/
+  fetch-sheets.js
+  fetch-images.js
+
 src/
-├── components/         # Astro components
-├── layouts/            # Page layouts
-├── pages/              # Content pages
-│   ├── affordances.md  # Landing page
-│   ├── materiality.md, ownability.md, etc.
-│   └── changelog.md
-├── styles/             # Modular CSS
-│   ├── global.css      # Main entry
-│   ├── base.css        # Variables + base styles
-│   ├── layout.css      # All components & utilities
-│   ├── markdown.css    # Markdown content
-│   ├── network.css     # Network visualization
-│   └── affordances.css # Affordance nodes
-└── data/               # Auto-generated from Google Sheets
+  content.config.ts
+  data/
+    data.json
+  pages/
+    index.astro
 
-public/screenshots/     # Downloaded images
+public/
+  screenshots/
 ```
-
-## Tech Stack
-
-- **Framework**: Astro v5
-- **Styling**: Tailwind CSS v4
-- **Data**: Google Sheets + opensheet.elk.sh
-- **Visualization**: D3.js, Mermaid
-- **Deployment**: Vercel
-
-## Key Features
-
-- **Affordances Framework** - 6 deep dives into publishing concepts
-- **Google Sheets Integration** - Fetch Projects, Precedents, Tools data
-- **Hybrid Changelog** - Combine manual entries with git commits
-- **Modular CSS** - Clean separation of concerns
-- **Responsive Design** - Mobile-first layout
-
-## Environment
-
-Create `.env` with:
-```
-PUBLIC_SHEET_ID=<your-sheet-id>
-PUBLIC_SHEET_TABS=Databases,Precedents,Tools
-```
-
-See `.env.example` for reference.

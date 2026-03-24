@@ -1,32 +1,20 @@
 import { defineCollection, z } from "astro:content";
+import { file } from "astro/loaders";
 
-const affordancesCollection = defineCollection({
-    type: "content",
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-    }),
+const records = defineCollection({
+  loader: file("src/data/data.json", {
+    parser: (text) => {
+      const parsed = JSON.parse(text);
+      return Array.isArray(parsed?.items) ? parsed.items : [];
+    },
+  }),
+  schema: z.object({
+    type: z.string(),
+    title: z.string(),
+    link: z.string().optional().default(""),
+    image: z.string().optional().default(""),
+    fields: z.record(z.any()).optional().default({}),
+  }),
 });
 
-const pagesCollection = defineCollection({
-    type: "content",
-    schema: z.object({
-        title: z.string(),
-        slug: z.string().optional(),
-        layout: z.string().optional(),
-        layoutType: z.enum(["base", "affordances"]).optional().default("base"),
-    }),
-});
-
-const siteCollection = defineCollection({
-    type: "content",
-    schema: z.object({
-        title: z.string(),
-    }),
-});
-
-export const collections = {
-    affordances: affordancesCollection,
-    pages: pagesCollection,
-    site: siteCollection,
-};
+export const collections = { records };

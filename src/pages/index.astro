@@ -1,75 +1,266 @@
 ---
-import { SHEET_TABS } from "@/lib/opensheet";
-import { loadTabData, extractBooleanFields } from "@/lib/dataLoader";
-import FilterBar from "@/components/FilterBar.astro";
-import TabSection from "@/components/TabSection.astro";
-import NetworkView from "@/components/NetworkView.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import data from "../data/data.json";
+import { getCollection } from "astro:content";
 
-const tabData = loadTabData(SHEET_TABS);
-const BOOLEAN_FIELDS = extractBooleanFields(tabData);
+const entries = await getCollection("records");
+const items = entries.map((entry) => ({
+  id: entry.id,
+  ...entry.data,
+}));
+
+const SUMMARY_KEYS = [
+  "Subtitle",
+  "Summary",
+  "Description",
+  "Notes (need to edit in accordance to our point of view)",
+];
+
+function toCardSummary(fields) {
+  if (!fields || typeof fields !== "object") return "";
+
+  for (const key of SUMMARY_KEYS) {
+    const value = fields[key];
+    if (typeof value === "string" && value.trim()) {
+      return value.trim();
+    }
+  }
+
+  for (const [_, value] of Object.entries(fields)) {
+    if (typeof value === "string" && value.trim()) {
+      return value.trim();
+    }
+  }
+
+  return "";
+}
+
+const cards = items.map((item) => ({
+  ...item,
+  summary: toCardSummary(item.fields),
+}));
 ---
 
-<BaseLayout
-  title="[Munus, Asad, Carolina]"
-  showViewToggle={true}
-  noMarkdown={true}
->
-  <div id="gridView">
-    <FilterBar tags={BOOLEAN_FIELDS} />
-    {
-      Object.entries(tabData).map(([tab, payload]) => (
-        <TabSection
-          tab={tab}
-          payload={payload}
-          booleanFields={BOOLEAN_FIELDS}
-        />
-      ))
-    }
-  </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Database</title>
+    <style>
+      :root {
+        --bg: #f3f3f3;
+        --text: #111;
+        --muted: #666;
+        --card: #fff;
+        --line: #ddd;
+        --line-strong: #111;
+      }
 
-  <NetworkView tabData={tabData} booleanFields={BOOLEAN_FIELDS} />
+      * {
+        box-sizing: border-box;
+      }
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggleButton = document.getElementById("viewToggle");
-      const gridView = document.getElementById("gridView");
-      const networkView = document.querySelector(".network-view");
-      const toggleText = document.querySelector(".toggle-text");
-      let isNetworkMode = false;
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
 
-      const handleToggle = () => {
-        isNetworkMode = !isNetworkMode;
+      main {
+        width: min(1200px, 100%);
+        margin: 0 auto;
+        padding: 24px;
+      }
 
-        if (isNetworkMode) {
-          gridView!.style.display = "none";
-          networkView!.style.display = "block";
-          // Lock scroll in network view
-          document.body.style.overflow = "hidden";
-          toggleText!.textContent = "Grid View";
-          // Hide header and footer in network view
-          const header = document.getElementById("siteHeader");
-          if (header) header.style.display = "none";
-          const footer = document.querySelector(".footer");
-          if (footer) (footer as HTMLElement).style.display = "none";
-        } else {
-          gridView!.style.display = "block";
-          networkView!.style.display = "none";
-          // Restore scroll in grid view
-          document.body.style.overflow = "";
-          toggleText!.textContent = "Network View";
-          // Show header and footer in grid view
-          const header = document.getElementById("siteHeader");
-          if (header) header.style.display = "";
-          const footer = document.querySelector(".footer");
-          if (footer) (footer as HTMLElement).style.display = "";
+      .meta {
+        margin: 0 0 20px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 12px;
+      }
+
+      .card.is-bookmarked {
+        border-color: var(--line-strong);
+      }
+
+      .card__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .type {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .bookmark-btn {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: transparent;
+        padding: 4px 8px;
+        color: var(--text);
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      .card.is-bookmarked .bookmark-btn {
+        border-color: var(--line-strong);
+      }
+
+      .title {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.25;
+      }
+
+      .cover {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fafafa;
+      }
+
+      .summary {
+        margin: 0;
+        color: #222;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .link {
+        color: inherit;
+        font-size: 13px;
+        word-break: break-word;
+      }
+
+      @media (max-width: 980px) {
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-      };
+      }
 
-      toggleButton?.addEventListener("click", handleToggle);
-      document
-        .getElementById("networkToggle")
-        ?.addEventListener("click", handleToggle);
-    });
-  </script>
-</BaseLayout>
+      @media (max-width: 640px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Database</h1>
+      <p class="meta">Updated: {data.updatedAt || "unknown"} · Total items: {data.count || cards.length}</p>
+
+      <section id="cardsGrid" class="grid">
+        {
+          cards.map((item) => (
+            <article class="card" data-card data-id={item.id}>
+              <div class="card__head">
+                <p class="type">{item.type}</p>
+                <button class="bookmark-btn" type="button" data-bookmark-btn aria-pressed="false">
+                  Bookmark
+                </button>
+              </div>
+
+              <h2 class="title">{item.title}</h2>
+
+              {item.image && <img class="cover" src={item.image} alt={item.title} loading="lazy" />}
+              {item.summary && <p class="summary">{item.summary}</p>}
+              {item.link && (
+                <a class="link" href={item.link} target="_blank" rel="noopener noreferrer">
+                  {item.link}
+                </a>
+              )}
+            </article>
+          ))
+        }
+      </section>
+    </main>
+
+    <script>
+      const STORAGE_KEY = "source-code-print.bookmarks.v1";
+
+      function shuffle(array) {
+        const result = [...array];
+        for (let i = result.length - 1; i > 0; i -= 1) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [result[i], result[j]] = [result[j], result[i]];
+        }
+        return result;
+      }
+
+      function readBookmarks() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          const parsed = raw ? JSON.parse(raw) : [];
+          if (!Array.isArray(parsed)) return new Set();
+          return new Set(parsed.filter((value) => typeof value === "string"));
+        } catch {
+          return new Set();
+        }
+      }
+
+      function writeBookmarks(bookmarks) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(bookmarks)));
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const grid = document.getElementById("cardsGrid");
+        if (!grid) return;
+
+        const cards = Array.from(grid.querySelectorAll("[data-card]"));
+        const shuffled = shuffle(cards);
+        shuffled.forEach((card) => grid.appendChild(card));
+
+        const bookmarks = readBookmarks();
+
+        for (const card of shuffled) {
+          const id = card.getAttribute("data-id") || "";
+          const button = card.querySelector("[data-bookmark-btn]");
+          if (!id || !button) continue;
+
+          const renderBookmarkState = () => {
+            const active = bookmarks.has(id);
+            card.classList.toggle("is-bookmarked", active);
+            button.setAttribute("aria-pressed", String(active));
+            button.textContent = active ? "Bookmarked" : "Bookmark";
+          };
+
+          button.addEventListener("click", () => {
+            if (bookmarks.has(id)) {
+              bookmarks.delete(id);
+            } else {
+              bookmarks.add(id);
+            }
+            writeBookmarks(bookmarks);
+            renderBookmarkState();
+          });
+
+          renderBookmarkState();
+        }
+      });
+    </script>
+  </body>
+</html>
