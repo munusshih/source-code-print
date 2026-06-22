@@ -12,7 +12,7 @@
 }
 
 .title-source {
-    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-family: "Inconsolata", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
 .header-link {
@@ -71,6 +71,95 @@
 
 .tab-title {
     @apply text-4xl font-bold mb-6 md:text-3xl sm:text-2xl;
+}
+
+/* Project Table Styles */
+.project-table-wrap {
+    @apply w-full overflow-x-auto border-2 border-[var(--color-border)] bg-white;
+}
+
+.project-table {
+    @apply w-full border-collapse text-left;
+    table-layout: fixed;
+    min-width: 980px;
+}
+
+.project-table th {
+    @apply sticky top-[94px] z-[1] bg-[var(--color-tag-bg)] text-[var(--color-tag-text)] border-b-2 border-[var(--color-border)] px-3 py-2 text-xs font-bold uppercase;
+}
+
+.project-table th:nth-child(1) {
+    width: 30%;
+}
+
+.project-table th:nth-child(2) {
+    width: 18%;
+}
+
+.project-table th:nth-child(3) {
+    width: 22%;
+}
+
+.project-table th:nth-child(4) {
+    width: 30%;
+}
+
+.project-row {
+    @apply border-b-2 border-[var(--color-border)] align-top transition-colors duration-150;
+}
+
+.project-row:last-child {
+    @apply border-b-0;
+}
+
+.project-row:hover {
+    @apply bg-[var(--color-bg)];
+}
+
+.project-cell {
+    @apply border-r-2 border-[var(--color-border)] px-3 py-3 text-sm leading-snug align-top;
+}
+
+.project-cell:last-child {
+    @apply border-r-0;
+}
+
+.project-title {
+    @apply text-lg font-bold leading-tight;
+}
+
+.project-subtitle {
+    @apply mt-1 text-sm font-medium text-[var(--color-muted)];
+}
+
+.project-cell-author {
+    @apply text-[var(--color-muted)];
+}
+
+.project-cell-tags .tags {
+    @apply mb-0;
+}
+
+.project-notes {
+    @apply whitespace-pre-wrap;
+}
+
+@media (max-width: 768px) {
+    .project-table {
+        min-width: 760px;
+    }
+
+    .project-table th {
+        @apply top-[86px];
+    }
+
+    .project-cell {
+        @apply px-2.5 py-2.5 text-xs;
+    }
+
+    .project-title {
+        @apply text-base;
+    }
 }
 
 /* Card Styles */

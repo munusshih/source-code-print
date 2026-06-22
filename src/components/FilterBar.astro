@@ -23,49 +23,51 @@ const { tags } = Astro.props;
   document.addEventListener("DOMContentLoaded", () => {
     const filterButtons = document.querySelectorAll(".filter-tag");
     const allButton = document.querySelector('.filter-tag[data-filter="all"]');
-    const cards = document.querySelectorAll(".card");
+    const rows = document.querySelectorAll(".project-row");
     const resultCount = document.querySelector(".result-count");
     const activeFilters = new Set();
 
     function updateResultCount() {
-      const visibleCards = Array.from(cards).filter(
-        (card) => card.style.display !== "none"
+      const visibleRows = Array.from(rows).filter(
+        (row) => row.style.display !== "none"
       ).length;
       if (resultCount) {
-        resultCount.textContent = `${visibleCards} result${visibleCards !== 1 ? "s" : ""}`;
+        resultCount.textContent = `${visibleRows} result${visibleRows !== 1 ? "s" : ""}`;
       }
     }
 
     function updateSectionTitles() {
       const sections = document.querySelectorAll(".tab-section");
       sections.forEach((section) => {
-        const sectionCards = section.querySelectorAll(".card");
-        const visibleSectionCards = Array.from(sectionCards).filter(
-          (card) => card.style.display !== "none"
+        const sectionRows = section.querySelectorAll(".project-row");
+        const visibleSectionRows = Array.from(sectionRows).filter(
+          (row) => row.style.display !== "none"
         );
         const title = section.querySelector(".tab-title");
         if (title) {
-          title.style.display = visibleSectionCards.length > 0 ? "" : "none";
+          title.style.display = visibleSectionRows.length > 0 ? "" : "none";
+        }
+        const tableWrap = section.querySelector(".project-table-wrap");
+        if (tableWrap) {
+          tableWrap.style.display = visibleSectionRows.length > 0 ? "" : "none";
         }
       });
     }
 
-    function filterCards() {
+    function filterRows() {
       if (activeFilters.size === 0) {
-        // Show all cards
-        cards.forEach((card) => {
-          card.style.display = "";
+        // Show all rows
+        rows.forEach((row) => {
+          row.style.display = "";
         });
       } else {
-        // Filter cards by active filters
-        cards.forEach((card) => {
-          const tags = Array.from(card.querySelectorAll(".tag")).map((tag) =>
-            tag.textContent?.trim()
-          );
+        // Filter rows by active filters
+        rows.forEach((row) => {
+          const tags = row.getAttribute("data-tags")?.split(",") || [];
           const hasAllFilters = Array.from(activeFilters).every((filter) =>
             tags.includes(filter)
           );
-          card.style.display = hasAllFilters ? "" : "none";
+          row.style.display = hasAllFilters ? "" : "none";
         });
       }
       updateSectionTitles();
@@ -99,7 +101,7 @@ const { tags } = Astro.props;
           }
         }
 
-        filterCards();
+        filterRows();
       });
     });
 

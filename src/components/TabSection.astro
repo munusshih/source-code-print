@@ -1,5 +1,5 @@
 ---
-import Card from "./Card.astro";
+import ProjectTableRow from "./ProjectTableRow.astro";
 
 const { tab, payload, booleanFields } = Astro.props;
 ---
@@ -14,10 +14,22 @@ const { tab, payload, booleanFields } = Astro.props;
   {payload.rows && payload.rows.length === 0 && <p>No entries yet.</p>}
   {
     payload.rows && payload.rows.length > 0 && (
-      <div class="cards">
-        {payload.rows.map((row) => (
-          <Card row={row} booleanFields={booleanFields} tab={tab} />
-        ))}
+      <div class="project-table-wrap">
+        <table class="project-table">
+          <thead>
+            <tr>
+              <th scope="col">Project</th>
+              <th scope="col">Author/Publisher</th>
+              <th scope="col">Affordances</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {payload.rows.map((row) => (
+              <ProjectTableRow row={row} booleanFields={booleanFields} />
+            ))}
+          </tbody>
+        </table>
       </div>
     )
   }

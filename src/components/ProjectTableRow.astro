@@ -1,0 +1,60 @@
+---
+import { isURL, truncate } from "../lib/utils.js";
+
+const { row, booleanFields } = Astro.props;
+
+const link = row["Link"] || row["link"];
+const titleLink = link && isURL(link) ? link.split("\n")[0].trim() : null;
+const title = row["Title"] || row["title"];
+const subtitle = row["Subtitle"] || row["subtitle"] || row["Short Description"];
+const author = row["Author/Publisher"] || row["author/publisher"];
+const notes =
+  row["Notes (need to edit in accordance to our point of view)"] ||
+  row["Notes (general) (need to edit in accordance to our point of view)"] ||
+  row["Notes"] ||
+  row["notes"];
+
+const activeTags = booleanFields.filter((field) => {
+  const val = row[field];
+  return val && String(val).trim().toUpperCase() === "TRUE";
+});
+---
+
+<tr class="project-row" data-tags={activeTags.join(",")}>
+  <td class="project-cell project-cell-title">
+    {
+      title && (
+        <div class="project-title">
+          {titleLink ? (
+            <a
+              href={titleLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="title-link"
+            >
+              {title}
+            </a>
+          ) : (
+            title
+          )}
+        </div>
+      )
+    }
+    {subtitle && <div class="project-subtitle">{subtitle}</div>}
+  </td>
+  <td class="project-cell project-cell-author">{author || ""}</td>
+  <td class="project-cell project-cell-tags">
+    {
+      activeTags.length > 0 && (
+        <div class="tags">
+          {activeTags.map((tag) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      )
+    }
+  </td>
+  <td class="project-cell project-cell-notes">
+    {notes && <div class="project-notes">{truncate(notes, 180)}</div>}
+  </td>
+</tr>

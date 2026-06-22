@@ -25,7 +25,7 @@ export default defineConfig({
         tertiaryColor: "#fffacd",
         tertiaryBorderColor: "#000000",
         tertiaryTextColor: "#000000",
-        fontFamily: "Inter, sans-serif",
+        fontFamily: "Inconsolata, monospace",
         fontSize: 16,
         curve: "linear",
         themeVariables: {
@@ -38,7 +38,7 @@ export default defineConfig({
           tertiaryColor: "#ffffff",
           tertiaryTextColor: "#000000",
           tertiaryBorderColor: "#000000",
-          fontFamily: "Inter, sans-serif",
+          fontFamily: "Inconsolata, monospace",
           fontSize: "16px",
           lineColor: "#000000",
           textColor: "#000000",
