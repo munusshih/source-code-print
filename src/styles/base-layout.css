@@ -1,24 +1,50 @@
 /* Base Layout Styles */
 .top-controls-menu-only {
-    @apply absolute top-0 right-0 z-50 flex gap-2 p-0;
+  @apply absolute top-0 right-0 z-50 flex gap-2 p-0;
 }
 
 .top-controls {
-    @apply absolute top-0 right-0 z-50 flex gap-2 p-0;
+  @apply absolute top-0 right-0 z-50 flex gap-2 p-0;
 }
 
 .layout-content {
-    @apply min-h-screen;
+  @apply min-h-screen;
+}
+
+body.home-page {
+  --home-menu-size: clamp(2rem, 3.35vw, 4rem);
+  --home-menu-rail-width: calc(var(--home-menu-size) * 2);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding-right: var(--home-menu-rail-width);
+}
+
+body.home-page .container {
+  padding: 0.6rem 15px 15px 24px;
+}
+
+body.home-page .top-controls {
+  right: 0;
 }
 
 .view-toggle {
-    @apply px-3 py-4 bg-[var(--color-tag-bg)] text-[var(--color-tag-text)] border-2 border-[var(--color-border)] font-bold text-base cursor-pointer transition-all duration-150 leading-none;
+  @apply px-3 py-4 bg-[var(--color-tag-bg)] text-[var(--color-tag-text)] border-2 border-[var(--color-border)] font-bold text-base cursor-pointer transition-all duration-150 leading-none;
 }
 
 .view-toggle:hover {
-    @apply -translate-y-0.5;
+  @apply -translate-y-0.5;
 }
 
 .toggle-text {
-    @apply inline-block;
+  @apply inline-block;
+}
+
+@media (max-width: 768px) {
+  body.home-page {
+    padding-right: var(--home-menu-rail-width);
+  }
+
+  body.home-page .top-controls {
+    right: 0;
+  }
 }

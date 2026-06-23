@@ -1,40 +1,80 @@
 ---
+interface Props {
+  variant?: "dropdown" | "home-rail";
+}
 
+const { variant = "dropdown" } = Astro.props;
 ---
 
-<div class="menu-container">
-  <button class="menu-button" id="menuButton">Menu</button>
-  <div class="menu-dropdown" id="menuDropdown">
-    <nav class="menu-nav">
-      <a href="/" class="menu-item">Home</a>
-      <a href="/about" class="menu-item">About</a>
-      <a href="/changelog" class="menu-item">Changelog</a>
-      <a href="/affordances" class="menu-item">Affordances</a>
-      <a href="/tutorials" class="menu-item">Tutorials</a>
-    </nav>
-  </div>
-</div>
+{
+  variant === "home-rail" ? (
+    <div class="home-menu-rail" aria-label="Section labels">
+      <div class="home-menu-background" aria-hidden="true">
+        <span class="home-menu-column home-menu-code" />
+        <span class="home-menu-column home-menu-print" />
+      </div>
+      <div class="home-menu-labels">
+        <span class="home-menu-arrow home-menu-arrow-start" aria-hidden="true">
+          &gt;
+        </span>
+        <span class="home-menu-arrow home-menu-arrow-between" aria-hidden="true">
+          &gt;
+        </span>
+        <span class="home-menu-label" aria-label="CODE">
+          <span>C</span>
+          <span>O</span>
+          <span>D</span>
+          <span>E</span>
+        </span>
+        <span class="home-menu-label" aria-label="PRINT">
+          <span>P</span>
+          <span>R</span>
+          <span>I</span>
+          <span>N</span>
+          <span>T</span>
+        </span>
+      </div>
+    </div>
+  ) : (
+    <div class="menu-container">
+      <button class="menu-button" id="menuButton">Menu</button>
+      <div class="menu-dropdown" id="menuDropdown">
+        <nav class="menu-nav">
+          <a href="/" class="menu-item">Home</a>
+          <a href="/about" class="menu-item">About</a>
+          <a href="/changelog" class="menu-item">Changelog</a>
+          <a href="/affordances" class="menu-item">Affordances</a>
+          <a href="/tutorials" class="menu-item">Tutorials</a>
+        </nav>
+      </div>
+    </div>
+  )
+}
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuButton = document.getElementById("menuButton");
-    const menuDropdown = document.getElementById("menuDropdown");
+{
+  variant === "dropdown" && (
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuButton = document.getElementById("menuButton");
+        const menuDropdown = document.getElementById("menuDropdown");
 
-    menuButton?.addEventListener("click", (e) => {
-      e.stopPropagation();
-      menuDropdown?.classList.toggle("active");
-    });
+        menuButton?.addEventListener("click", (e) => {
+          e.stopPropagation();
+          menuDropdown?.classList.toggle("active");
+        });
 
-    // Close menu when clicking outside
-    document.addEventListener("click", () => {
-      menuDropdown?.classList.remove("active");
-    });
+        // Close menu when clicking outside
+        document.addEventListener("click", () => {
+          menuDropdown?.classList.remove("active");
+        });
 
-    // Close menu when a link is clicked
-    document.querySelectorAll(".menu-item").forEach((item) => {
-      item.addEventListener("click", () => {
-        menuDropdown?.classList.remove("active");
+        // Close menu when a link is clicked
+        document.querySelectorAll(".menu-item").forEach((item) => {
+          item.addEventListener("click", () => {
+            menuDropdown?.classList.remove("active");
+          });
+        });
       });
-    });
-  });
-</script>
+    </script>
+  )
+}

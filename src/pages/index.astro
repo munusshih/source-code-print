@@ -14,9 +14,12 @@ const BOOLEAN_FIELDS = extractBooleanFields(tabData);
   title="[Munus, Asad, Carolina]"
   showViewToggle={true}
   noMarkdown={true}
+  homeChrome={true}
 >
   <div id="gridView">
-    <FilterBar tags={BOOLEAN_FIELDS} />
+    <div hidden>
+      <FilterBar tags={BOOLEAN_FIELDS} />
+    </div>
     {
       Object.entries(tabData).map(([tab, payload]) => (
         <TabSection

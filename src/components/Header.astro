@@ -1,24 +1,80 @@
 ---
 import { getEntry } from "astro:content";
 
+interface Props {
+  homeChrome?: boolean;
+}
+
+const { homeChrome = false } = Astro.props;
 const headerContent = await getEntry("site", "header");
 const { Content } = (await headerContent?.render()) || {};
 ---
 
-<header class="site-header" id="siteHeader">
-  <div>
-    <h1>
-      <a href="/" class="header-link">
-        <span class="title-source">Source</span>, <br /><span class="title-code"
-          >Code</span
-        >, <span class="title-print">Print</span>
-      </a>
-    </h1>
-    <p class="mt-8 font-bold text-xl text-balance">
-      Edited by Munus Shih, Asad Pervaiz and Carolina Stierli de Abreu
-    </p>
-  </div>
-  <div class="byline max-w-prose flex flex-col gap-8">
-    {headerContent && <Content />}
-  </div>
-</header>
+{
+  homeChrome ? (
+    <header class="site-header site-header-home" id="siteHeader">
+      <h1>
+        <a href="/" class="header-link" id="homeHeaderTitle">
+          SOURCE
+        </a>
+      </h1>
+      <div class="home-about">
+        {headerContent && <Content />}
+      </div>
+      <script>
+        const title = document.getElementById("homeHeaderTitle");
+        const endGap = 16;
+        const baseText = "SOURCE";
+
+        const fitHomeTitle = () => {
+          if (!title) return;
+
+          const menuRail = document.querySelector(".home-menu-labels");
+          const menuRailWidth =
+            menuRail instanceof HTMLElement
+              ? menuRail.getBoundingClientRect().width
+              : 120;
+          const titleLeft = title.getBoundingClientRect().left;
+          const maxWidth = window.innerWidth - menuRailWidth - titleLeft - endGap;
+
+          let text = baseText;
+          title.textContent = text;
+
+          while (title.scrollWidth <= maxWidth && text.length < 1000) {
+            text += "E";
+            title.textContent = text;
+          }
+
+          if (title.scrollWidth > maxWidth) {
+            title.textContent = text.slice(0, -1);
+          }
+        };
+
+        const scheduleFitHomeTitle = () =>
+          window.requestAnimationFrame(fitHomeTitle);
+
+        scheduleFitHomeTitle();
+        document.fonts?.ready.then(scheduleFitHomeTitle);
+        window.addEventListener("resize", scheduleFitHomeTitle);
+      </script>
+    </header>
+  ) : (
+    <header class="site-header" id="siteHeader">
+      <div>
+        <h1>
+          <a href="/" class="header-link">
+            <span class="title-source">Source</span>, <br />
+            <span class="title-code">Code</span>,{" "}
+            <span class="title-print">Print</span>
+          </a>
+        </h1>
+        <p class="mt-8 font-bold text-xl text-balance">
+          Edited by Munus Shih, Asad Pervaiz and Carolina Stierli de Abreu
+        </p>
+      </div>
+      <div class="byline max-w-prose flex flex-col gap-8">
+        {headerContent && <Content />}
+      </div>
+    </header>
+  )
+}

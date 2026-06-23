@@ -9,9 +9,15 @@ interface Props {
   title: string;
   showViewToggle?: boolean;
   noMarkdown?: boolean;
+  homeChrome?: boolean;
 }
 
-const { title, showViewToggle = false, noMarkdown = false } = Astro.props;
+const {
+  title,
+  showViewToggle = false,
+  noMarkdown = false,
+  homeChrome = false,
+} = Astro.props;
 const currentYear = new Date().getFullYear();
 // Wrap in markdown unless explicitly disabled
 const isMarkdown = !noMarkdown;
@@ -31,14 +37,14 @@ const isMarkdown = !noMarkdown;
     />
     <title>{title}</title>
   </head>
-  <body>
+  <body class:list={[homeChrome && "home-page"]}>
     {
       showViewToggle && (
         <div class="top-controls">
-          <button class="view-toggle" id="viewToggle">
+          <button class="view-toggle hidden-view-toggle" id="viewToggle" hidden>
             <span class="toggle-text">Network View</span>
           </button>
-          <Menu />
+          <Menu variant={homeChrome ? "home-rail" : "dropdown"} />
         </div>
       )
     }
@@ -51,7 +57,7 @@ const isMarkdown = !noMarkdown;
     }
 
     <div class="container">
-      <Header />
+      <Header homeChrome={homeChrome} />
       {
         isMarkdown ? (
           <article class="markdown">

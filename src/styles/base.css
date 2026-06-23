@@ -1,6 +1,6 @@
 /* Color Theme & Design Tokens */
 :root {
-    --color-bg: #ffc0cb;
+    --color-bg: #FFFDF4;
     --color-text: #000;
     --color-muted: #333;
     --color-border: #000;
@@ -16,7 +16,7 @@
     --primaryColor: #fff;
     --primaryBorderColor: #000;
     --primaryTextColor: #000;
-    --secondaryColor: #ffc0cb;
+    --secondaryColor: #FFFDF4;
     --secondaryBorderColor: #000;
     --secondaryTextColor: #000;
     --tertiaryColor: #fff;
@@ -26,7 +26,7 @@
     --textColor: #000;
     --background: #fff;
     --mainBkg: #fff;
-    --secondBkg: #ffc0cb;
+    --secondBkg: #FFFDF4;
     --tertiaryBkg: #fff;
 }
 
