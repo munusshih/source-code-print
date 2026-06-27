@@ -14,13 +14,15 @@
 body.home-page {
   --home-menu-size: clamp(2rem, 3.35vw, 4rem);
   --home-menu-rail-width: calc(var(--home-menu-size) * 2);
+  --home-menu-height: 100vh;
+  --home-menu-height: 100dvh;
   box-sizing: border-box;
   overflow-x: hidden;
   padding-right: var(--home-menu-rail-width);
 }
 
 body.home-page .container {
-  padding: 0.6rem 15px 15px 24px;
+  padding: 0.6rem 15px 15px 30px;
 }
 
 body.home-page .top-controls {

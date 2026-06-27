@@ -42,16 +42,18 @@
 
 /* Homepage right-side menu rail */
 .home-menu-rail {
-  @apply absolute top-0 right-0 z-50 h-screen;
+  @apply absolute top-0 right-0 z-50;
   box-sizing: border-box;
   font-size: var(--home-menu-size);
+  height: var(--home-menu-height);
   width: 2em;
 }
 
 .home-menu-background {
-  @apply fixed top-0 right-0 z-40 flex h-screen;
+  @apply fixed top-0 right-0 z-40 flex;
   box-sizing: border-box;
   font-size: var(--home-menu-size);
+  height: var(--home-menu-height);
   width: 2em;
 }
 
@@ -73,14 +75,16 @@
 }
 
 .home-menu-column {
-  @apply block h-screen;
+  @apply block;
+  height: var(--home-menu-height);
   width: 1em;
 }
 
 .home-menu-labels {
-  @apply fixed top-0 right-0 z-50 flex h-screen;
+  @apply fixed top-0 right-0 z-50 flex;
   box-sizing: border-box;
   font-size: var(--home-menu-size);
+  height: var(--home-menu-height);
   width: 2em;
 }
 

@@ -31,8 +31,8 @@
 }
 
 .home-about {
-  @apply grid gap-6;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @apply grid gap-20;
+  grid-template-columns: minmax(0, 50ch) minmax(0, 77ch);
   align-items: start;
   font-size: 1.5rem;
   margin-top: 1rem;
@@ -43,6 +43,14 @@
 .home-about p {
   @apply m-0;
   max-width: 100%;
+}
+
+.home-about p:first-child {
+  max-width: 60ch;
+}
+
+.home-about p:nth-child(2) {
+  max-width: 77ch;
 }
 
 .title-source {

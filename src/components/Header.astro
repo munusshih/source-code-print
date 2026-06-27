@@ -48,6 +48,10 @@ const { Content } = (await headerContent?.render()) || {};
           if (title.scrollWidth > maxWidth) {
             title.textContent = text.slice(0, -1);
           }
+
+          if (title.textContent.length > baseText.length) {
+            title.textContent = title.textContent.slice(0, -1);
+          }
         };
 
         const scheduleFitHomeTitle = () =>
