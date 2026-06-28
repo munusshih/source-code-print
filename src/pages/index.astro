@@ -47,6 +47,7 @@ const BOOLEAN_FIELDS = extractBooleanFields(tabData);
         if (isNetworkMode) {
           gridView!.style.display = "none";
           networkView!.style.display = "block";
+          document.body.classList.add("network-mode");
           // Lock scroll in network view
           document.body.style.overflow = "hidden";
           toggleText!.textContent = "Grid View";
@@ -58,6 +59,7 @@ const BOOLEAN_FIELDS = extractBooleanFields(tabData);
         } else {
           gridView!.style.display = "block";
           networkView!.style.display = "none";
+          document.body.classList.remove("network-mode");
           // Restore scroll in grid view
           document.body.style.overflow = "";
           toggleText!.textContent = "Network View";

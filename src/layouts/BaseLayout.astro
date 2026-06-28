@@ -39,15 +39,16 @@ const isMarkdown = !noMarkdown;
   </head>
   <body class:list={[homeChrome && "home-page"]}>
     {
-      showViewToggle && (
+      showViewToggle && !homeChrome && (
         <div class="top-controls">
-          <button class="view-toggle hidden-view-toggle" id="viewToggle" hidden>
+          <button class="view-toggle" id="viewToggle">
             <span class="toggle-text">Network View</span>
           </button>
-          <Menu variant={homeChrome ? "home-rail" : "dropdown"} />
+          <Menu variant="dropdown" />
         </div>
       )
     }
+    {showViewToggle && homeChrome && <Menu variant="home-rail" />}
     {
       !showViewToggle && (
         <div class="top-controls-menu-only">
@@ -58,6 +59,28 @@ const isMarkdown = !noMarkdown;
 
     <div class="container">
       <Header homeChrome={homeChrome} />
+      {
+        showViewToggle && homeChrome && (
+          <nav class="home-action-bar" aria-label="Homepage actions">
+            <div class="home-action-group">
+              <a class="home-action-button" href="/about">
+                about
+              </a>
+              <button class="home-action-button" type="button" disabled>
+                submit
+              </button>
+            </div>
+            <div class="home-action-group home-action-group-right">
+              <button class="home-action-button view-toggle" id="viewToggle">
+                <span class="toggle-text">Network View</span>
+              </button>
+              <button class="home-action-button" type="button" disabled>
+                Your Bookmarks
+              </button>
+            </div>
+          </nav>
+        )
+      }
       {
         isMarkdown ? (
           <article class="markdown">
